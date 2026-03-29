@@ -1,0 +1,22 @@
+System: AI Co-Scientist
+Blocks: 5
+Wirings: 8
+Feedback wirings: 0
+Temporal wirings: 2
+
+Blocks:
+  Generation Agent (decision)
+  Reflection Agent (function_covariant)
+  Ranking Agent (decision)
+  Evolution Agent (function_covariant)
+  Meta-Review Agent (decision)
+
+Wirings:
+  Generation Agent -> Reflection Agent [Candidate Hypotheses] covariant
+  Reflection Agent -> Ranking Agent [Critiqued Hypotheses] covariant
+  Ranking Agent -> Evolution Agent [Ranked Hypotheses] covariant
+  Evolution Agent -> Generation Agent [Evolved Population] covariant [TEMPORAL]
+  Evolution Agent -> Meta-Review Agent [Evolved Population] covariant
+  Meta-Review Agent -> Generation Agent [Meta Insights] covariant [TEMPORAL]
+  Research Goal -> Generation Agent [Research Goal] covariant
+  Literature Corpus -> Generation Agent [Research Goal] covariant

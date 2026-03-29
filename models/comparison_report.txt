@@ -1,0 +1,119 @@
+======================================================================
+STRUCTURED ANTAGONISM — CROSS-MODEL STRUCTURAL COMPARISON
+======================================================================
+
+Total triples in merged graph: 358
+
+----------------------------------------------------------------------
+1. SYSTEM TOPOLOGY
+----------------------------------------------------------------------
+  AI Co-Scientist: 5 blocks, 8 wirings
+  Generative Adversarial Network: 2 blocks, 4 wirings
+  Socratic Elenchus (Euthyphro): 5 blocks, 9 wirings
+
+----------------------------------------------------------------------
+2. OPERATOR CLASS (feedback vs temporal wirings)
+----------------------------------------------------------------------
+  AI Co-Scientist: feedback=0, temporal=2 → .loop() — pursuit-evasion or hierarchical
+  Generative Adversarial Network: feedback=1, temporal=0 → .feedback() — symmetric antagonism
+  Socratic Elenchus (Euthyphro): feedback=0, temporal=2 → .loop() — pursuit-evasion or hierarchical
+
+----------------------------------------------------------------------
+3. BLOCK ROLES
+----------------------------------------------------------------------
+
+  AI Co-Scientist:
+    Evolution Agent (function_covariant)
+    Generation Agent (decision)
+    Meta-Review Agent (decision)
+    Ranking Agent (decision)
+    Reflection Agent (function_covariant)
+
+  Generative Adversarial Network:
+    Discriminator (decision)
+    Generator (decision)
+
+  Socratic Elenchus (Euthyphro):
+    Commitment Update (function_covariant)
+    Euthyphro (decision)
+    Euthyphro View (function_covariant)
+    Socrates (decision)
+    Socrates View (function_covariant)
+
+----------------------------------------------------------------------
+4. OBSERVATION ASYMMETRY (forward_in of decision blocks)
+----------------------------------------------------------------------
+
+  AI Co-Scientist:
+    Generation Agent: x = [Research Goal + Meta Insights]
+    Meta-Review Agent: x = [Evolved Population + Round History]
+    Ranking Agent: x = [Critiqued Hypotheses]
+
+  Generative Adversarial Network:
+    Discriminator: x = [Generated Sample + Real Sample]
+    Generator: x = [Noise Vector]
+
+  Socratic Elenchus (Euthyphro):
+    Euthyphro: x = [Current Commitments + Refutation]
+    Socrates: x = [Commitment History + Current Commitments + Proposed Definition]
+
+----------------------------------------------------------------------
+5. FULL WIRING TOPOLOGY
+----------------------------------------------------------------------
+
+  AI Co-Scientist:
+    Evolution Agent -> Generation Agent [Evolved Population] covariant [TEMPORAL]
+    Evolution Agent -> Meta-Review Agent [Evolved Population] covariant
+    Generation Agent -> Reflection Agent [Candidate Hypotheses] covariant
+    Literature Corpus -> Generation Agent [Research Goal] covariant
+    Meta-Review Agent -> Generation Agent [Meta Insights] covariant [TEMPORAL]
+    Ranking Agent -> Evolution Agent [Ranked Hypotheses] covariant
+    Reflection Agent -> Ranking Agent [Critiqued Hypotheses] covariant
+    Research Goal -> Generation Agent [Research Goal] covariant
+
+  Generative Adversarial Network:
+    Discriminator -> Generator [Discriminator Gradient] contravariant [FEEDBACK]
+    Generator -> Discriminator [Generated Sample] covariant
+    Noise Distribution -> Generator [Noise Vector] covariant
+    Training Data -> Discriminator [Real Sample] covariant
+
+  Socratic Elenchus (Euthyphro):
+    Commitment Update -> Euthyphro View [Commitment Store] covariant [TEMPORAL]
+    Commitment Update -> Socrates View [Commitment Store] covariant [TEMPORAL]
+    Euthyphro -> Commitment Update [Proposed Definition] covariant
+    Euthyphro -> Socrates [Proposed Definition] covariant
+    Euthyphro View -> Euthyphro [Current Commitments] covariant
+    Initial Question -> Euthyphro [Refutation] covariant
+    Socrates -> Commitment Update [Refutation] covariant
+    Socrates View -> Socrates [Commitment History] covariant
+    Socrates View -> Socrates [Current Commitments] covariant
+
+----------------------------------------------------------------------
+6. TAXONOMY VALIDATION
+----------------------------------------------------------------------
+
+  Predicted taxonomy:
+    .feedback()       → symmetric antagonism    → mode collapse
+    .loop()           → pursuit-evasion         → sophistry
+    .loop().loop()    → hierarchical antagonism → sycophantic consensus
+
+  Structural evidence from compiled models:
+    GAN:            1 feedback, 0 temporal → .feedback()        ✓
+    Euthyphro:      0 feedback, 2 temporal → .loop()            ✓
+    Co-Scientist:   0 feedback, 2 temporal → .loop().loop()     ✓
+
+  The three systems compile to structurally distinct composition trees.
+  The operator class (feedback vs temporal) is the primary discriminant.
+  The distinction between .loop() and .loop().loop() is visible in the
+  wiring topology: the co-scientist has temporal wirings at two different
+  nesting depths (inner: Evolved Population → Generation, outer:
+  Meta Insights → Generation).
+
+  Observation asymmetry:
+    GAN:            Generator and Discriminator have comparable x channels
+    Euthyphro:      Socrates observes superset (History + Current + Definition)
+                    vs Euthyphro (Current + Refutation) — asymmetric
+    Co-Scientist:   Generation Agent receives both Research Goal and
+                    Meta Insights — hierarchical information flow
+
+======================================================================

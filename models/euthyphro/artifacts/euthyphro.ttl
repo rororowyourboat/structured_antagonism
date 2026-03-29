@@ -1,0 +1,171 @@
+@prefix gds-core: <https://gds.block.science/ontology/core/> .
+@prefix gds-ir: <https://gds.block.science/ontology/ir/> .
+@prefix inst: <https://gds.block.science/instance/Socratic%20Elenchus%20%28Euthyphro%29/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+inst:system a gds-ir:SystemIR ;
+    gds-core:name "Socratic Elenchus (Euthyphro)" ;
+    gds-ir:compositionTypeSystem "temporal" ;
+    gds-ir:hasBlockIR <https://gds.block.science/instance/Socratic%20Elenchus%20%28Euthyphro%29/block/Commitment%20Update>,
+        <https://gds.block.science/instance/Socratic%20Elenchus%20%28Euthyphro%29/block/Euthyphro>,
+        <https://gds.block.science/instance/Socratic%20Elenchus%20%28Euthyphro%29/block/Euthyphro%20View>,
+        <https://gds.block.science/instance/Socratic%20Elenchus%20%28Euthyphro%29/block/Socrates>,
+        <https://gds.block.science/instance/Socratic%20Elenchus%20%28Euthyphro%29/block/Socrates%20View> ;
+    gds-ir:hasInputIR <https://gds.block.science/instance/Socratic%20Elenchus%20%28Euthyphro%29/input/Initial%20Question> ;
+    gds-ir:hasWiringIR <https://gds.block.science/instance/Socratic%20Elenchus%20%28Euthyphro%29/wiring/Commitment%20Update-Euthyphro%20View-6>,
+        <https://gds.block.science/instance/Socratic%20Elenchus%20%28Euthyphro%29/wiring/Commitment%20Update-Socrates%20View-7>,
+        <https://gds.block.science/instance/Socratic%20Elenchus%20%28Euthyphro%29/wiring/Euthyphro%20View-Euthyphro-0>,
+        <https://gds.block.science/instance/Socratic%20Elenchus%20%28Euthyphro%29/wiring/Euthyphro-Commitment%20Update-4>,
+        <https://gds.block.science/instance/Socratic%20Elenchus%20%28Euthyphro%29/wiring/Euthyphro-Socrates-3>,
+        <https://gds.block.science/instance/Socratic%20Elenchus%20%28Euthyphro%29/wiring/Initial%20Question-Euthyphro-8>,
+        <https://gds.block.science/instance/Socratic%20Elenchus%20%28Euthyphro%29/wiring/Socrates%20View-Socrates-1>,
+        <https://gds.block.science/instance/Socratic%20Elenchus%20%28Euthyphro%29/wiring/Socrates%20View-Socrates-2>,
+        <https://gds.block.science/instance/Socratic%20Elenchus%20%28Euthyphro%29/wiring/Socrates-Commitment%20Update-5> ;
+    gds-ir:sourceLabel "dsl" .
+
+gds-core:name rdfs:label "name" .
+
+<https://gds.block.science/instance/Socratic%20Elenchus%20%28Euthyphro%29/block/Commitment%20Update> a gds-ir:BlockIR ;
+    gds-core:name "Commitment Update" ;
+    gds-ir:blockType "function_covariant" ;
+    gds-ir:colorCode 1 ;
+    gds-ir:logic "Updates the commitment store with the new definition and refutation. The store is append-only (monotonic): new commitments are added, refuted definitions are marked as refuted but not removed. This monotonicity is the enforcement mechanism that prevents sophistry — the evader cannot retract prior concessions." ;
+    gds-ir:signatureBackwardIn "" ;
+    gds-ir:signatureBackwardOut "" ;
+    gds-ir:signatureForwardIn "Proposed Definition + Refutation + Commitment Store" ;
+    gds-ir:signatureForwardOut "Commitment Store" .
+
+<https://gds.block.science/instance/Socratic%20Elenchus%20%28Euthyphro%29/block/Euthyphro> a gds-ir:BlockIR ;
+    gds-core:name "Euthyphro" ;
+    gds-ir:blockType "decision" ;
+    gds-ir:colorCode 1 ;
+    gds-ir:logic "The respondent observes their current commitments and the latest refutation from Socrates. They propose a new or revised definition of piety, attempting to maintain coherence across all accumulated commitments. Strategy: evade inconsistency by finding definitions compatible with all prior concessions." ;
+    gds-ir:signatureBackwardIn "Refutation" ;
+    gds-ir:signatureBackwardOut "Euthyphro Response Quality" ;
+    gds-ir:signatureForwardIn "Current Commitments + Refutation" ;
+    gds-ir:signatureForwardOut "Proposed Definition" .
+
+<https://gds.block.science/instance/Socratic%20Elenchus%20%28Euthyphro%29/block/Euthyphro%20View> a gds-ir:BlockIR ;
+    gds-core:name "Euthyphro View" ;
+    gds-ir:blockType "function_covariant" ;
+    gds-ir:colorCode 1 ;
+    gds-ir:logic "Projects the full commitment store into the respondent's local view: the current active commitments without the full history of how they were established or which were retracted." ;
+    gds-ir:signatureBackwardIn "" ;
+    gds-ir:signatureBackwardOut "" ;
+    gds-ir:signatureForwardIn "Commitment Store" ;
+    gds-ir:signatureForwardOut "Current Commitments" .
+
+<https://gds.block.science/instance/Socratic%20Elenchus%20%28Euthyphro%29/block/Socrates> a gds-ir:BlockIR ;
+    gds-core:name "Socrates" ;
+    gds-ir:blockType "decision" ;
+    gds-ir:colorCode 1 ;
+    gds-ir:logic "The questioner observes the full commitment history, the current active commitments, and the latest proposed definition. Produces a refutation by identifying: (a) internal contradiction with prior commitments, (b) conflation of attribute with essence, (c) circularity with a previously refuted definition, or (d) methodological error. Strategy: navigate the commitment space toward inconsistency — engineer aporia." ;
+    gds-ir:signatureBackwardIn "Euthyphro Response Quality" ;
+    gds-ir:signatureBackwardOut "Socratic Strategy Signal" ;
+    gds-ir:signatureForwardIn "Commitment History + Current Commitments + Proposed Definition" ;
+    gds-ir:signatureForwardOut "Refutation" .
+
+<https://gds.block.science/instance/Socratic%20Elenchus%20%28Euthyphro%29/block/Socrates%20View> a gds-ir:BlockIR ;
+    gds-core:name "Socrates View" ;
+    gds-ir:blockType "function_covariant" ;
+    gds-ir:colorCode 1 ;
+    gds-ir:logic "Projects the full commitment store into the questioner's global view: the complete history of commitments including which were added, which were retracted, and the dependency chain between definitions. This asymmetric access enables the pursuer to target specific prior commitments." ;
+    gds-ir:signatureBackwardIn "" ;
+    gds-ir:signatureBackwardOut "" ;
+    gds-ir:signatureForwardIn "Commitment Store" ;
+    gds-ir:signatureForwardOut "Commitment History + Current Commitments" .
+
+<https://gds.block.science/instance/Socratic%20Elenchus%20%28Euthyphro%29/input/Initial%20Question> a gds-ir:InputIR ;
+    gds-core:name "Initial Question" .
+
+<https://gds.block.science/instance/Socratic%20Elenchus%20%28Euthyphro%29/wiring/Commitment%20Update-Euthyphro%20View-6> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal true ;
+    gds-ir:label "Commitment Store" ;
+    gds-ir:source "Commitment Update" ;
+    gds-ir:target "Euthyphro View" ;
+    gds-ir:wiringType "observation" .
+
+<https://gds.block.science/instance/Socratic%20Elenchus%20%28Euthyphro%29/wiring/Commitment%20Update-Socrates%20View-7> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal true ;
+    gds-ir:label "Commitment Store" ;
+    gds-ir:source "Commitment Update" ;
+    gds-ir:target "Socrates View" ;
+    gds-ir:wiringType "observation" .
+
+<https://gds.block.science/instance/Socratic%20Elenchus%20%28Euthyphro%29/wiring/Euthyphro%20View-Euthyphro-0> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal false ;
+    gds-ir:label "Current Commitments" ;
+    gds-ir:source "Euthyphro View" ;
+    gds-ir:target "Euthyphro" ;
+    gds-ir:wiringType "observation" .
+
+<https://gds.block.science/instance/Socratic%20Elenchus%20%28Euthyphro%29/wiring/Euthyphro-Commitment%20Update-4> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal false ;
+    gds-ir:label "Proposed Definition" ;
+    gds-ir:source "Euthyphro" ;
+    gds-ir:target "Commitment Update" ;
+    gds-ir:wiringType "observation" .
+
+<https://gds.block.science/instance/Socratic%20Elenchus%20%28Euthyphro%29/wiring/Euthyphro-Socrates-3> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal false ;
+    gds-ir:label "Proposed Definition" ;
+    gds-ir:source "Euthyphro" ;
+    gds-ir:target "Socrates" ;
+    gds-ir:wiringType "observation" .
+
+<https://gds.block.science/instance/Socratic%20Elenchus%20%28Euthyphro%29/wiring/Initial%20Question-Euthyphro-8> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal false ;
+    gds-ir:label "Refutation" ;
+    gds-ir:source "Initial Question" ;
+    gds-ir:target "Euthyphro" ;
+    gds-ir:wiringType "observation" .
+
+<https://gds.block.science/instance/Socratic%20Elenchus%20%28Euthyphro%29/wiring/Socrates%20View-Socrates-1> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal false ;
+    gds-ir:label "Commitment History" ;
+    gds-ir:source "Socrates View" ;
+    gds-ir:target "Socrates" ;
+    gds-ir:wiringType "observation" .
+
+<https://gds.block.science/instance/Socratic%20Elenchus%20%28Euthyphro%29/wiring/Socrates%20View-Socrates-2> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal false ;
+    gds-ir:label "Current Commitments" ;
+    gds-ir:source "Socrates View" ;
+    gds-ir:target "Socrates" ;
+    gds-ir:wiringType "observation" .
+
+<https://gds.block.science/instance/Socratic%20Elenchus%20%28Euthyphro%29/wiring/Socrates-Commitment%20Update-5> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal false ;
+    gds-ir:label "Refutation" ;
+    gds-ir:source "Socrates" ;
+    gds-ir:target "Commitment Update" ;
+    gds-ir:wiringType "observation" .
+

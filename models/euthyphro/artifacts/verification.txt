@@ -1,0 +1,32 @@
+System: Socratic Elenchus (Euthyphro)
+Checks: 29/29 passed
+
+PASS G-001 (error): Wiring 'Current Commitments': Euthyphro View out='Current Commitments' -> Euthyphro in='Current Commitments + Refutation'
+PASS G-001 (error): Wiring 'Commitment History': Socrates View out='Commitment History + Current Commitments' -> Socrates in='Commitment History + Current Commitments + Proposed Definition'
+PASS G-001 (error): Wiring 'Current Commitments': Socrates View out='Commitment History + Current Commitments' -> Socrates in='Commitment History + Current Commitments + Proposed Definition'
+PASS G-001 (error): Wiring 'Proposed Definition': Euthyphro out='Proposed Definition' -> Socrates in='Commitment History + Current Commitments + Proposed Definition'
+PASS G-001 (error): Wiring 'Proposed Definition': Euthyphro out='Proposed Definition' -> Commitment Update in='Proposed Definition + Refutation + Commitment Store'
+PASS G-001 (error): Wiring 'Refutation': Socrates out='Refutation' -> Commitment Update in='Proposed Definition + Refutation + Commitment Store'
+PASS G-001 (error): Wiring 'Commitment Store': Commitment Update out='Commitment Store' -> Euthyphro View in='Commitment Store'
+PASS G-001 (error): Wiring 'Commitment Store': Commitment Update out='Commitment Store' -> Socrates View in='Commitment Store'
+PASS G-002 (error): Euthyphro View: signature ('Commitment Store', 'Current Commitments', '', '')
+PASS G-002 (error): Euthyphro: signature ('Current Commitments + Refutation', 'Proposed Definition', 'Refutation', 'Euthyphro Response Quality')
+PASS G-002 (error): Socrates View: signature ('Commitment Store', 'Commitment History + Current Commitments', '', '')
+PASS G-002 (error): Socrates: signature ('Commitment History + Current Commitments + Proposed Definition', 'Refutation', 'Euthyphro Response Quality', 'Socratic Strategy Signal')
+PASS G-002 (error): Commitment Update: signature ('Proposed Definition + Refutation + Commitment Store', 'Commitment Store', '', '')
+PASS G-004 (error): Wiring 'Current Commitments' (Euthyphro View -> Euthyphro)
+PASS G-004 (error): Wiring 'Commitment History' (Socrates View -> Socrates)
+PASS G-004 (error): Wiring 'Current Commitments' (Socrates View -> Socrates)
+PASS G-004 (error): Wiring 'Proposed Definition' (Euthyphro -> Socrates)
+PASS G-004 (error): Wiring 'Proposed Definition' (Euthyphro -> Commitment Update)
+PASS G-004 (error): Wiring 'Refutation' (Socrates -> Commitment Update)
+PASS G-004 (error): Wiring 'Commitment Store' (Commitment Update -> Euthyphro View)
+PASS G-004 (error): Wiring 'Commitment Store' (Commitment Update -> Socrates View)
+PASS G-004 (error): Wiring 'Refutation' (Initial Question -> Euthyphro)
+PASS G-005 (error): Stack Euthyphro View ; Euthyphro: out='Current Commitments', in='Current Commitments + Refutation', wiring='Current Commitments'
+PASS G-005 (error): Stack Socrates View ; Socrates: out='Commitment History + Current Commitments', in='Commitment History + Current Commitments + Proposed Definition', wiring='Commitment History'
+PASS G-005 (error): Stack Socrates View ; Socrates: out='Commitment History + Current Commitments', in='Commitment History + Current Commitments + Proposed Definition', wiring='Current Commitments'
+PASS G-005 (error): Stack Euthyphro ; Socrates: out='Proposed Definition', in='Commitment History + Current Commitments + Proposed Definition', wiring='Proposed Definition'
+PASS G-005 (error): Stack Euthyphro ; Commitment Update: out='Proposed Definition', in='Proposed Definition + Refutation + Commitment Store', wiring='Proposed Definition'
+PASS G-005 (error): Stack Socrates ; Commitment Update: out='Refutation', in='Proposed Definition + Refutation + Commitment Store', wiring='Refutation'
+PASS G-006 (error): Covariant flow graph is acyclic (DAG)

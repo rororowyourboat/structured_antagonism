@@ -1,0 +1,164 @@
+@prefix gds-core: <https://gds.block.science/ontology/core/> .
+@prefix gds-ir: <https://gds.block.science/ontology/ir/> .
+@prefix inst: <https://gds.block.science/instance/AI%20Co-Scientist/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+inst:system a gds-ir:SystemIR ;
+    gds-core:name "AI Co-Scientist" ;
+    gds-ir:compositionTypeSystem "temporal" ;
+    gds-ir:hasBlockIR <https://gds.block.science/instance/AI%20Co-Scientist/block/Evolution%20Agent>,
+        <https://gds.block.science/instance/AI%20Co-Scientist/block/Generation%20Agent>,
+        <https://gds.block.science/instance/AI%20Co-Scientist/block/Meta-Review%20Agent>,
+        <https://gds.block.science/instance/AI%20Co-Scientist/block/Ranking%20Agent>,
+        <https://gds.block.science/instance/AI%20Co-Scientist/block/Reflection%20Agent> ;
+    gds-ir:hasInputIR <https://gds.block.science/instance/AI%20Co-Scientist/input/Literature%20Corpus>,
+        <https://gds.block.science/instance/AI%20Co-Scientist/input/Research%20Goal> ;
+    gds-ir:hasWiringIR <https://gds.block.science/instance/AI%20Co-Scientist/wiring/Evolution%20Agent-Generation%20Agent-3>,
+        <https://gds.block.science/instance/AI%20Co-Scientist/wiring/Evolution%20Agent-Meta-Review%20Agent-4>,
+        <https://gds.block.science/instance/AI%20Co-Scientist/wiring/Generation%20Agent-Reflection%20Agent-0>,
+        <https://gds.block.science/instance/AI%20Co-Scientist/wiring/Literature%20Corpus-Generation%20Agent-7>,
+        <https://gds.block.science/instance/AI%20Co-Scientist/wiring/Meta-Review%20Agent-Generation%20Agent-5>,
+        <https://gds.block.science/instance/AI%20Co-Scientist/wiring/Ranking%20Agent-Evolution%20Agent-2>,
+        <https://gds.block.science/instance/AI%20Co-Scientist/wiring/Reflection%20Agent-Ranking%20Agent-1>,
+        <https://gds.block.science/instance/AI%20Co-Scientist/wiring/Research%20Goal-Generation%20Agent-6> ;
+    gds-ir:sourceLabel "dsl" .
+
+gds-core:name rdfs:label "name" .
+
+<https://gds.block.science/instance/AI%20Co-Scientist/block/Evolution%20Agent> a gds-ir:BlockIR ;
+    gds-core:name "Evolution Agent" ;
+    gds-ir:blockType "function_covariant" ;
+    gds-ir:colorCode 1 ;
+    gds-ir:logic "Selects top-ranked hypotheses for survival. Applies variation operators: mutation (small modifications), crossover (combining ideas from two hypotheses), and immigration (injecting new hypotheses from scratch). Outputs the next-generation population." ;
+    gds-ir:signatureBackwardIn "" ;
+    gds-ir:signatureBackwardOut "" ;
+    gds-ir:signatureForwardIn "Ranked Hypotheses" ;
+    gds-ir:signatureForwardOut "Evolved Population + Evolution Outcome" .
+
+<https://gds.block.science/instance/AI%20Co-Scientist/block/Generation%20Agent> a gds-ir:BlockIR ;
+    gds-core:name "Generation Agent" ;
+    gds-ir:blockType "decision" ;
+    gds-ir:colorCode 1 ;
+    gds-ir:logic "Generates novel hypotheses based on the research goal and accumulated meta-insights from prior rounds. Uses diverse generation strategies (literature-grounded, analogical, contrarian) to maintain population diversity." ;
+    gds-ir:signatureBackwardIn "Ranking Feedback" ;
+    gds-ir:signatureBackwardOut "Generation Quality Signal" ;
+    gds-ir:signatureForwardIn "Research Goal + Meta Insights" ;
+    gds-ir:signatureForwardOut "Candidate Hypotheses" .
+
+<https://gds.block.science/instance/AI%20Co-Scientist/block/Meta-Review%20Agent> a gds-ir:BlockIR ;
+    gds-core:name "Meta-Review Agent" ;
+    gds-ir:blockType "decision" ;
+    gds-ir:colorCode 1 ;
+    gds-ir:logic "Operates on the *distribution* of outcomes across rounds, not individual hypotheses. Identifies systematic patterns: which hypothesis families consistently score well, which research directions are exhausted, what blind spots the inner pipeline exhibits. Produces strategic guidance that biases the next round's generation." ;
+    gds-ir:signatureBackwardIn "Research Outcome" ;
+    gds-ir:signatureBackwardOut "Meta Quality Signal" ;
+    gds-ir:signatureForwardIn "Evolved Population + Round History" ;
+    gds-ir:signatureForwardOut "Meta Insights" .
+
+<https://gds.block.science/instance/AI%20Co-Scientist/block/Ranking%20Agent> a gds-ir:BlockIR ;
+    gds-core:name "Ranking Agent" ;
+    gds-ir:blockType "decision" ;
+    gds-ir:colorCode 1 ;
+    gds-ir:logic "Conducts pairwise tournament comparisons between hypotheses using Elo rating. Simulates debates between hypothesis pairs to determine the stronger candidate based on novelty, correctness, and evidential support. Produces an Elo-ranked ordering." ;
+    gds-ir:signatureBackwardIn "Evolution Outcome" ;
+    gds-ir:signatureBackwardOut "Ranking Feedback" ;
+    gds-ir:signatureForwardIn "Critiqued Hypotheses" ;
+    gds-ir:signatureForwardOut "Ranked Hypotheses" .
+
+<https://gds.block.science/instance/AI%20Co-Scientist/block/Reflection%20Agent> a gds-ir:BlockIR ;
+    gds-core:name "Reflection Agent" ;
+    gds-ir:blockType "function_covariant" ;
+    gds-ir:colorCode 1 ;
+    gds-ir:logic "Reviews each hypothesis for internal consistency, novelty, and testability. Produces structured critiques identifying weaknesses, missing evidence, and logical gaps. Does not rank — only annotates." ;
+    gds-ir:signatureBackwardIn "" ;
+    gds-ir:signatureBackwardOut "" ;
+    gds-ir:signatureForwardIn "Candidate Hypotheses" ;
+    gds-ir:signatureForwardOut "Critiqued Hypotheses" .
+
+<https://gds.block.science/instance/AI%20Co-Scientist/input/Literature%20Corpus> a gds-ir:InputIR ;
+    gds-core:name "Literature Corpus" .
+
+<https://gds.block.science/instance/AI%20Co-Scientist/input/Research%20Goal> a gds-ir:InputIR ;
+    gds-core:name "Research Goal" .
+
+<https://gds.block.science/instance/AI%20Co-Scientist/wiring/Evolution%20Agent-Generation%20Agent-3> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal true ;
+    gds-ir:label "Evolved Population" ;
+    gds-ir:source "Evolution Agent" ;
+    gds-ir:target "Generation Agent" ;
+    gds-ir:wiringType "observation" .
+
+<https://gds.block.science/instance/AI%20Co-Scientist/wiring/Evolution%20Agent-Meta-Review%20Agent-4> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal false ;
+    gds-ir:label "Evolved Population" ;
+    gds-ir:source "Evolution Agent" ;
+    gds-ir:target "Meta-Review Agent" ;
+    gds-ir:wiringType "observation" .
+
+<https://gds.block.science/instance/AI%20Co-Scientist/wiring/Generation%20Agent-Reflection%20Agent-0> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal false ;
+    gds-ir:label "Candidate Hypotheses" ;
+    gds-ir:source "Generation Agent" ;
+    gds-ir:target "Reflection Agent" ;
+    gds-ir:wiringType "observation" .
+
+<https://gds.block.science/instance/AI%20Co-Scientist/wiring/Literature%20Corpus-Generation%20Agent-7> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal false ;
+    gds-ir:label "Research Goal" ;
+    gds-ir:source "Literature Corpus" ;
+    gds-ir:target "Generation Agent" ;
+    gds-ir:wiringType "observation" .
+
+<https://gds.block.science/instance/AI%20Co-Scientist/wiring/Meta-Review%20Agent-Generation%20Agent-5> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal true ;
+    gds-ir:label "Meta Insights" ;
+    gds-ir:source "Meta-Review Agent" ;
+    gds-ir:target "Generation Agent" ;
+    gds-ir:wiringType "observation" .
+
+<https://gds.block.science/instance/AI%20Co-Scientist/wiring/Ranking%20Agent-Evolution%20Agent-2> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal false ;
+    gds-ir:label "Ranked Hypotheses" ;
+    gds-ir:source "Ranking Agent" ;
+    gds-ir:target "Evolution Agent" ;
+    gds-ir:wiringType "observation" .
+
+<https://gds.block.science/instance/AI%20Co-Scientist/wiring/Reflection%20Agent-Ranking%20Agent-1> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal false ;
+    gds-ir:label "Critiqued Hypotheses" ;
+    gds-ir:source "Reflection Agent" ;
+    gds-ir:target "Ranking Agent" ;
+    gds-ir:wiringType "observation" .
+
+<https://gds.block.science/instance/AI%20Co-Scientist/wiring/Research%20Goal-Generation%20Agent-6> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal false ;
+    gds-ir:label "Research Goal" ;
+    gds-ir:source "Research Goal" ;
+    gds-ir:target "Generation Agent" ;
+    gds-ir:wiringType "observation" .
+

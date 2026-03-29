@@ -1,0 +1,259 @@
+{
+  "dialogue": "Euthyphro",
+  "author": "Plato",
+  "topic": "The nature of piety (to hosion)",
+  "stephanus_range": "2a-16a",
+  "structure": "Five definitions, each refuted, terminating in aporia",
+  "turns": [
+    {
+      "turn": 1,
+      "stephanus": "5d-6e",
+      "speaker": "Euthyphro",
+      "speech_act": "propose",
+      "content": "Piety is what I am doing now — prosecuting wrongdoers, even one's own father, as Zeus punished Kronos.",
+      "commitment_delta": {
+        "added": ["Piety can be defined by example (prosecuting wrongdoers)"],
+        "removed": []
+      },
+      "commitment_store": {
+        "euthyphro": ["Piety can be defined by example (prosecuting wrongdoers)"],
+        "socrates": []
+      }
+    },
+    {
+      "turn": 2,
+      "stephanus": "6d-6e",
+      "speaker": "Socrates",
+      "speech_act": "refute",
+      "content": "I did not ask for an example of piety but for the form (eidos) itself — the single characteristic by which all pious things are pious. An example is not a definition.",
+      "commitment_delta": {
+        "added": ["A definition must state the form (eidos), not enumerate instances"],
+        "removed": []
+      },
+      "commitment_store": {
+        "euthyphro": ["Piety can be defined by example (prosecuting wrongdoers)"],
+        "socrates": ["A definition must state the form (eidos), not enumerate instances"]
+      },
+      "refutation_type": "methodological",
+      "refutation_target": "Definition 1 — conflates example with definition"
+    },
+    {
+      "turn": 3,
+      "stephanus": "6e-8a",
+      "speaker": "Euthyphro",
+      "speech_act": "propose",
+      "content": "Piety is what is dear to the gods (to theophiles). Impiety is what is hateful to the gods.",
+      "commitment_delta": {
+        "added": ["Piety = what is dear to the gods", "Impiety = what is hateful to the gods"],
+        "removed": ["Piety can be defined by example (prosecuting wrongdoers)"]
+      },
+      "commitment_store": {
+        "euthyphro": ["Piety = what is dear to the gods", "Impiety = what is hateful to the gods"],
+        "socrates": ["A definition must state the form (eidos), not enumerate instances"]
+      }
+    },
+    {
+      "turn": 4,
+      "stephanus": "7b-8a",
+      "speaker": "Socrates",
+      "speech_act": "refute",
+      "content": "You yourself agree the gods quarrel and disagree. If they disagree about what is just, then the same act may be dear to some gods and hateful to others. By your definition, the same act would be both pious and impious — a contradiction.",
+      "commitment_delta": {
+        "added": [
+          "The gods disagree about justice",
+          "If gods disagree, the same act is both dear and hateful to the gods",
+          "Definition 2 produces contradiction: same act is pious and impious"
+        ],
+        "removed": []
+      },
+      "commitment_store": {
+        "euthyphro": [
+          "Piety = what is dear to the gods",
+          "Impiety = what is hateful to the gods",
+          "The gods disagree about justice"
+        ],
+        "socrates": [
+          "A definition must state the form (eidos), not enumerate instances",
+          "If gods disagree, the same act is both dear and hateful to the gods",
+          "Definition 2 produces contradiction: same act is pious and impious"
+        ]
+      },
+      "refutation_type": "internal_contradiction",
+      "refutation_target": "Definition 2 — god-disagreement generates contradiction"
+    },
+    {
+      "turn": 5,
+      "stephanus": "9e-10a",
+      "speaker": "Euthyphro",
+      "speech_act": "propose",
+      "content": "Piety is what all the gods love. Impiety is what all the gods hate.",
+      "commitment_delta": {
+        "added": ["Piety = what ALL the gods love", "Impiety = what ALL the gods hate"],
+        "removed": ["Piety = what is dear to the gods", "Impiety = what is hateful to the gods"]
+      },
+      "commitment_store": {
+        "euthyphro": [
+          "Piety = what ALL the gods love",
+          "Impiety = what ALL the gods hate",
+          "The gods disagree about justice"
+        ],
+        "socrates": [
+          "A definition must state the form (eidos), not enumerate instances",
+          "If gods disagree, the same act is both dear and hateful to the gods",
+          "Definition 2 produces contradiction: same act is pious and impious"
+        ]
+      }
+    },
+    {
+      "turn": 6,
+      "stephanus": "10a-11b",
+      "speaker": "Socrates",
+      "speech_act": "refute",
+      "content": "Is the pious loved by the gods because it is pious, or is it pious because it is loved by the gods? These are different. 'Being loved' is a passive state caused by the gods' attitude. 'Being pious' is a property of the act itself. God-lovedness is an effect of piety, not its essence. Your definition gives an attribute (pathos) of piety, not its nature (ousia).",
+      "commitment_delta": {
+        "added": [
+          "Being-loved-by-gods is a passive state (pathos), not an essence (ousia)",
+          "If piety causes god-love, then god-love cannot define piety (circular)",
+          "Definition 3 conflates attribute with essence"
+        ],
+        "removed": []
+      },
+      "commitment_store": {
+        "euthyphro": [
+          "Piety = what ALL the gods love",
+          "Impiety = what ALL the gods hate",
+          "The gods disagree about justice",
+          "The pious is loved because it is pious (not pious because loved)"
+        ],
+        "socrates": [
+          "A definition must state the form (eidos), not enumerate instances",
+          "Being-loved-by-gods is a passive state (pathos), not an essence (ousia)",
+          "If piety causes god-love, then god-love cannot define piety (circular)",
+          "Definition 3 conflates attribute with essence"
+        ]
+      },
+      "refutation_type": "essence_vs_attribute",
+      "refutation_target": "Definition 3 — the Euthyphro dilemma"
+    },
+    {
+      "turn": 7,
+      "stephanus": "12d-14b",
+      "speaker": "Euthyphro",
+      "speech_act": "propose",
+      "content": "Piety is that part of justice concerned with the care (therapeia) of the gods, as there are other parts of justice concerned with the care of humans.",
+      "commitment_delta": {
+        "added": ["Piety is a species of justice", "Piety = care (therapeia) of the gods"],
+        "removed": ["Piety = what ALL the gods love"]
+      },
+      "commitment_store": {
+        "euthyphro": [
+          "Piety is a species of justice",
+          "Piety = care (therapeia) of the gods",
+          "The gods disagree about justice",
+          "The pious is loved because it is pious (not pious because loved)"
+        ],
+        "socrates": [
+          "A definition must state the form (eidos), not enumerate instances",
+          "Being-loved-by-gods is a passive state (pathos), not an essence (ousia)",
+          "If piety causes god-love, then god-love cannot define piety (circular)",
+          "Definition 3 conflates attribute with essence"
+        ]
+      }
+    },
+    {
+      "turn": 8,
+      "stephanus": "13a-13e",
+      "speaker": "Socrates",
+      "speech_act": "refute",
+      "content": "Care (therapeia) of horses makes horses better. Care of dogs makes dogs better. Does your care of the gods make the gods better? Surely not — the gods are already perfect. So 'care' cannot mean what it normally means. What kind of service (hyperetike) to the gods is piety?",
+      "commitment_delta": {
+        "added": [
+          "Care (therapeia) normally improves its object",
+          "Gods cannot be improved (they are perfect)",
+          "Piety-as-care does not improve the gods",
+          "Piety must be service (hyperetike), but to what end?"
+        ],
+        "removed": []
+      },
+      "commitment_store": {
+        "euthyphro": [
+          "Piety is a species of justice",
+          "Piety = care (therapeia) of the gods",
+          "Gods cannot be improved (they are perfect)",
+          "The pious is loved because it is pious (not pious because loved)"
+        ],
+        "socrates": [
+          "A definition must state the form (eidos), not enumerate instances",
+          "Care (therapeia) normally improves its object",
+          "Piety-as-care does not improve the gods",
+          "Piety must be service (hyperetike), but to what end?"
+        ]
+      },
+      "refutation_type": "definitional_collapse",
+      "refutation_target": "Definition 4 — 'care' is inapplicable to perfect beings"
+    },
+    {
+      "turn": 9,
+      "stephanus": "14b-15c",
+      "speaker": "Euthyphro",
+      "speech_act": "propose",
+      "content": "Piety is knowledge of how to sacrifice and pray — giving to the gods and asking from them.",
+      "commitment_delta": {
+        "added": ["Piety = knowledge of sacrifice (giving) and prayer (asking)"],
+        "removed": ["Piety = care (therapeia) of the gods"]
+      },
+      "commitment_store": {
+        "euthyphro": [
+          "Piety is a species of justice",
+          "Piety = knowledge of sacrifice (giving) and prayer (asking)",
+          "Gods cannot be improved (they are perfect)",
+          "The pious is loved because it is pious (not pious because loved)"
+        ],
+        "socrates": [
+          "A definition must state the form (eidos), not enumerate instances",
+          "Care (therapeia) normally improves its object",
+          "Piety-as-care does not improve the gods",
+          "Piety must be service (hyperetike), but to what end?"
+        ]
+      }
+    },
+    {
+      "turn": 10,
+      "stephanus": "15a-15c",
+      "speaker": "Socrates",
+      "speech_act": "refute",
+      "content": "Giving to the gods and asking from them — this is a kind of commerce (emporike) between gods and humans. But what do the gods gain from our gifts? If piety is giving what pleases the gods, then piety is what is pleasing to the gods — and we are back to 'what the gods love.' We have gone in a circle.",
+      "commitment_delta": {
+        "added": [
+          "Sacrifice-and-prayer reduces to giving what pleases the gods",
+          "What pleases the gods = what the gods love",
+          "Definition 5 collapses into Definition 3",
+          "APORIA: the argument has returned to its starting point"
+        ],
+        "removed": []
+      },
+      "commitment_store": {
+        "euthyphro": [
+          "Piety is a species of justice",
+          "Piety = knowledge of sacrifice (giving) and prayer (asking)",
+          "Gods cannot be improved (they are perfect)",
+          "The pious is loved because it is pious (not pious because loved)"
+        ],
+        "socrates": [
+          "A definition must state the form (eidos), not enumerate instances",
+          "Sacrifice-and-prayer reduces to giving what pleases the gods",
+          "What pleases the gods = what the gods love",
+          "Definition 5 collapses into Definition 3",
+          "APORIA: the argument has returned to its starting point"
+        ]
+      },
+      "refutation_type": "circular_regression",
+      "refutation_target": "Definition 5 — collapses back into Definition 3"
+    }
+  ],
+  "terminal_state": {
+    "type": "aporia",
+    "description": "The fifth definition reduces to the third, which was already refuted. The commitment store is circular — no consistent definition of piety survives. Euthyphro departs without resolution.",
+    "commitment_store_property": "circular — definition chain D5 → D3 → (refuted)"
+  }
+}

@@ -1,0 +1,20 @@
+%%{init:{"theme":"neutral"}}%%
+flowchart TD
+    classDef boundary fill:#93c5fd,stroke:#2563eb,stroke-width:2px,color:#1e3a5f
+    classDef policy fill:#fcd34d,stroke:#d97706,stroke-width:2px,color:#78350f
+    classDef mechanism fill:#86efac,stroke:#16a34a,stroke-width:2px,color:#14532d
+    classDef control fill:#d8b4fe,stroke:#9333ea,stroke-width:2px,color:#3b0764
+    classDef generic fill:#cbd5e1,stroke:#64748b,stroke-width:1px,color:#1e293b
+    Generation_Agent[Generation Agent]:::generic
+    Reflection_Agent[Reflection Agent]:::generic
+    Ranking_Agent[Ranking Agent]:::generic
+    Evolution_Agent[Evolution Agent]:::generic
+    Meta_Review_Agent[Meta-Review Agent]:::generic
+    Generation_Agent --Candidate Hypotheses--> Reflection_Agent
+    Reflection_Agent --Critiqued Hypotheses--> Ranking_Agent
+    Ranking_Agent --Ranked Hypotheses--> Evolution_Agent
+    Evolution_Agent -.Evolved Population..-> Generation_Agent
+    Evolution_Agent --Evolved Population--> Meta_Review_Agent
+    Meta_Review_Agent -.Meta Insights..-> Generation_Agent
+    Research_Goal --Research Goal--> Generation_Agent
+    Literature_Corpus --Research Goal--> Generation_Agent

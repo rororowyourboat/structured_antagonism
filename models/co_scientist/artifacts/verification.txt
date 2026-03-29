@@ -1,0 +1,27 @@
+System: AI Co-Scientist
+Checks: 24/24 passed
+
+PASS G-001 (error): Wiring 'Candidate Hypotheses': Generation Agent out='Candidate Hypotheses' -> Reflection Agent in='Candidate Hypotheses'
+PASS G-001 (error): Wiring 'Critiqued Hypotheses': Reflection Agent out='Critiqued Hypotheses' -> Ranking Agent in='Critiqued Hypotheses'
+PASS G-001 (error): Wiring 'Ranked Hypotheses': Ranking Agent out='Ranked Hypotheses' -> Evolution Agent in='Ranked Hypotheses'
+PASS G-001 (error): Wiring 'Evolved Population': Evolution Agent out='Evolved Population + Evolution Outcome' -> Generation Agent in='Research Goal + Meta Insights'
+PASS G-001 (error): Wiring 'Evolved Population': Evolution Agent out='Evolved Population + Evolution Outcome' -> Meta-Review Agent in='Evolved Population + Round History'
+PASS G-001 (error): Wiring 'Meta Insights': Meta-Review Agent out='Meta Insights' -> Generation Agent in='Research Goal + Meta Insights'
+PASS G-002 (error): Generation Agent: signature ('Research Goal + Meta Insights', 'Candidate Hypotheses', 'Ranking Feedback', 'Generation Quality Signal')
+PASS G-002 (error): Reflection Agent: signature ('Candidate Hypotheses', 'Critiqued Hypotheses', '', '')
+PASS G-002 (error): Ranking Agent: signature ('Critiqued Hypotheses', 'Ranked Hypotheses', 'Evolution Outcome', 'Ranking Feedback')
+PASS G-002 (error): Evolution Agent: signature ('Ranked Hypotheses', 'Evolved Population + Evolution Outcome', '', '')
+PASS G-002 (error): Meta-Review Agent: signature ('Evolved Population + Round History', 'Meta Insights', 'Research Outcome', 'Meta Quality Signal')
+PASS G-004 (error): Wiring 'Candidate Hypotheses' (Generation Agent -> Reflection Agent)
+PASS G-004 (error): Wiring 'Critiqued Hypotheses' (Reflection Agent -> Ranking Agent)
+PASS G-004 (error): Wiring 'Ranked Hypotheses' (Ranking Agent -> Evolution Agent)
+PASS G-004 (error): Wiring 'Evolved Population' (Evolution Agent -> Generation Agent)
+PASS G-004 (error): Wiring 'Evolved Population' (Evolution Agent -> Meta-Review Agent)
+PASS G-004 (error): Wiring 'Meta Insights' (Meta-Review Agent -> Generation Agent)
+PASS G-004 (error): Wiring 'Research Goal' (Research Goal -> Generation Agent)
+PASS G-004 (error): Wiring 'Research Goal' (Literature Corpus -> Generation Agent)
+PASS G-005 (error): Stack Generation Agent ; Reflection Agent: out='Candidate Hypotheses', in='Candidate Hypotheses', wiring='Candidate Hypotheses'
+PASS G-005 (error): Stack Reflection Agent ; Ranking Agent: out='Critiqued Hypotheses', in='Critiqued Hypotheses', wiring='Critiqued Hypotheses'
+PASS G-005 (error): Stack Ranking Agent ; Evolution Agent: out='Ranked Hypotheses', in='Ranked Hypotheses', wiring='Ranked Hypotheses'
+PASS G-005 (error): Stack Evolution Agent ; Meta-Review Agent: out='Evolved Population + Evolution Outcome', in='Evolved Population + Round History', wiring='Evolved Population'
+PASS G-006 (error): Covariant flow graph is acyclic (DAG)

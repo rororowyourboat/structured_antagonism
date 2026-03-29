@@ -1,0 +1,23 @@
+System: Socratic Elenchus (Euthyphro)
+Blocks: 5
+Wirings: 9
+Feedback wirings: 0
+Temporal wirings: 2
+
+Blocks:
+  Euthyphro View (function_covariant)
+  Euthyphro (decision)
+  Socrates View (function_covariant)
+  Socrates (decision)
+  Commitment Update (function_covariant)
+
+Wirings:
+  Euthyphro View -> Euthyphro [Current Commitments] covariant
+  Socrates View -> Socrates [Commitment History] covariant
+  Socrates View -> Socrates [Current Commitments] covariant
+  Euthyphro -> Socrates [Proposed Definition] covariant
+  Euthyphro -> Commitment Update [Proposed Definition] covariant
+  Socrates -> Commitment Update [Refutation] covariant
+  Commitment Update -> Euthyphro View [Commitment Store] covariant [TEMPORAL]
+  Commitment Update -> Socrates View [Commitment Store] covariant [TEMPORAL]
+  Initial Question -> Euthyphro [Refutation] covariant
