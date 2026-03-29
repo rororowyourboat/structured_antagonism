@@ -1,0 +1,219 @@
+{
+  "_meta": "Context-minimal extraction. No schema, no commitment stores, no GDS. Raw turn segmentation with speech acts and candidate propositions asserted or conceded.",
+  "dialogue": "Euthyphro (Jowett translation)",
+  "turns": [
+    {
+      "id": 1, "lines": "282-284", "stephanus_est": "2a",
+      "speaker": "Euthyphro",
+      "act": "question",
+      "content_summary": "Asks why Socrates is at the King Archon's porch",
+      "propositions": []
+    },
+    {
+      "id": 2, "lines": "286-355", "stephanus_est": "2a-3b",
+      "speaker": "Both (alternating short exchanges)",
+      "act": "exposition",
+      "content_summary": "Socrates explains Meletus's impiety charge. Euthyphro sympathizes, says he too is attacked for speaking about divine things.",
+      "propositions": [
+        "Socrates is charged with impiety by Meletus",
+        "Meletus accuses Socrates of inventing new gods and denying old ones",
+        "Euthyphro claims special knowledge of divine things"
+      ]
+    },
+    {
+      "id": 3, "lines": "360-418", "stephanus_est": "3e-4e",
+      "speaker": "Both (alternating)",
+      "act": "exposition",
+      "content_summary": "Euthyphro reveals he is prosecuting his own father for murder. Explains the circumstances: a dependent killed a slave; father bound and left him to die while consulting a diviner.",
+      "propositions": [
+        "Euthyphro is prosecuting his father for murder",
+        "Pollution from murder is the same whether the victim is a relation or stranger",
+        "The real question is whether the killing was just or unjust",
+        "Euthyphro's family thinks it is impious for a son to prosecute his father"
+      ]
+    },
+    {
+      "id": 4, "lines": "420-427", "stephanus_est": "4e-5a",
+      "speaker": "Both",
+      "act": "challenge + concession",
+      "content_summary": "Socrates expresses surprise and asks if Euthyphro's knowledge of piety is so exact. Euthyphro claims exact knowledge is what distinguishes him.",
+      "propositions": [
+        "Euthyphro claims exact knowledge of piety and impiety",
+        "This knowledge is what makes Euthyphro valuable/distinctive"
+      ]
+    },
+    {
+      "id": 5, "lines": "429-458", "stephanus_est": "5a-5d",
+      "speaker": "Both",
+      "act": "question (Socratic setup)",
+      "content_summary": "Socrates asks Euthyphro to teach him what piety is — the general idea (eidos) that makes all pious things pious. Euthyphro agrees to try.",
+      "propositions": [
+        "Piety is always the same in every action",
+        "Impiety is always the opposite of piety and the same with itself",
+        "There is one idea/form (eidos) that makes all pious things pious"
+      ]
+    },
+    {
+      "id": 6, "lines": "462-475", "stephanus_est": "5d-6a",
+      "speaker": "Euthyphro",
+      "act": "propose (Definition 1)",
+      "content_summary": "Piety is doing as I do — prosecuting wrongdoers. Appeals to Zeus punishing Kronos as precedent.",
+      "propositions": [
+        "Piety is prosecuting anyone guilty of murder or sacrilege, regardless of relation",
+        "Not prosecuting is impiety",
+        "The gods themselves act this way (Zeus bound Kronos)"
+      ]
+    },
+    {
+      "id": 7, "lines": "477-526", "stephanus_est": "6a-6e",
+      "speaker": "Both (Socratic questioning)",
+      "act": "challenge + concession",
+      "content_summary": "Socrates says that was only one example, not a definition. Asks for the general form. Euthyphro acknowledges there are many pious acts. Socrates asks for the nature of the idea itself.",
+      "propositions": [
+        "An example is not a general definition",
+        "Socrates wants the general idea that makes all pious things pious — a standard by which to measure actions",
+        "Euthyphro concedes: there are many pious acts (his example is only one)"
+      ]
+    },
+    {
+      "id": 8, "lines": "528-529", "stephanus_est": "6e",
+      "speaker": "Euthyphro",
+      "act": "propose (Definition 2)",
+      "content_summary": "Piety is that which is dear to the gods; impiety is that which is not dear to them.",
+      "propositions": [
+        "Piety is what is dear to the gods",
+        "Impiety is what is not dear to the gods"
+      ]
+    },
+    {
+      "id": 9, "lines": "538-615", "stephanus_est": "7a-8a",
+      "speaker": "Both (Socratic questioning leading to refutation)",
+      "act": "challenge (step-by-step extraction)",
+      "content_summary": "Socrates builds an argument step by step: the gods have differences → differences about justice/good/evil cause enmity → so gods disagree about what is just → same act can be loved by some gods and hated by others → same act would be both pious and impious. Euthyphro concedes each step.",
+      "propositions": [
+        "The gods have enmities, hatreds, and differences",
+        "Differences about numbers/magnitudes are resolved by counting/measuring",
+        "Differences about just/unjust, good/evil, honorable/dishonorable cannot be so easily resolved",
+        "The gods quarrel about the same things humans quarrel about (justice, good, evil)",
+        "Each god loves what he deems noble and just, and hates the opposite",
+        "The same things are regarded as just by some gods and unjust by others",
+        "The same things are therefore hated by the gods and loved by the gods",
+        "On this view, the same things would be both pious and impious"
+      ]
+    },
+    {
+      "id": 10, "lines": "617-703", "stephanus_est": "8a-9d",
+      "speaker": "Both",
+      "act": "partial concession + amendment",
+      "content_summary": "Euthyphro objects that all gods would agree murder is wrong. Socrates presses: gods may agree in general but disagree about specifics (was THIS killing unjust?). Socrates then proposes an amendment: what ALL the gods love is pious, what they ALL hate is impious.",
+      "propositions": [
+        "Euthyphro claims all gods agree murder should be punished",
+        "Socrates: people and gods agree wrongdoers should be punished but disagree about WHO is the wrongdoer in specific cases",
+        "Socrates proposes amendment: what all the gods hate is impious, what they all love is pious"
+      ]
+    },
+    {
+      "id": 11, "lines": "712-713", "stephanus_est": "9e",
+      "speaker": "Euthyphro",
+      "act": "concede (adopts Definition 3)",
+      "content_summary": "Euthyphro adopts the amendment: what all the gods love is pious and holy.",
+      "propositions": [
+        "What all the gods love is pious and holy",
+        "What all the gods hate is impious"
+      ]
+    },
+    {
+      "id": 12, "lines": "722-821", "stephanus_est": "10a-11b",
+      "speaker": "Both (extended Socratic argument)",
+      "act": "challenge (the Euthyphro dilemma)",
+      "content_summary": "Socrates asks: is the pious loved by the gods because it is pious, or pious because it is loved? Through an extended analogy (carrying/being carried, seeing/being seen), establishes that the state follows the act. Piety is loved because it is pious (Euthyphro concedes). But being dear to the gods = being in a state of being loved (a consequence of being loved). So 'dear to the gods' and 'pious' are different things. Euthyphro has given an attribute (being loved), not the essence of piety.",
+      "propositions": [
+        "A thing is in a state of being carried because it is carried, not carried because it is in that state",
+        "The state of being loved follows the act of being loved",
+        "Piety is loved by the gods because it is pious (not pious because it is loved)",
+        "What is dear to the gods is dear because it is loved by them (not loved because it is dear)",
+        "Therefore: 'dear to the gods' and 'pious/holy' are two different things",
+        "Euthyphro has offered an attribute of piety (being loved by the gods) and not the essence",
+        "Euthyphro admits: 'I really do not know how to express what I mean'"
+      ]
+    },
+    {
+      "id": 13, "lines": "823-848", "stephanus_est": "11b-12d",
+      "speaker": "Both (interlude)",
+      "act": "clarify + new direction",
+      "content_summary": "Euthyphro says arguments walk away like Daedalus's statues. Socrates redirects: is not the pious necessarily just? Yes. Is all the just pious? No — piety is a part of justice.",
+      "propositions": [
+        "The pious is necessarily just",
+        "Not all the just is pious (piety is a part of justice, not the whole)"
+      ]
+    },
+    {
+      "id": 14, "lines": "850-914", "stephanus_est": "12d-12e",
+      "speaker": "Both",
+      "act": "propose (Definition 4) via Socratic guidance",
+      "content_summary": "Through the analogy of fear/reverence (reverence is a part of fear, not all fear is reverence), Socrates gets Euthyphro to say which part of justice piety is. Euthyphro: piety is that part of justice which attends to the gods.",
+      "propositions": [
+        "Piety is that part of justice which attends to the gods",
+        "There is another part of justice which attends to men"
+      ]
+    },
+    {
+      "id": 15, "lines": "916-978", "stephanus_est": "13a-13d",
+      "speaker": "Both (Socratic questioning)",
+      "act": "challenge (care/attention analogy)",
+      "content_summary": "Socrates asks what 'attention' means. Through horse/dog/ox analogies: attention to X normally improves X. Does attention to the gods improve them? Euthyphro: no, certainly not. So what kind of attention?",
+      "propositions": [
+        "Attention/care in the case of horses/dogs/oxen benefits and improves them",
+        "Pious acts do NOT make the gods better",
+        "Euthyphro retracts the 'care' meaning: 'that was certainly not what I meant'"
+      ]
+    },
+    {
+      "id": 16, "lines": "980-1036", "stephanus_est": "13d-14b",
+      "speaker": "Both",
+      "act": "evade + propose (Definition 5)",
+      "content_summary": "Euthyphro shifts to 'service/ministration.' Socrates: service to what end? Medicine serves health; shipbuilding serves ships. What does service to the gods accomplish? Euthyphro evades the specific question and says piety is 'learning how to please the gods in word and deed, by prayers and sacrifices.'",
+      "propositions": [
+        "Piety is a kind of service/ministration (hyperetike) to the gods",
+        "Every service has an end/purpose (health, ships, houses)",
+        "Euthyphro cannot name the specific work gods accomplish with our service",
+        "Piety is learning how to please the gods by prayers and sacrifices"
+      ]
+    },
+    {
+      "id": 17, "lines": "1038-1097", "stephanus_est": "14c-15b",
+      "speaker": "Both (Socratic reduction)",
+      "act": "challenge (reduction to D3)",
+      "content_summary": "Socrates: so piety is a science of asking (prayer) and giving (sacrifice)? Giving what they want — but what do gods gain from our gifts? Not benefit. Euthyphro: 'honour' and 'what pleases them.' Socrates: so piety is what is pleasing/dear to the gods — we are back where we started.",
+      "propositions": [
+        "Piety is a science of asking and giving",
+        "Giving to the gods what they want; asking from them what we want",
+        "Gods give us everything good; what do we give them?",
+        "Not benefit — 'tributes of honour' and 'what pleases them'",
+        "Piety is pleasing to the gods = what is dear to the gods",
+        "This is the same position as Definition 3, which was already shown to give only an attribute"
+      ]
+    },
+    {
+      "id": 18, "lines": "1109-1128", "stephanus_est": "15b-15c",
+      "speaker": "Both",
+      "act": "challenge (circularity demonstrated)",
+      "content_summary": "Socrates states the argument has come round in a circle. Were we not saying holy ≠ loved by the gods? But now you are saying what is loved = holy. Either the former or the latter is wrong.",
+      "propositions": [
+        "The argument comes round to the same point (explicit circularity)",
+        "Either the earlier refutation was wrong, or the current position is wrong",
+        "Euthyphro concedes: 'one of the two must be true'"
+      ]
+    },
+    {
+      "id": 19, "lines": "1130-1143", "stephanus_est": "15c-16a",
+      "speaker": "Both",
+      "act": "termination",
+      "content_summary": "Socrates asks to begin again. Euthyphro leaves: 'Another time, Socrates; for I am in a hurry.'",
+      "propositions": [
+        "Socrates: we must begin again and ask what piety is",
+        "Euthyphro departs without resolution"
+      ]
+    }
+  ]
+}

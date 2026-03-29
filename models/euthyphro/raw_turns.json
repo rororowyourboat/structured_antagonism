@@ -1,0 +1,1629 @@
+{
+  "total_turns": 232,
+  "turns": [
+    {
+      "turn_id": 1,
+      "line_start": 282,
+      "speaker": "Euthyphro",
+      "text": "Why have you left the Lyceum, Socrates? and what are you doing in the Porch of the King Archon? Surely you cannot be concerned in a suit before the King, like myself?",
+      "line_end": 285
+    },
+    {
+      "turn_id": 2,
+      "line_start": 286,
+      "speaker": "Socrates",
+      "text": "Not in a suit, Euthyphro; impeachment is the word which the Athenians use.",
+      "line_end": 288
+    },
+    {
+      "turn_id": 3,
+      "line_start": 289,
+      "speaker": "Euthyphro",
+      "text": "What! I suppose that some one has been prosecuting you, for I cannot believe that you are the prosecutor of another.",
+      "line_end": 291
+    },
+    {
+      "turn_id": 4,
+      "line_start": 292,
+      "speaker": "Socrates",
+      "text": "Certainly not.",
+      "line_end": 293
+    },
+    {
+      "turn_id": 5,
+      "line_start": 294,
+      "speaker": "Euthyphro",
+      "text": "Then some one else has been prosecuting you?",
+      "line_end": 295
+    },
+    {
+      "turn_id": 6,
+      "line_start": 296,
+      "speaker": "Socrates",
+      "text": "Yes.",
+      "line_end": 297
+    },
+    {
+      "turn_id": 7,
+      "line_start": 298,
+      "speaker": "Euthyphro",
+      "text": "And who is he?",
+      "line_end": 299
+    },
+    {
+      "turn_id": 8,
+      "line_start": 300,
+      "speaker": "Socrates",
+      "text": "A young man who is little known, Euthyphro; and I hardly know him: his name is Meletus, and he is of the deme of Pitthis. Perhaps you may remember his appearance; he has a beak, and long straight hair, and a beard which is ill grown.",
+      "line_end": 304
+    },
+    {
+      "turn_id": 9,
+      "line_start": 305,
+      "speaker": "Euthyphro",
+      "text": "No, I do not remember him, Socrates. But what is the charge which he brings against you?",
+      "line_end": 307
+    },
+    {
+      "turn_id": 10,
+      "line_start": 308,
+      "speaker": "Socrates",
+      "text": "What is the charge? Well, a very serious charge, which shows a good deal of character in the young man, and for which he is certainly not to be despised. He says he knows how the youth are corrupted and who are their corruptors. I fancy that he must be a wise man, and seeing that I am the reverse of a wise man, he has found me out, and is going to accuse me of corrupting his young friends. And of this our mother the state is to be the judge. Of all our political men he is the only one who seems to me to begin in the right way, with the cultivation of virtue in youth; like a good husbandman, he makes the young shoots his first care, and clears away us who are the destroyers of them. This is only the first step; he will afterwards attend to the elder branches; and if he goes on as he has begun, he will be a very great public benefactor.",
+      "line_end": 321
+    },
+    {
+      "turn_id": 11,
+      "line_start": 322,
+      "speaker": "Euthyphro",
+      "text": "I hope that he may; but I rather fear, Socrates, that the opposite will turn out to be the truth. My opinion is that in attacking you he is simply aiming a blow at the foundation of the state. But in what way does he say that you corrupt the young?",
+      "line_end": 326
+    },
+    {
+      "turn_id": 12,
+      "line_start": 327,
+      "speaker": "Socrates",
+      "text": "He brings a wonderful accusation against me, which at first hearing excites surprise: he says that I am a poet or maker of gods, and that I invent new gods and deny the existence of old ones; this is the ground of his indictment.",
+      "line_end": 331
+    },
+    {
+      "turn_id": 13,
+      "line_start": 332,
+      "speaker": "Euthyphro",
+      "text": "I understand, Socrates; he means to attack you about the familiar sign which occasionally, as you say, comes to you. He thinks that you are a neologian, and he is going to have you up before the court for this. He knows that such a charge is readily received by the world, as I myself know too well; for when I speak in the assembly about divine things, and foretell the future to them, they laugh at me and think me a madman. Yet every word that I say is true. But they are jealous of us all; and we must be brave and go at them.",
+      "line_end": 340
+    },
+    {
+      "turn_id": 14,
+      "line_start": 341,
+      "speaker": "Socrates",
+      "text": "Their laughter, friend Euthyphro, is not a matter of much consequence. For a man may be thought wise; but the Athenians, I suspect, do not much trouble themselves about him until he begins to impart his wisdom to others, and then for some reason or other, perhaps, as you say, from jealousy, they are angry.",
+      "line_end": 346
+    },
+    {
+      "turn_id": 15,
+      "line_start": 347,
+      "speaker": "Euthyphro",
+      "text": "I am never likely to try their temper in this way.",
+      "line_end": 348
+    },
+    {
+      "turn_id": 16,
+      "line_start": 349,
+      "speaker": "Socrates",
+      "text": "I dare say not, for you are reserved in your behaviour, and seldom impart your wisdom. But I have a benevolent habit of pouring out myself to everybody, and would even pay for a listener, and I am afraid that the Athenians may think me too talkative. Now if, as I was saying, they would only laugh at me, as you say that they laugh at you, the time might pass gaily enough in the court; but perhaps they may be in earnest, and then what the end will be you soothsayers only can predict.",
+      "line_end": 356
+    },
+    {
+      "turn_id": 17,
+      "line_start": 357,
+      "speaker": "Euthyphro",
+      "text": "I dare say that the affair will end in nothing, Socrates, and that you will win your cause; and I think that I shall win my own.",
+      "line_end": 359
+    },
+    {
+      "turn_id": 18,
+      "line_start": 360,
+      "speaker": "Socrates",
+      "text": "And what is your suit, Euthyphro? are you the pursuer or the defendant?",
+      "line_end": 362
+    },
+    {
+      "turn_id": 19,
+      "line_start": 363,
+      "speaker": "Euthyphro",
+      "text": "I am the pursuer.",
+      "line_end": 364
+    },
+    {
+      "turn_id": 20,
+      "line_start": 365,
+      "speaker": "Socrates",
+      "text": "Of whom?",
+      "line_end": 366
+    },
+    {
+      "turn_id": 21,
+      "line_start": 367,
+      "speaker": "Euthyphro",
+      "text": "You will think me mad when I tell you.",
+      "line_end": 368
+    },
+    {
+      "turn_id": 22,
+      "line_start": 369,
+      "speaker": "Socrates",
+      "text": "Why, has the fugitive wings?",
+      "line_end": 370
+    },
+    {
+      "turn_id": 23,
+      "line_start": 371,
+      "speaker": "Euthyphro",
+      "text": "Nay, he is not very volatile at his time of life.",
+      "line_end": 372
+    },
+    {
+      "turn_id": 24,
+      "line_start": 373,
+      "speaker": "Socrates",
+      "text": "Who is he?",
+      "line_end": 374
+    },
+    {
+      "turn_id": 25,
+      "line_start": 375,
+      "speaker": "Euthyphro",
+      "text": "My father.",
+      "line_end": 376
+    },
+    {
+      "turn_id": 26,
+      "line_start": 377,
+      "speaker": "Socrates",
+      "text": "Your father! my good man?",
+      "line_end": 378
+    },
+    {
+      "turn_id": 27,
+      "line_start": 379,
+      "speaker": "Euthyphro",
+      "text": "Yes.",
+      "line_end": 380
+    },
+    {
+      "turn_id": 28,
+      "line_start": 381,
+      "speaker": "Socrates",
+      "text": "And of what is he accused?",
+      "line_end": 382
+    },
+    {
+      "turn_id": 29,
+      "line_start": 383,
+      "speaker": "Euthyphro",
+      "text": "Of murder, Socrates.",
+      "line_end": 384
+    },
+    {
+      "turn_id": 30,
+      "line_start": 385,
+      "speaker": "Socrates",
+      "text": "By the powers, Euthyphro! how little does the common herd know of the nature of right and truth. A man must be an extraordinary man, and have made great strides in wisdom, before he could have seen his way to bring such an action.",
+      "line_end": 389
+    },
+    {
+      "turn_id": 31,
+      "line_start": 390,
+      "speaker": "Euthyphro",
+      "text": "Indeed, Socrates, he must.",
+      "line_end": 391
+    },
+    {
+      "turn_id": 32,
+      "line_start": 392,
+      "speaker": "Socrates",
+      "text": "I suppose that the man whom your father murdered was one of your relatives--clearly he was; for if he had been a stranger you would never have thought of prosecuting him.",
+      "line_end": 395
+    },
+    {
+      "turn_id": 33,
+      "line_start": 396,
+      "speaker": "Euthyphro",
+      "text": "I am amused, Socrates, at your making a distinction between one who is a relation and one who is not a relation; for surely the pollution is the same in either case, if you knowingly associate with the murderer when you ought to clear yourself and him by proceeding against him. The real question is whether the murdered man has been justly slain. If justly, then your duty is to let the matter alone; but if unjustly, then even if the murderer lives under the same roof with you and eats at the same table, proceed against him. Now the man who is dead was a poor dependant of mine who worked for us as a field labourer on our farm in Naxos, and one day in a fit of drunken passion he got into a quarrel with one of our domestic servants and slew him. My father bound him hand and foot and threw him into a ditch, and then sent to Athens to ask of a diviner what he should do with him. Meanwhile he never attended to him and took no care about him, for he regarded him as a murderer; and thought that no great harm would be done even if he did die. Now this was just what happened. For such was the effect of cold and hunger and chains upon him, that before the messenger returned from the diviner, he was dead. And my father and family are angry with me for taking the part of the murderer and prosecuting my father. They say that he did not kill him, and that if he did, the dead man was but a murderer, and I ought not to take any notice, for that a son is impious who prosecutes a father. Which shows, Socrates, how little they know what the gods think about piety and impiety.",
+      "line_end": 419
+    },
+    {
+      "turn_id": 34,
+      "line_start": 420,
+      "speaker": "Socrates",
+      "text": "Good heavens, Euthyphro! and is your knowledge of religion and of things pious and impious so very exact, that, supposing the circumstances to be as you state them, you are not afraid lest you too may be doing an impious thing in bringing an action against your father?",
+      "line_end": 424
+    },
+    {
+      "turn_id": 35,
+      "line_start": 425,
+      "speaker": "Euthyphro",
+      "text": "The best of Euthyphro, and that which distinguishes him, Socrates, from other men, is his exact knowledge of all such matters. What should I be good for without it?",
+      "line_end": 428
+    },
+    {
+      "turn_id": 36,
+      "line_start": 429,
+      "speaker": "Socrates",
+      "text": "Rare friend! I think that I cannot do better than be your disciple. Then before the trial with Meletus comes on I shall challenge him, and say that I have always had a great interest in religious questions, and now, as he charges me with rash imaginations and innovations in religion, I have become your disciple. You, Meletus, as I shall say to him, acknowledge Euthyphro to be a great theologian, and sound in his opinions; and if you approve of him you ought to approve of me, and not have me into court; but if you disapprove, you should begin by indicting him who is my teacher, and who will be the ruin, not of the young, but of the old; that is to say, of myself whom he instructs, and of his old father whom he admonishes and chastises. And if Meletus refuses to listen to me, but will go on, and will not shift the indictment from me to you, I cannot do better than repeat this challenge in the court.",
+      "line_end": 443
+    },
+    {
+      "turn_id": 37,
+      "line_start": 444,
+      "speaker": "Euthyphro",
+      "text": "Yes, indeed, Socrates; and if he attempts to indict me I am mistaken if I do not find a flaw in him; the court shall have a great deal more to say to him than to me.",
+      "line_end": 447
+    },
+    {
+      "turn_id": 38,
+      "line_start": 448,
+      "speaker": "Socrates",
+      "text": "And I, my dear friend, knowing this, am desirous of becoming your disciple. For I observe that no one appears to notice you--not even this Meletus; but his sharp eyes have found me out at once, and he has indicted me for impiety. And therefore, I adjure you to tell me the nature of piety and impiety, which you said that you knew so well, and of murder, and of other offences against the gods. What are they? Is not piety in every action always the same? and impiety, again--is it not always the opposite of piety, and also the same with itself, having, as impiety, one notion which includes whatever is impious?",
+      "line_end": 457
+    },
+    {
+      "turn_id": 39,
+      "line_start": 458,
+      "speaker": "Euthyphro",
+      "text": "To be sure, Socrates.",
+      "line_end": 459
+    },
+    {
+      "turn_id": 40,
+      "line_start": 460,
+      "speaker": "Socrates",
+      "text": "And what is piety, and what is impiety?",
+      "line_end": 461
+    },
+    {
+      "turn_id": 41,
+      "line_start": 462,
+      "speaker": "Euthyphro",
+      "text": "Piety is doing as I am doing; that is to say, prosecuting any one who is guilty of murder, sacrilege, or of any similar crime--whether he be your father or mother, or whoever he may be--that makes no difference; and not to prosecute them is impiety. And please to consider, Socrates, what a notable proof I will give you of the truth of my words, a proof which I have already given to others:--of the principle, I mean, that the impious, whoever he may be, ought not to go unpunished. For do not men regard Zeus as the best and most righteous of the gods?--and yet they admit that he bound his father (Cronos) because he wickedly devoured his sons, and that he too had punished his own father (Uranus) for a similar reason, in a nameless manner. And yet when I proceed against my father, they are angry with me. So inconsistent are they in their way of talking when the gods are concerned, and when I am concerned.",
+      "line_end": 476
+    },
+    {
+      "turn_id": 42,
+      "line_start": 477,
+      "speaker": "Socrates",
+      "text": "May not this be the reason, Euthyphro, why I am charged with impiety--that I cannot away with these stories about the gods? and therefore I suppose that people think me wrong. But, as you who are well informed about them approve of them, I cannot do better than assent to your superior wisdom. What else can I say, confessing as I do, that I know nothing about them? Tell me, for the love of Zeus, whether you really believe that they are true.",
+      "line_end": 484
+    },
+    {
+      "turn_id": 43,
+      "line_start": 485,
+      "speaker": "Euthyphro",
+      "text": "Yes, Socrates; and things more wonderful still, of which the world is in ignorance.",
+      "line_end": 487
+    },
+    {
+      "turn_id": 44,
+      "line_start": 488,
+      "speaker": "Socrates",
+      "text": "And do you really believe that the gods fought with one another, and had dire quarrels, battles, and the like, as the poets say, and as you may see represented in the works of great artists? The temples are full of them; and notably the robe of Athene, which is carried up to the Acropolis at the great Panathenaea, is embroidered with them. Are all these tales of the gods true, Euthyphro?",
+      "line_end": 494
+    },
+    {
+      "turn_id": 45,
+      "line_start": 495,
+      "speaker": "Euthyphro",
+      "text": "Yes, Socrates; and, as I was saying, I can tell you, if you would like to hear them, many other things about the gods which would quite amaze you.",
+      "line_end": 498
+    },
+    {
+      "turn_id": 46,
+      "line_start": 499,
+      "speaker": "Socrates",
+      "text": "I dare say; and you shall tell me them at some other time when I have leisure. But just at present I would rather hear from you a more precise answer, which you have not as yet given, my friend, to the question, What is 'piety'? When asked, you only replied, Doing as you do, charging your father with murder.",
+      "line_end": 504
+    },
+    {
+      "turn_id": 47,
+      "line_start": 505,
+      "speaker": "Euthyphro",
+      "text": "And what I said was true, Socrates.",
+      "line_end": 506
+    },
+    {
+      "turn_id": 48,
+      "line_start": 507,
+      "speaker": "Socrates",
+      "text": "No doubt, Euthyphro; but you would admit that there are many other pious acts?",
+      "line_end": 509
+    },
+    {
+      "turn_id": 49,
+      "line_start": 510,
+      "speaker": "Euthyphro",
+      "text": "There are.",
+      "line_end": 511
+    },
+    {
+      "turn_id": 50,
+      "line_start": 512,
+      "speaker": "Socrates",
+      "text": "Remember that I did not ask you to give me two or three examples of piety, but to explain the general idea which makes all pious things to be pious. Do you not recollect that there was one idea which made the impious impious, and the pious pious?",
+      "line_end": 516
+    },
+    {
+      "turn_id": 51,
+      "line_start": 517,
+      "speaker": "Euthyphro",
+      "text": "I remember.",
+      "line_end": 518
+    },
+    {
+      "turn_id": 52,
+      "line_start": 519,
+      "speaker": "Socrates",
+      "text": "Tell me what is the nature of this idea, and then I shall have a standard to which I may look, and by which I may measure actions, whether yours or those of any one else, and then I shall be able to say that such and such an action is pious, such another impious.",
+      "line_end": 523
+    },
+    {
+      "turn_id": 53,
+      "line_start": 524,
+      "speaker": "Euthyphro",
+      "text": "I will tell you, if you like.",
+      "line_end": 525
+    },
+    {
+      "turn_id": 54,
+      "line_start": 526,
+      "speaker": "Socrates",
+      "text": "I should very much like.",
+      "line_end": 527
+    },
+    {
+      "turn_id": 55,
+      "line_start": 528,
+      "speaker": "Euthyphro",
+      "text": "Piety, then, is that which is dear to the gods, and impiety is that which is not dear to them.",
+      "line_end": 530
+    },
+    {
+      "turn_id": 56,
+      "line_start": 531,
+      "speaker": "Socrates",
+      "text": "Very good, Euthyphro; you have now given me the sort of answer which I wanted. But whether what you say is true or not I cannot as yet tell, although I make no doubt that you will prove the truth of your words.",
+      "line_end": 535
+    },
+    {
+      "turn_id": 57,
+      "line_start": 536,
+      "speaker": "Euthyphro",
+      "text": "Of course.",
+      "line_end": 537
+    },
+    {
+      "turn_id": 58,
+      "line_start": 538,
+      "speaker": "Socrates",
+      "text": "Come, then, and let us examine what we are saying. That thing or person which is dear to the gods is pious, and that thing or person which is hateful to the gods is impious, these two being the extreme opposites of one another. Was not that said?",
+      "line_end": 542
+    },
+    {
+      "turn_id": 59,
+      "line_start": 543,
+      "speaker": "Euthyphro",
+      "text": "It was.",
+      "line_end": 544
+    },
+    {
+      "turn_id": 60,
+      "line_start": 545,
+      "speaker": "Socrates",
+      "text": "And well said?",
+      "line_end": 546
+    },
+    {
+      "turn_id": 61,
+      "line_start": 547,
+      "speaker": "Euthyphro",
+      "text": "Yes, Socrates, I thought so; it was certainly said.",
+      "line_end": 548
+    },
+    {
+      "turn_id": 62,
+      "line_start": 549,
+      "speaker": "Socrates",
+      "text": "And further, Euthyphro, the gods were admitted to have enmities and hatreds and differences?",
+      "line_end": 551
+    },
+    {
+      "turn_id": 63,
+      "line_start": 552,
+      "speaker": "Euthyphro",
+      "text": "Yes, that was also said.",
+      "line_end": 553
+    },
+    {
+      "turn_id": 64,
+      "line_start": 554,
+      "speaker": "Socrates",
+      "text": "And what sort of difference creates enmity and anger? Suppose for example that you and I, my good friend, differ about a number; do differences of this sort make us enemies and set us at variance with one another? Do we not go at once to arithmetic, and put an end to them by a sum?",
+      "line_end": 559
+    },
+    {
+      "turn_id": 65,
+      "line_start": 560,
+      "speaker": "Euthyphro",
+      "text": "True.",
+      "line_end": 561
+    },
+    {
+      "turn_id": 66,
+      "line_start": 562,
+      "speaker": "Socrates",
+      "text": "Or suppose that we differ about magnitudes, do we not quickly end the differences by measuring?",
+      "line_end": 564
+    },
+    {
+      "turn_id": 67,
+      "line_start": 565,
+      "speaker": "Euthyphro",
+      "text": "Very true.",
+      "line_end": 566
+    },
+    {
+      "turn_id": 68,
+      "line_start": 567,
+      "speaker": "Socrates",
+      "text": "And we end a controversy about heavy and light by resorting to a weighing machine?",
+      "line_end": 569
+    },
+    {
+      "turn_id": 69,
+      "line_start": 570,
+      "speaker": "Euthyphro",
+      "text": "To be sure.",
+      "line_end": 571
+    },
+    {
+      "turn_id": 70,
+      "line_start": 572,
+      "speaker": "Socrates",
+      "text": "But what differences are there which cannot be thus decided, and which therefore make us angry and set us at enmity with one another? I dare say the answer does not occur to you at the moment, and therefore I will suggest that these enmities arise when the matters of difference are the just and unjust, good and evil, honourable and dishonourable. Are not these the points about which men differ, and about which when we are unable satisfactorily to decide our differences, you and I and all of us quarrel, when we do quarrel? (Compare Alcib.)",
+      "line_end": 580
+    },
+    {
+      "turn_id": 71,
+      "line_start": 581,
+      "speaker": "Euthyphro",
+      "text": "Yes, Socrates, the nature of the differences about which we quarrel is such as you describe.",
+      "line_end": 583
+    },
+    {
+      "turn_id": 72,
+      "line_start": 584,
+      "speaker": "Socrates",
+      "text": "And the quarrels of the gods, noble Euthyphro, when they occur, are of a like nature?",
+      "line_end": 586
+    },
+    {
+      "turn_id": 73,
+      "line_start": 587,
+      "speaker": "Euthyphro",
+      "text": "Certainly they are.",
+      "line_end": 588
+    },
+    {
+      "turn_id": 74,
+      "line_start": 589,
+      "speaker": "Socrates",
+      "text": "They have differences of opinion, as you say, about good and evil, just and unjust, honourable and dishonourable: there would have been no quarrels among them, if there had been no such differences--would there now?",
+      "line_end": 593
+    },
+    {
+      "turn_id": 75,
+      "line_start": 594,
+      "speaker": "Euthyphro",
+      "text": "You are quite right.",
+      "line_end": 595
+    },
+    {
+      "turn_id": 76,
+      "line_start": 596,
+      "speaker": "Socrates",
+      "text": "Does not every man love that which he deems noble and just and good, and hate the opposite of them?",
+      "line_end": 598
+    },
+    {
+      "turn_id": 77,
+      "line_start": 599,
+      "speaker": "Euthyphro",
+      "text": "Very true.",
+      "line_end": 600
+    },
+    {
+      "turn_id": 78,
+      "line_start": 601,
+      "speaker": "Socrates",
+      "text": "But, as you say, people regard the same things, some as just and others as unjust,--about these they dispute; and so there arise wars and fightings among them.",
+      "line_end": 604
+    },
+    {
+      "turn_id": 79,
+      "line_start": 605,
+      "speaker": "Euthyphro",
+      "text": "Very true.",
+      "line_end": 606
+    },
+    {
+      "turn_id": 80,
+      "line_start": 607,
+      "speaker": "Socrates",
+      "text": "Then the same things are hated by the gods and loved by the gods, and are both hateful and dear to them?",
+      "line_end": 609
+    },
+    {
+      "turn_id": 81,
+      "line_start": 610,
+      "speaker": "Euthyphro",
+      "text": "True.",
+      "line_end": 611
+    },
+    {
+      "turn_id": 82,
+      "line_start": 612,
+      "speaker": "Socrates",
+      "text": "And upon this view the same things, Euthyphro, will be pious and also impious?",
+      "line_end": 614
+    },
+    {
+      "turn_id": 83,
+      "line_start": 615,
+      "speaker": "Euthyphro",
+      "text": "So I should suppose.",
+      "line_end": 616
+    },
+    {
+      "turn_id": 84,
+      "line_start": 617,
+      "speaker": "Socrates",
+      "text": "Then, my friend, I remark with surprise that you have not answered the question which I asked. For I certainly did not ask you to tell me what action is both pious and impious: but now it would seem that what is loved by the gods is also hated by them. And therefore, Euthyphro, in thus chastising your father you may very likely be doing what is agreeable to Zeus but disagreeable to Cronos or Uranus, and what is acceptable to Hephaestus but unacceptable to Here, and there may be other gods who have similar differences of opinion.",
+      "line_end": 625
+    },
+    {
+      "turn_id": 85,
+      "line_start": 626,
+      "speaker": "Euthyphro",
+      "text": "But I believe, Socrates, that all the gods would be agreed as to the propriety of punishing a murderer: there would be no difference of opinion about that.",
+      "line_end": 629
+    },
+    {
+      "turn_id": 86,
+      "line_start": 630,
+      "speaker": "Socrates",
+      "text": "Well, but speaking of men, Euthyphro, did you ever hear any one arguing that a murderer or any sort of evil-doer ought to be let off?",
+      "line_end": 633
+    },
+    {
+      "turn_id": 87,
+      "line_start": 634,
+      "speaker": "Euthyphro",
+      "text": "I should rather say that these are the questions which they are always arguing, especially in courts of law: they commit all sorts of crimes, and there is nothing which they will not do or say in their own defence.",
+      "line_end": 638
+    },
+    {
+      "turn_id": 88,
+      "line_start": 639,
+      "speaker": "Socrates",
+      "text": "But do they admit their guilt, Euthyphro, and yet say that they ought not to be punished?",
+      "line_end": 641
+    },
+    {
+      "turn_id": 89,
+      "line_start": 642,
+      "speaker": "Euthyphro",
+      "text": "No; they do not.",
+      "line_end": 643
+    },
+    {
+      "turn_id": 90,
+      "line_start": 644,
+      "speaker": "Socrates",
+      "text": "Then there are some things which they do not venture to say and do: for they do not venture to argue that the guilty are to be unpunished, but they deny their guilt, do they not?",
+      "line_end": 647
+    },
+    {
+      "turn_id": 91,
+      "line_start": 648,
+      "speaker": "Euthyphro",
+      "text": "Yes.",
+      "line_end": 649
+    },
+    {
+      "turn_id": 92,
+      "line_start": 650,
+      "speaker": "Socrates",
+      "text": "Then they do not argue that the evil-doer should not be punished, but they argue about the fact of who the evil-doer is, and what he did and when?",
+      "line_end": 653
+    },
+    {
+      "turn_id": 93,
+      "line_start": 654,
+      "speaker": "Euthyphro",
+      "text": "True.",
+      "line_end": 655
+    },
+    {
+      "turn_id": 94,
+      "line_start": 656,
+      "speaker": "Socrates",
+      "text": "And the gods are in the same case, if as you assert they quarrel about just and unjust, and some of them say while others deny that injustice is done among them. For surely neither God nor man will ever venture to say that the doer of injustice is not to be punished?",
+      "line_end": 660
+    },
+    {
+      "turn_id": 95,
+      "line_start": 661,
+      "speaker": "Euthyphro",
+      "text": "That is true, Socrates, in the main.",
+      "line_end": 662
+    },
+    {
+      "turn_id": 96,
+      "line_start": 663,
+      "speaker": "Socrates",
+      "text": "But they join issue about the particulars--gods and men alike; and, if they dispute at all, they dispute about some act which is called in question, and which by some is affirmed to be just, by others to be unjust. Is not that true?",
+      "line_end": 667
+    },
+    {
+      "turn_id": 97,
+      "line_start": 668,
+      "speaker": "Euthyphro",
+      "text": "Quite true.",
+      "line_end": 669
+    },
+    {
+      "turn_id": 98,
+      "line_start": 670,
+      "speaker": "Socrates",
+      "text": "Well then, my dear friend Euthyphro, do tell me, for my better instruction and information, what proof have you that in the opinion of all the gods a servant who is guilty of murder, and is put in chains by the master of the dead man, and dies because he is put in chains before he who bound him can learn from the interpreters of the gods what he ought to do with him, dies unjustly; and that on behalf of such an one a son ought to proceed against his father and accuse him of murder. How would you show that all the gods absolutely agree in approving of his act? Prove to me that they do, and I will applaud your wisdom as long as I live.",
+      "line_end": 680
+    },
+    {
+      "turn_id": 99,
+      "line_start": 681,
+      "speaker": "Euthyphro",
+      "text": "It will be a difficult task; but I could make the matter very clear indeed to you.",
+      "line_end": 683
+    },
+    {
+      "turn_id": 100,
+      "line_start": 684,
+      "speaker": "Socrates",
+      "text": "I understand; you mean to say that I am not so quick of apprehension as the judges: for to them you will be sure to prove that the act is unjust, and hateful to the gods.",
+      "line_end": 687
+    },
+    {
+      "turn_id": 101,
+      "line_start": 688,
+      "speaker": "Euthyphro",
+      "text": "Yes indeed, Socrates; at least if they will listen to me.",
+      "line_end": 689
+    },
+    {
+      "turn_id": 102,
+      "line_start": 690,
+      "speaker": "Socrates",
+      "text": "But they will be sure to listen if they find that you are a good speaker. There was a notion that came into my mind while you were speaking; I said to myself: 'Well, and what if Euthyphro does prove to me that all the gods regarded the death of the serf as unjust, how do I know anything more of the nature of piety and impiety? for granting that this action may be hateful to the gods, still piety and impiety are not adequately defined by these distinctions, for that which is hateful to the gods has been shown to be also pleasing and dear to them.' And therefore, Euthyphro, I do not ask you to prove this; I will suppose, if you like, that all the gods condemn and abominate such an action. But I will amend the definition so far as to say that what all the gods hate is impious, and what they love pious or holy; and what some of them love and others hate is both or neither. Shall this be our definition of piety and impiety?",
+      "line_end": 704
+    },
+    {
+      "turn_id": 103,
+      "line_start": 705,
+      "speaker": "Euthyphro",
+      "text": "Why not, Socrates?",
+      "line_end": 706
+    },
+    {
+      "turn_id": 104,
+      "line_start": 707,
+      "speaker": "Socrates",
+      "text": "Why not! certainly, as far as I am concerned, Euthyphro, there is no reason why not. But whether this admission will greatly assist you in the task of instructing me as you promised, is a matter for you to consider.",
+      "line_end": 711
+    },
+    {
+      "turn_id": 105,
+      "line_start": 712,
+      "speaker": "Euthyphro",
+      "text": "Yes, I should say that what all the gods love is pious and holy, and the opposite which they all hate, impious.",
+      "line_end": 714
+    },
+    {
+      "turn_id": 106,
+      "line_start": 715,
+      "speaker": "Socrates",
+      "text": "Ought we to enquire into the truth of this, Euthyphro, or simply to accept the mere statement on our own authority and that of others? What do you say?",
+      "line_end": 718
+    },
+    {
+      "turn_id": 107,
+      "line_start": 719,
+      "speaker": "Euthyphro",
+      "text": "We should enquire; and I believe that the statement will stand the test of enquiry.",
+      "line_end": 721
+    },
+    {
+      "turn_id": 108,
+      "line_start": 722,
+      "speaker": "Socrates",
+      "text": "We shall know better, my good friend, in a little while. The point which I should first wish to understand is whether the pious or holy is beloved by the gods because it is holy, or holy because it is beloved of the gods.",
+      "line_end": 726
+    },
+    {
+      "turn_id": 109,
+      "line_start": 727,
+      "speaker": "Euthyphro",
+      "text": "I do not understand your meaning, Socrates.",
+      "line_end": 728
+    },
+    {
+      "turn_id": 110,
+      "line_start": 729,
+      "speaker": "Socrates",
+      "text": "I will endeavour to explain: we, speak of carrying and we speak of being carried, of leading and being led, seeing and being seen. You know that in all such cases there is a difference, and you know also in what the difference lies?",
+      "line_end": 733
+    },
+    {
+      "turn_id": 111,
+      "line_start": 734,
+      "speaker": "Euthyphro",
+      "text": "I think that I understand.",
+      "line_end": 735
+    },
+    {
+      "turn_id": 112,
+      "line_start": 736,
+      "speaker": "Socrates",
+      "text": "And is not that which is beloved distinct from that which loves?",
+      "line_end": 738
+    },
+    {
+      "turn_id": 113,
+      "line_start": 739,
+      "speaker": "Euthyphro",
+      "text": "Certainly.",
+      "line_end": 740
+    },
+    {
+      "turn_id": 114,
+      "line_start": 741,
+      "speaker": "Socrates",
+      "text": "Well; and now tell me, is that which is carried in this state of carrying because it is carried, or for some other reason?",
+      "line_end": 743
+    },
+    {
+      "turn_id": 115,
+      "line_start": 744,
+      "speaker": "Euthyphro",
+      "text": "No; that is the reason.",
+      "line_end": 745
+    },
+    {
+      "turn_id": 116,
+      "line_start": 746,
+      "speaker": "Socrates",
+      "text": "And the same is true of what is led and of what is seen?",
+      "line_end": 747
+    },
+    {
+      "turn_id": 117,
+      "line_start": 748,
+      "speaker": "Euthyphro",
+      "text": "True.",
+      "line_end": 749
+    },
+    {
+      "turn_id": 118,
+      "line_start": 750,
+      "speaker": "Socrates",
+      "text": "And a thing is not seen because it is visible, but conversely, visible because it is seen; nor is a thing led because it is in the state of being led, or carried because it is in the state of being carried, but the converse of this. And now I think, Euthyphro, that my meaning will be intelligible; and my meaning is, that any state of action or passion implies previous action or passion. It does not become because it is becoming, but it is in a state of becoming because it becomes; neither does it suffer because it is in a state of suffering, but it is in a state of suffering because it suffers. Do you not agree?",
+      "line_end": 759
+    },
+    {
+      "turn_id": 119,
+      "line_start": 760,
+      "speaker": "Euthyphro",
+      "text": "Yes.",
+      "line_end": 761
+    },
+    {
+      "turn_id": 120,
+      "line_start": 762,
+      "speaker": "Socrates",
+      "text": "Is not that which is loved in some state either of becoming or suffering?",
+      "line_end": 764
+    },
+    {
+      "turn_id": 121,
+      "line_start": 765,
+      "speaker": "Euthyphro",
+      "text": "Yes.",
+      "line_end": 766
+    },
+    {
+      "turn_id": 122,
+      "line_start": 767,
+      "speaker": "Socrates",
+      "text": "And the same holds as in the previous instances; the state of being loved follows the act of being loved, and not the act the state.",
+      "line_end": 769
+    },
+    {
+      "turn_id": 123,
+      "line_start": 770,
+      "speaker": "Euthyphro",
+      "text": "Certainly.",
+      "line_end": 771
+    },
+    {
+      "turn_id": 124,
+      "line_start": 772,
+      "speaker": "Socrates",
+      "text": "And what do you say of piety, Euthyphro: is not piety, according to your definition, loved by all the gods?",
+      "line_end": 774
+    },
+    {
+      "turn_id": 125,
+      "line_start": 775,
+      "speaker": "Euthyphro",
+      "text": "Yes.",
+      "line_end": 776
+    },
+    {
+      "turn_id": 126,
+      "line_start": 777,
+      "speaker": "Socrates",
+      "text": "Because it is pious or holy, or for some other reason?",
+      "line_end": 778
+    },
+    {
+      "turn_id": 127,
+      "line_start": 779,
+      "speaker": "Euthyphro",
+      "text": "No, that is the reason.",
+      "line_end": 780
+    },
+    {
+      "turn_id": 128,
+      "line_start": 781,
+      "speaker": "Socrates",
+      "text": "It is loved because it is holy, not holy because it is loved?",
+      "line_end": 782
+    },
+    {
+      "turn_id": 129,
+      "line_start": 783,
+      "speaker": "Euthyphro",
+      "text": "Yes.",
+      "line_end": 784
+    },
+    {
+      "turn_id": 130,
+      "line_start": 785,
+      "speaker": "Socrates",
+      "text": "And that which is dear to the gods is loved by them, and is in a state to be loved of them because it is loved of them?",
+      "line_end": 787
+    },
+    {
+      "turn_id": 131,
+      "line_start": 788,
+      "speaker": "Euthyphro",
+      "text": "Certainly.",
+      "line_end": 789
+    },
+    {
+      "turn_id": 132,
+      "line_start": 790,
+      "speaker": "Socrates",
+      "text": "Then that which is dear to the gods, Euthyphro, is not holy, nor is that which is holy loved of God, as you affirm; but they are two different things.",
+      "line_end": 793
+    },
+    {
+      "turn_id": 133,
+      "line_start": 794,
+      "speaker": "Euthyphro",
+      "text": "How do you mean, Socrates?",
+      "line_end": 795
+    },
+    {
+      "turn_id": 134,
+      "line_start": 796,
+      "speaker": "Socrates",
+      "text": "I mean to say that the holy has been acknowledged by us to be loved of God because it is holy, not to be holy because it is loved.",
+      "line_end": 798
+    },
+    {
+      "turn_id": 135,
+      "line_start": 799,
+      "speaker": "Euthyphro",
+      "text": "Yes.",
+      "line_end": 800
+    },
+    {
+      "turn_id": 136,
+      "line_start": 801,
+      "speaker": "Socrates",
+      "text": "But that which is dear to the gods is dear to them because it is loved by them, not loved by them because it is dear to them.",
+      "line_end": 803
+    },
+    {
+      "turn_id": 137,
+      "line_start": 804,
+      "speaker": "Euthyphro",
+      "text": "True.",
+      "line_end": 805
+    },
+    {
+      "turn_id": 138,
+      "line_start": 806,
+      "speaker": "Socrates",
+      "text": "But, friend Euthyphro, if that which is holy is the same with that which is dear to God, and is loved because it is holy, then that which is dear to God would have been loved as being dear to God; but if that which is dear to God is dear to him because loved by him, then that which is holy would have been holy because loved by him. But now you see that the reverse is the case, and that they are quite different from one another. For one (theophiles) is of a kind to be loved cause it is loved, and the other (osion) is loved because it is of a kind to be loved. Thus you appear to me, Euthyphro, when I ask you what is the essence of holiness, to offer an attribute only, and not the essence--the attribute of being loved by all the gods. But you still refuse to explain to me the nature of holiness. And therefore, if you please, I will ask you not to hide your treasure, but to tell me once more what holiness or piety really is, whether dear to the gods or not (for that is a matter about which we will not quarrel); and what is impiety?",
+      "line_end": 822
+    },
+    {
+      "turn_id": 139,
+      "line_start": 823,
+      "speaker": "Euthyphro",
+      "text": "I really do not know, Socrates, how to express what I mean. For somehow or other our arguments, on whatever ground we rest them, seem to turn round and walk away from us.",
+      "line_end": 826
+    },
+    {
+      "turn_id": 140,
+      "line_start": 827,
+      "speaker": "Socrates",
+      "text": "Your words, Euthyphro, are like the handiwork of my ancestor Daedalus; and if I were the sayer or propounder of them, you might say that my arguments walk away and will not remain fixed where they are placed because I am a descendant of his. But now, since these notions are your own, you must find some other gibe, for they certainly, as you yourself allow, show an inclination to be on the move.",
+      "line_end": 833
+    },
+    {
+      "turn_id": 141,
+      "line_start": 834,
+      "speaker": "Euthyphro",
+      "text": "Nay, Socrates, I shall still say that you are the Daedalus who sets arguments in motion; not I, certainly, but you make them move or go round, for they would never have stirred, as far as I am concerned.",
+      "line_end": 838
+    },
+    {
+      "turn_id": 142,
+      "line_start": 839,
+      "speaker": "Socrates",
+      "text": "Then I must be a greater than Daedalus: for whereas he only made his own inventions to move, I move those of other people as well. And the beauty of it is, that I would rather not. For I would give the wisdom of Daedalus, and the wealth of Tantalus, to be able to detain them and keep them fixed. But enough of this. As I perceive that you are lazy, I will myself endeavour to show you how you might instruct me in the nature of piety; and I hope that you will not grudge your labour. Tell me, then--Is not that which is pious necessarily just?",
+      "line_end": 847
+    },
+    {
+      "turn_id": 143,
+      "line_start": 848,
+      "speaker": "Euthyphro",
+      "text": "Yes.",
+      "line_end": 849
+    },
+    {
+      "turn_id": 144,
+      "line_start": 850,
+      "speaker": "Socrates",
+      "text": "And is, then, all which is just pious? or, is that which is pious all just, but that which is just, only in part and not all, pious?",
+      "line_end": 852
+    },
+    {
+      "turn_id": 145,
+      "line_start": 853,
+      "speaker": "Euthyphro",
+      "text": "I do not understand you, Socrates.",
+      "line_end": 854
+    },
+    {
+      "turn_id": 146,
+      "line_start": 855,
+      "speaker": "Socrates",
+      "text": "And yet I know that you are as much wiser than I am, as you are younger. But, as I was saying, revered friend, the abundance of your wisdom makes you lazy. Please to exert yourself, for there is no real difficulty in understanding me. What I mean I may explain by an illustration of what I do not mean. The poet (Stasinus) sings-- 'Of Zeus, the author and creator of all these things, You will not tell: for where there is fear there is also reverence.' Now I disagree with this poet. Shall I tell you in what respect?",
+      "line_end": 865
+    },
+    {
+      "turn_id": 147,
+      "line_start": 866,
+      "speaker": "Euthyphro",
+      "text": "By all means.",
+      "line_end": 867
+    },
+    {
+      "turn_id": 148,
+      "line_start": 868,
+      "speaker": "Socrates",
+      "text": "I should not say that where there is fear there is also reverence; for I am sure that many persons fear poverty and disease, and the like evils, but I do not perceive that they reverence the objects of their fear.",
+      "line_end": 872
+    },
+    {
+      "turn_id": 149,
+      "line_start": 873,
+      "speaker": "Euthyphro",
+      "text": "Very true.",
+      "line_end": 874
+    },
+    {
+      "turn_id": 150,
+      "line_start": 875,
+      "speaker": "Socrates",
+      "text": "But where reverence is, there is fear; for he who has a feeling of reverence and shame about the commission of any action, fears and is afraid of an ill reputation.",
+      "line_end": 878
+    },
+    {
+      "turn_id": 151,
+      "line_start": 879,
+      "speaker": "Euthyphro",
+      "text": "No doubt.",
+      "line_end": 880
+    },
+    {
+      "turn_id": 152,
+      "line_start": 881,
+      "speaker": "Socrates",
+      "text": "Then we are wrong in saying that where there is fear there is also reverence; and we should say, where there is reverence there is also fear. But there is not always reverence where there is fear; for fear is a more extended notion, and reverence is a part of fear, just as the odd is a part of number, and number is a more extended notion than the odd. I suppose that you follow me now?",
+      "line_end": 887
+    },
+    {
+      "turn_id": 153,
+      "line_start": 888,
+      "speaker": "Euthyphro",
+      "text": "Quite well.",
+      "line_end": 889
+    },
+    {
+      "turn_id": 154,
+      "line_start": 890,
+      "speaker": "Socrates",
+      "text": "That was the sort of question which I meant to raise when I asked whether the just is always the pious, or the pious always the just; and whether there may not be justice where there is not piety; for justice is the more extended notion of which piety is only a part. Do you dissent?",
+      "line_end": 895
+    },
+    {
+      "turn_id": 155,
+      "line_start": 896,
+      "speaker": "Euthyphro",
+      "text": "No, I think that you are quite right.",
+      "line_end": 897
+    },
+    {
+      "turn_id": 156,
+      "line_start": 898,
+      "speaker": "Socrates",
+      "text": "Then, if piety is a part of justice, I suppose that we should enquire what part? If you had pursued the enquiry in the previous cases; for instance, if you had asked me what is an even number, and what part of number the even is, I should have had no difficulty in replying, a number which represents a figure having two equal sides. Do you not agree?",
+      "line_end": 904
+    },
+    {
+      "turn_id": 157,
+      "line_start": 905,
+      "speaker": "Euthyphro",
+      "text": "Yes, I quite agree.",
+      "line_end": 906
+    },
+    {
+      "turn_id": 158,
+      "line_start": 907,
+      "speaker": "Socrates",
+      "text": "In like manner, I want you to tell me what part of justice is piety or holiness, that I may be able to tell Meletus not to do me injustice, or indict me for impiety, as I am now adequately instructed by you in the nature of piety or holiness, and their opposites.",
+      "line_end": 911
+    },
+    {
+      "turn_id": 159,
+      "line_start": 912,
+      "speaker": "Euthyphro",
+      "text": "Piety or holiness, Socrates, appears to me to be that part of justice which attends to the gods, as there is the other part of justice which attends to men.",
+      "line_end": 915
+    },
+    {
+      "turn_id": 160,
+      "line_start": 916,
+      "speaker": "Socrates",
+      "text": "That is good, Euthyphro; yet still there is a little point about which I should like to have further information, What is the meaning of 'attention'? For attention can hardly be used in the same sense when applied to the gods as when applied to other things. For instance, horses are said to require attention, and not every person is able to attend to them, but only a person skilled in horsemanship. Is it not so?",
+      "line_end": 923
+    },
+    {
+      "turn_id": 161,
+      "line_start": 924,
+      "speaker": "Euthyphro",
+      "text": "Certainly.",
+      "line_end": 925
+    },
+    {
+      "turn_id": 162,
+      "line_start": 926,
+      "speaker": "Socrates",
+      "text": "I should suppose that the art of horsemanship is the art of attending to horses?",
+      "line_end": 928
+    },
+    {
+      "turn_id": 163,
+      "line_start": 929,
+      "speaker": "Euthyphro",
+      "text": "Yes.",
+      "line_end": 930
+    },
+    {
+      "turn_id": 164,
+      "line_start": 931,
+      "speaker": "Socrates",
+      "text": "Nor is every one qualified to attend to dogs, but only the huntsman?",
+      "line_end": 933
+    },
+    {
+      "turn_id": 165,
+      "line_start": 934,
+      "speaker": "Euthyphro",
+      "text": "True.",
+      "line_end": 935
+    },
+    {
+      "turn_id": 166,
+      "line_start": 936,
+      "speaker": "Socrates",
+      "text": "And I should also conceive that the art of the huntsman is the art of attending to dogs?",
+      "line_end": 938
+    },
+    {
+      "turn_id": 167,
+      "line_start": 939,
+      "speaker": "Euthyphro",
+      "text": "Yes.",
+      "line_end": 940
+    },
+    {
+      "turn_id": 168,
+      "line_start": 941,
+      "speaker": "Socrates",
+      "text": "As the art of the oxherd is the art of attending to oxen?",
+      "line_end": 942
+    },
+    {
+      "turn_id": 169,
+      "line_start": 943,
+      "speaker": "Euthyphro",
+      "text": "Very true.",
+      "line_end": 944
+    },
+    {
+      "turn_id": 170,
+      "line_start": 945,
+      "speaker": "Socrates",
+      "text": "In like manner holiness or piety is the art of attending to the gods?--that would be your meaning, Euthyphro?",
+      "line_end": 947
+    },
+    {
+      "turn_id": 171,
+      "line_start": 948,
+      "speaker": "Euthyphro",
+      "text": "Yes.",
+      "line_end": 949
+    },
+    {
+      "turn_id": 172,
+      "line_start": 950,
+      "speaker": "Socrates",
+      "text": "And is not attention always designed for the good or benefit of that to which the attention is given? As in the case of horses, you may observe that when attended to by the horseman's art they are benefited and improved, are they not?",
+      "line_end": 954
+    },
+    {
+      "turn_id": 173,
+      "line_start": 955,
+      "speaker": "Euthyphro",
+      "text": "True.",
+      "line_end": 956
+    },
+    {
+      "turn_id": 174,
+      "line_start": 957,
+      "speaker": "Socrates",
+      "text": "As the dogs are benefited by the huntsman's art, and the oxen by the art of the oxherd, and all other things are tended or attended for their good and not for their hurt?",
+      "line_end": 960
+    },
+    {
+      "turn_id": 175,
+      "line_start": 961,
+      "speaker": "Euthyphro",
+      "text": "Certainly, not for their hurt.",
+      "line_end": 962
+    },
+    {
+      "turn_id": 176,
+      "line_start": 963,
+      "speaker": "Socrates",
+      "text": "But for their good?",
+      "line_end": 964
+    },
+    {
+      "turn_id": 177,
+      "line_start": 965,
+      "speaker": "Euthyphro",
+      "text": "Of course.",
+      "line_end": 966
+    },
+    {
+      "turn_id": 178,
+      "line_start": 967,
+      "speaker": "Socrates",
+      "text": "And does piety or holiness, which has been defined to be the art of attending to the gods, benefit or improve them? Would you say that when you do a holy act you make any of the gods better?",
+      "line_end": 970
+    },
+    {
+      "turn_id": 179,
+      "line_start": 971,
+      "speaker": "Euthyphro",
+      "text": "No, no; that was certainly not what I meant.",
+      "line_end": 972
+    },
+    {
+      "turn_id": 180,
+      "line_start": 973,
+      "speaker": "Socrates",
+      "text": "And I, Euthyphro, never supposed that you did. I asked you the question about the nature of the attention, because I thought that you did not.",
+      "line_end": 976
+    },
+    {
+      "turn_id": 181,
+      "line_start": 977,
+      "speaker": "Euthyphro",
+      "text": "You do me justice, Socrates; that is not the sort of attention which I mean.",
+      "line_end": 979
+    },
+    {
+      "turn_id": 182,
+      "line_start": 980,
+      "speaker": "Socrates",
+      "text": "Good: but I must still ask what is this attention to the gods which is called piety?",
+      "line_end": 982
+    },
+    {
+      "turn_id": 183,
+      "line_start": 983,
+      "speaker": "Euthyphro",
+      "text": "It is such, Socrates, as servants show to their masters.",
+      "line_end": 984
+    },
+    {
+      "turn_id": 184,
+      "line_start": 985,
+      "speaker": "Socrates",
+      "text": "I understand--a sort of ministration to the gods.",
+      "line_end": 986
+    },
+    {
+      "turn_id": 185,
+      "line_start": 987,
+      "speaker": "Euthyphro",
+      "text": "Exactly.",
+      "line_end": 988
+    },
+    {
+      "turn_id": 186,
+      "line_start": 989,
+      "speaker": "Socrates",
+      "text": "Medicine is also a sort of ministration or service, having in view the attainment of some object--would you not say of health?",
+      "line_end": 991
+    },
+    {
+      "turn_id": 187,
+      "line_start": 992,
+      "speaker": "Euthyphro",
+      "text": "I should.",
+      "line_end": 993
+    },
+    {
+      "turn_id": 188,
+      "line_start": 994,
+      "speaker": "Socrates",
+      "text": "Again, there is an art which ministers to the ship-builder with a view to the attainment of some result?",
+      "line_end": 996
+    },
+    {
+      "turn_id": 189,
+      "line_start": 997,
+      "speaker": "Euthyphro",
+      "text": "Yes, Socrates, with a view to the building of a ship.",
+      "line_end": 998
+    },
+    {
+      "turn_id": 190,
+      "line_start": 999,
+      "speaker": "Socrates",
+      "text": "As there is an art which ministers to the house-builder with a view to the building of a house?",
+      "line_end": 1001
+    },
+    {
+      "turn_id": 191,
+      "line_start": 1002,
+      "speaker": "Euthyphro",
+      "text": "Yes.",
+      "line_end": 1003
+    },
+    {
+      "turn_id": 192,
+      "line_start": 1004,
+      "speaker": "Socrates",
+      "text": "And now tell me, my good friend, about the art which ministers to the gods: what work does that help to accomplish? For you must surely know if, as you say, you are of all men living the one who is best instructed in religion.",
+      "line_end": 1008
+    },
+    {
+      "turn_id": 193,
+      "line_start": 1009,
+      "speaker": "Euthyphro",
+      "text": "And I speak the truth, Socrates.",
+      "line_end": 1010
+    },
+    {
+      "turn_id": 194,
+      "line_start": 1011,
+      "speaker": "Socrates",
+      "text": "Tell me then, oh tell me--what is that fair work which the gods do by the help of our ministrations?",
+      "line_end": 1013
+    },
+    {
+      "turn_id": 195,
+      "line_start": 1014,
+      "speaker": "Euthyphro",
+      "text": "Many and fair, Socrates, are the works which they do.",
+      "line_end": 1015
+    },
+    {
+      "turn_id": 196,
+      "line_start": 1016,
+      "speaker": "Socrates",
+      "text": "Why, my friend, and so are those of a general. But the chief of them is easily told. Would you not say that victory in war is the chief of them?",
+      "line_end": 1019
+    },
+    {
+      "turn_id": 197,
+      "line_start": 1020,
+      "speaker": "Euthyphro",
+      "text": "Certainly.",
+      "line_end": 1021
+    },
+    {
+      "turn_id": 198,
+      "line_start": 1022,
+      "speaker": "Socrates",
+      "text": "Many and fair, too, are the works of the husbandman, if I am not mistaken; but his chief work is the production of food from the earth?",
+      "line_end": 1025
+    },
+    {
+      "turn_id": 199,
+      "line_start": 1026,
+      "speaker": "Euthyphro",
+      "text": "Exactly.",
+      "line_end": 1027
+    },
+    {
+      "turn_id": 200,
+      "line_start": 1028,
+      "speaker": "Socrates",
+      "text": "And of the many and fair things done by the gods, which is the chief or principal one?",
+      "line_end": 1030
+    },
+    {
+      "turn_id": 201,
+      "line_start": 1031,
+      "speaker": "Euthyphro",
+      "text": "I have told you already, Socrates, that to learn all these things accurately will be very tiresome. Let me simply say that piety or holiness is learning how to please the gods in word and deed, by prayers and sacrifices. Such piety is the salvation of families and states, just as the impious, which is unpleasing to the gods, is their ruin and destruction.",
+      "line_end": 1037
+    },
+    {
+      "turn_id": 202,
+      "line_start": 1038,
+      "speaker": "Socrates",
+      "text": "I think that you could have answered in much fewer words the chief question which I asked, Euthyphro, if you had chosen. But I see plainly that you are not disposed to instruct me--clearly not: else why, when we reached the point, did you turn aside? Had you only answered me I should have truly learned of you by this time the nature of piety. Now, as the asker of a question is necessarily dependent on the answerer, whither he leads I must follow; and can only ask again, what is the pious, and what is piety? Do you mean that they are a sort of science of praying and sacrificing?",
+      "line_end": 1047
+    },
+    {
+      "turn_id": 203,
+      "line_start": 1048,
+      "speaker": "Euthyphro",
+      "text": "Yes, I do.",
+      "line_end": 1049
+    },
+    {
+      "turn_id": 204,
+      "line_start": 1050,
+      "speaker": "Socrates",
+      "text": "And sacrificing is giving to the gods, and prayer is asking of the gods?",
+      "line_end": 1052
+    },
+    {
+      "turn_id": 205,
+      "line_start": 1053,
+      "speaker": "Euthyphro",
+      "text": "Yes, Socrates.",
+      "line_end": 1054
+    },
+    {
+      "turn_id": 206,
+      "line_start": 1055,
+      "speaker": "Socrates",
+      "text": "Upon this view, then, piety is a science of asking and giving?",
+      "line_end": 1056
+    },
+    {
+      "turn_id": 207,
+      "line_start": 1057,
+      "speaker": "Euthyphro",
+      "text": "You understand me capitally, Socrates.",
+      "line_end": 1058
+    },
+    {
+      "turn_id": 208,
+      "line_start": 1059,
+      "speaker": "Socrates",
+      "text": "Yes, my friend; the reason is that I am a votary of your science, and give my mind to it, and therefore nothing which you say will be thrown away upon me. Please then to tell me, what is the nature of this service to the gods? Do you mean that we prefer requests and give gifts to them?",
+      "line_end": 1064
+    },
+    {
+      "turn_id": 209,
+      "line_start": 1065,
+      "speaker": "Euthyphro",
+      "text": "Yes, I do.",
+      "line_end": 1066
+    },
+    {
+      "turn_id": 210,
+      "line_start": 1067,
+      "speaker": "Socrates",
+      "text": "Is not the right way of asking to ask of them what we want?",
+      "line_end": 1068
+    },
+    {
+      "turn_id": 211,
+      "line_start": 1069,
+      "speaker": "Euthyphro",
+      "text": "Certainly.",
+      "line_end": 1070
+    },
+    {
+      "turn_id": 212,
+      "line_start": 1071,
+      "speaker": "Socrates",
+      "text": "And the right way of giving is to give to them in return what they want of us. There would be no meaning in an art which gives to any one that which he does not want.",
+      "line_end": 1074
+    },
+    {
+      "turn_id": 213,
+      "line_start": 1075,
+      "speaker": "Euthyphro",
+      "text": "Very true, Socrates.",
+      "line_end": 1076
+    },
+    {
+      "turn_id": 214,
+      "line_start": 1077,
+      "speaker": "Socrates",
+      "text": "Then piety, Euthyphro, is an art which gods and men have of doing business with one another?",
+      "line_end": 1079
+    },
+    {
+      "turn_id": 215,
+      "line_start": 1080,
+      "speaker": "Euthyphro",
+      "text": "That is an expression which you may use, if you like.",
+      "line_end": 1081
+    },
+    {
+      "turn_id": 216,
+      "line_start": 1082,
+      "speaker": "Socrates",
+      "text": "But I have no particular liking for anything but the truth. I wish, however, that you would tell me what benefit accrues to the gods from our gifts. There is no doubt about what they give to us; for there is no good thing which they do not give; but how we can give any good thing to them in return is far from being equally clear. If they give everything and we give nothing, that must be an affair of business in which we have very greatly the advantage of them.",
+      "line_end": 1089
+    },
+    {
+      "turn_id": 217,
+      "line_start": 1090,
+      "speaker": "Euthyphro",
+      "text": "And do you imagine, Socrates, that any benefit accrues to the gods from our gifts?",
+      "line_end": 1092
+    },
+    {
+      "turn_id": 218,
+      "line_start": 1093,
+      "speaker": "Socrates",
+      "text": "But if not, Euthyphro, what is the meaning of gifts which are conferred by us upon the gods?",
+      "line_end": 1095
+    },
+    {
+      "turn_id": 219,
+      "line_start": 1096,
+      "speaker": "Euthyphro",
+      "text": "What else, but tributes of honour; and, as I was just now saying, what pleases them?",
+      "line_end": 1098
+    },
+    {
+      "turn_id": 220,
+      "line_start": 1099,
+      "speaker": "Socrates",
+      "text": "Piety, then, is pleasing to the gods, but not beneficial or dear to them?",
+      "line_end": 1101
+    },
+    {
+      "turn_id": 221,
+      "line_start": 1102,
+      "speaker": "Euthyphro",
+      "text": "I should say that nothing could be dearer.",
+      "line_end": 1103
+    },
+    {
+      "turn_id": 222,
+      "line_start": 1104,
+      "speaker": "Socrates",
+      "text": "Then once more the assertion is repeated that piety is dear to the gods?",
+      "line_end": 1106
+    },
+    {
+      "turn_id": 223,
+      "line_start": 1107,
+      "speaker": "Euthyphro",
+      "text": "Certainly.",
+      "line_end": 1108
+    },
+    {
+      "turn_id": 224,
+      "line_start": 1109,
+      "speaker": "Socrates",
+      "text": "And when you say this, can you wonder at your words not standing firm, but walking away? Will you accuse me of being the Daedalus who makes them walk away, not perceiving that there is another and far greater artist than Daedalus who makes them go round in a circle, and he is yourself; for the argument, as you will perceive, comes round to the same point. Were we not saying that the holy or pious was not the same with that which is loved of the gods? Have you forgotten?",
+      "line_end": 1117
+    },
+    {
+      "turn_id": 225,
+      "line_start": 1118,
+      "speaker": "Euthyphro",
+      "text": "I quite remember.",
+      "line_end": 1119
+    },
+    {
+      "turn_id": 226,
+      "line_start": 1120,
+      "speaker": "Socrates",
+      "text": "And are you not saying that what is loved of the gods is holy; and is not this the same as what is dear to them--do you see?",
+      "line_end": 1122
+    },
+    {
+      "turn_id": 227,
+      "line_start": 1123,
+      "speaker": "Euthyphro",
+      "text": "True.",
+      "line_end": 1124
+    },
+    {
+      "turn_id": 228,
+      "line_start": 1125,
+      "speaker": "Socrates",
+      "text": "Then either we were wrong in our former assertion; or, if we were right then, we are wrong now.",
+      "line_end": 1127
+    },
+    {
+      "turn_id": 229,
+      "line_start": 1128,
+      "speaker": "Euthyphro",
+      "text": "One of the two must be true.",
+      "line_end": 1129
+    },
+    {
+      "turn_id": 230,
+      "line_start": 1130,
+      "speaker": "Socrates",
+      "text": "Then we must begin again and ask, What is piety? That is an enquiry which I shall never be weary of pursuing as far as in me lies; and I entreat you not to scorn me, but to apply your mind to the utmost, and tell me the truth. For, if any man knows, you are he; and therefore I must detain you, like Proteus, until you tell. If you had not certainly known the nature of piety and impiety, I am confident that you would never, on behalf of a serf, have charged your aged father with murder. You would not have run such a risk of doing wrong in the sight of the gods, and you would have had too much respect for the opinions of men. I am sure, therefore, that you know the nature of piety and impiety. Speak out then, my dear Euthyphro, and do not hide your knowledge.",
+      "line_end": 1142
+    },
+    {
+      "turn_id": 231,
+      "line_start": 1143,
+      "speaker": "Euthyphro",
+      "text": "Another time, Socrates; for I am in a hurry, and must go now.",
+      "line_end": 1144
+    },
+    {
+      "turn_id": 232,
+      "line_start": 1145,
+      "speaker": "Socrates",
+      "text": "Alas! my companion, and will you leave me in despair? I was hoping that you would instruct me in the nature of piety and impiety; and then I might have cleared myself of Meletus and his indictment. I would have told him that I had been enlightened by Euthyphro, and had given up rash innovations and speculations, in which I indulged only through ignorance, and that now I am about to lead a better life.",
+      "line_end": 1151
+    }
+  ]
+}
