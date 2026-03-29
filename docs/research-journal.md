@@ -2,6 +2,8 @@
 
 *A record of the intellectual development, design decisions, and open questions driving this project.*
 
+**Notation:** This journal uses `.feedback()` and `.loop()` as shorthand for GDS composition operators. In the OGS API: `.feedback()` = `FeedbackLoop` (contravariant, within-timestep); `.loop()` = `CorecursiveLoop` (covariant, cross-timestep, wraps GDS `TemporalLoop`). The GDS IR uses `is_temporal` for corecursive wirings. See `models/` for actual API usage.
+
 ---
 
 ## Entry 1: The Core Observation
@@ -22,11 +24,11 @@ The quality improvement comes not from either component alone but from the tensi
 - **Multi-agent AI** — Google's AI Co-Scientist and DeepMind's AlphaEvolve use specialized agent coalitions locked in iterative competition. Hypotheses compete in Elo-based tournaments.
 - **Ancient philosophy** — Socratic elenchus (as recorded in the Platonic dialogues) is a structured adversarial process where a questioner systematically probes a respondent's commitments until contradiction (aporia) is reached.
 
-The same failure mode appears at every level of abstraction: **GAN mode collapse and LLM sycophancy are structurally identical.** In both cases, the adversarial process degenerates because the evaluator has no independent leverage on truth.
+A common failure mode appears across these systems: the adversarial process degenerates because the evaluator has no independent leverage on truth. GAN mode collapse and LLM sycophancy are instances of this — both involve evaluator-generator information channels collapsing. *(Note: Entry 7 shows these are not "structurally identical" in the compositional sense — GANs use `.feedback()` while multi-agent debate uses `.loop()`. The shared pattern is the information asymmetry failure, not the composition topology.)*
 
 ### The question this raises
 
-These systems clearly share something structural. But *what exactly* do they share, and can we make that precise enough to prove properties about it?
+These systems clearly share something structural. But *what exactly* do they share, and can we make that precise enough to prove properties about it? And where the structural details diverge, does that divergence predict different behavior?
 
 ---
 
@@ -47,7 +49,7 @@ All productive antagonistic systems share:
 
 | Property | Elenchus | GAN | AI Co-Scientist |
 |----------|----------|-----|-----------------|
-| Feedback topology | Single loop | Single loop | Nested loops |
+| Composition operator | `.loop()` (corecursive) | `.feedback()` (contravariant) | `.loop().loop()` (nested corecursive) |
 | Signal type | Natural language | Scalar gradient | Structured hypothesis |
 | State | Commitment store | Model parameters | Hypothesis population |
 | Convergence | Aporia (inconsistency) | Nash equilibrium | Elo-stable ranking |
@@ -471,17 +473,17 @@ The structural result is now a *classification* of antagonistic systems by compo
 |-------|-------------|----------------|----------------------|-------------|
 | **Symmetric antagonism** | `.feedback()` | Stateless per-step | Nash equilibrium | Mode collapse |
 | **Pursuit-evasion antagonism** | `.loop()` | Accumulating state | Aporia (inconsistency) | Sophistry |
-| **Hierarchical antagonism** | `.loop().feedback()` | Population + meta-signal | Elo-stable ranking | Sycophantic consensus |
+| **Hierarchical antagonism** | `.loop().loop()` | Population + meta-signal | Elo-stable ranking | Sycophantic consensus |
 
-The failure modes are *predicted by* the composition topology:
+The failure modes are *associated with* the composition topology, but as Entry 8 clarifies, they depend on the full three-axis combination (operator class, observation symmetry, commitment enforcement), not operator class alone:
 
-- **Mode collapse** occurs in `.feedback()` systems when the evaluator and generator share the same information channel — the feedback signal loses orthogonality.
-- **Sophistry** occurs in `.loop()` systems when the evader (interlocutor) escapes by shifting ground — retracting commitments or redefining terms to avoid the inconsistency the pursuer is navigating toward. The commitment store is not enforced.
-- **Sycophantic consensus** occurs in `.loop().feedback()` systems when the inner loop dominates the outer loop — agents converge on locally popular answers because the meta-review signal is too weak relative to the inner-loop reward.
+- **Mode collapse** occurs in `.feedback()` systems when the evaluator and generator share the same information channel — specifically when observation is symmetric (both players see the same signals). The operator class creates the precondition; the observation symmetry determines whether the failure manifests.
+- **Sophistry** occurs in `.loop()` systems when commitment enforcement fails — the evader retracts or shifts ground, violating monotonicity. The operator class creates accumulating state; the enforcement mechanism determines whether that state converges or cycles.
+- **Sycophantic consensus** occurs in nested `.loop()` systems when the outer loop signal is too weak relative to the inner loop — agents converge on locally popular answers. The nesting creates the hierarchical structure; the relative signal strength (an observation asymmetry property) determines whether the outer loop has genuine leverage.
 
 ### What this means for the research plan
 
-The claim to test is no longer "these systems share a topology." It is: **different classes of antagonistic systems have different composition topologies in GDS, and the topology predicts the convergence dynamics and failure modes.**
+The claim to test is no longer "these systems share a topology." It is: **different classes of antagonistic systems have different composition topologies in GDS, and the three-axis combination (operator, observation, enforcement) determines convergence dynamics and failure modes.**
 
 This is a stronger result. It also has a clear falsification condition: if the composition trees don't differ (all three systems reduce to the same operator), the taxonomy is trivial. If they differ but the structural differences don't predict convergence behavior, the taxonomy is uninformative.
 
@@ -686,3 +688,21 @@ This is the direct path from the formal taxonomy back to the methodology: **the 
 - **What generates a fourth axis?** The three axes (operator, observation, commitment) were discovered by examining three systems. Are there antagonistic systems that vary on an axis not yet identified?
 - **Does the Hegelian case require a new operator?** Aufhebung transforms the state space itself. If `.loop()` can only iterate within a fixed state space, Hegelian dialectic may require an operator that *lifts* — expanding the state space with each iteration. This would be a genuinely new GDS primitive.
 - **Is the taxonomy predictive?** The strong claim is that knowing the composition topology, observation structure, and commitment mechanism is *sufficient* to predict the convergence dynamics and failure modes. The weak claim is that it is *necessary but not sufficient* — the information content (semantics) still matters. Which claim holds?
+
+---
+
+## Known Limitations of the Formalism
+
+### Terminal conditions are strings, not computable predicates (F-006)
+
+GDS `TemporalLoop.exit_condition` and OGS `CorecursiveLoop.exit_condition` accept a free-form string description, not a computable predicate. The claim that a system "converges" or "reaches aporia" is asserted *outside* the formal system — GDS can verify structural properties of the composition (wiring correctness, type matching, acyclicity) but cannot verify that a loop terminates.
+
+This means our convergence claims (Nash equilibrium for GAN, aporia for elenchus, Elo stability for co-scientist) are external to the formalism. The taxonomy classifies systems by *structural preconditions for convergence*, not by convergence itself. Making convergence computable would require extending GDS with state predicates — a significant framework addition.
+
+### Naming mismatch between IR layers (F-004)
+
+The GDS SystemIR uses `is_temporal` for corecursive wirings. The OGS IR uses `is_corecursive`. The RDF export via `gds-owl` uses `isTemporal` (from the GDS layer). These refer to the same property but the naming is inconsistent across layers. This is a `gds-owl` framework issue, not a modeling error. SPARQL queries should use `isTemporal`; Python code working with PatternIR should use `is_corecursive`.
+
+### S-005 false positive for environment-sourced utility (F-001/F-002)
+
+OGS check S-005 requires every `DecisionGame` to have an incoming contravariant flow from another game. In the GAN topology, the Discriminator's utility signal (Ground Truth Label) comes from the external environment (training data), not from another player. S-005 produces a warning (not an error) for this topology. The signal is provided via `PatternInput`, which S-005 does not inspect. This is documented in `models/gan/artifacts/verification.txt`.

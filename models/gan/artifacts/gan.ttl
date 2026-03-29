@@ -9,10 +9,12 @@ inst:system a gds-ir:SystemIR ;
     gds-ir:compositionTypeSystem "feedback" ;
     gds-ir:hasBlockIR <https://gds.block.science/instance/Generative%20Adversarial%20Network/block/Discriminator>,
         <https://gds.block.science/instance/Generative%20Adversarial%20Network/block/Generator> ;
-    gds-ir:hasInputIR <https://gds.block.science/instance/Generative%20Adversarial%20Network/input/Noise%20Distribution>,
+    gds-ir:hasInputIR <https://gds.block.science/instance/Generative%20Adversarial%20Network/input/Ground%20Truth%20Labels>,
+        <https://gds.block.science/instance/Generative%20Adversarial%20Network/input/Noise%20Distribution>,
         <https://gds.block.science/instance/Generative%20Adversarial%20Network/input/Training%20Data> ;
     gds-ir:hasWiringIR <https://gds.block.science/instance/Generative%20Adversarial%20Network/wiring/Discriminator-Generator-1>,
         <https://gds.block.science/instance/Generative%20Adversarial%20Network/wiring/Generator-Discriminator-0>,
+        <https://gds.block.science/instance/Generative%20Adversarial%20Network/wiring/Ground%20Truth%20Labels-Discriminator-4>,
         <https://gds.block.science/instance/Generative%20Adversarial%20Network/wiring/Noise%20Distribution-Generator-2>,
         <https://gds.block.science/instance/Generative%20Adversarial%20Network/wiring/Training%20Data-Discriminator-3> ;
     gds-ir:sourceLabel "dsl" .
@@ -39,6 +41,9 @@ gds-core:name rdfs:label "name" .
     gds-ir:signatureForwardIn "Noise Vector" ;
     gds-ir:signatureForwardOut "Generated Sample" .
 
+<https://gds.block.science/instance/Generative%20Adversarial%20Network/input/Ground%20Truth%20Labels> a gds-ir:InputIR ;
+    gds-core:name "Ground Truth Labels" .
+
 <https://gds.block.science/instance/Generative%20Adversarial%20Network/input/Noise%20Distribution> a gds-ir:InputIR ;
     gds-core:name "Noise Distribution" .
 
@@ -62,6 +67,16 @@ gds-core:name rdfs:label "name" .
     gds-ir:isTemporal false ;
     gds-ir:label "Generated Sample" ;
     gds-ir:source "Generator" ;
+    gds-ir:target "Discriminator" ;
+    gds-ir:wiringType "observation" .
+
+<https://gds.block.science/instance/Generative%20Adversarial%20Network/wiring/Ground%20Truth%20Labels-Discriminator-4> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal false ;
+    gds-ir:label "Ground Truth Label" ;
+    gds-ir:source "Ground Truth Labels" ;
     gds-ir:target "Discriminator" ;
     gds-ir:wiringType "observation" .
 

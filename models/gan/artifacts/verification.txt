@@ -1,6 +1,23 @@
 System: Generative Adversarial Network
-Checks: 10/10 passed
+Verification run: full suite (OGS + GDS)
 
+=== OGS Checks: 26/27 passed ===
+PASS T-003 (error): Covariant flow 'Generated Sample' (Generator -> Discriminator) has type observation
+PASS T-003 (error): Contravariant flow 'Discriminator Gradient' (Discriminator -> Generator) has type utility_coutility
+PASS T-003 (error): Covariant flow 'Noise Vector' (Noise Distribution -> Generator) has type observation
+PASS T-003 (error): Covariant flow 'Real Sample' (Training Data -> Discriminator) has type observation
+PASS T-003 (error): Covariant flow 'Ground Truth Label' (Ground Truth Labels -> Discriminator) has type observation
+PASS T-004 (warning): Input 'Noise Distribution': schema_hint='z ~ N(0, I) or U(-1, 1)'
+PASS T-004 (warning): Input 'Training Data': schema_hint='x ~ p_data (true data distribution)'
+PASS T-004 (warning): Input 'Ground Truth Labels': schema_hint='y = 1 for real samples, y = 0 for generated samples'
+PASS T-005 (info): Input 'Noise Distribution'
+PASS T-005 (info): Input 'Training Data'
+PASS T-005 (info): Input 'Ground Truth Labels'
+PASS S-002 (warning): Pattern is not parallel composition — S-002 not applicable
+PASS S-003 (error): Feedback Discriminator -> Generator: S='Discriminator Gradient', X='Noise Vector', flow='Discriminator Gradient'
+PASS S-005 (warning): Decision game 'Generator': Y='Generated Sample'
+FAIL S-005 (warning): Decision game 'Discriminator': Y='Classification' — no incoming contravariant flow (no utility feedback)
+PASS S-007 (warning): No initialization inputs found
 PASS G-001 (error): Wiring 'Generated Sample': Generator out='Generated Sample' -> Discriminator in='Generated Sample + Real Sample'
 PASS G-002 (error): Generator: signature ('Noise Vector', 'Generated Sample', 'Discriminator Gradient', 'Generator Loss')
 PASS G-002 (error): Discriminator: signature ('Generated Sample + Real Sample', 'Classification', 'Ground Truth Label', 'Discriminator Gradient')
@@ -9,5 +26,32 @@ PASS G-004 (error): Wiring 'Generated Sample' (Generator -> Discriminator)
 PASS G-004 (error): Wiring 'Discriminator Gradient' (Discriminator -> Generator)
 PASS G-004 (error): Wiring 'Noise Vector' (Noise Distribution -> Generator)
 PASS G-004 (error): Wiring 'Real Sample' (Training Data -> Discriminator)
+PASS G-004 (error): Wiring 'Ground Truth Label' (Ground Truth Labels -> Discriminator)
 PASS G-005 (error): Stack Generator ; Discriminator: out='Generated Sample', in='Generated Sample + Real Sample', wiring='Generated Sample'
 PASS G-006 (error): Covariant flow graph is acyclic (DAG)
+
+=== GDS Checks: 11/11 passed ===
+PASS G-001 (error): Wiring 'Generated Sample': Generator out='Generated Sample' -> Discriminator in='Generated Sample + Real Sample'
+PASS G-002 (error): Generator: signature ('Noise Vector', 'Generated Sample', 'Discriminator Gradient', 'Generator Loss')
+PASS G-002 (error): Discriminator: signature ('Generated Sample + Real Sample', 'Classification', 'Ground Truth Label', 'Discriminator Gradient')
+PASS G-003 (error): Wiring 'Discriminator Gradient': Discriminator bwd_out='Discriminator Gradient' -> Generator bwd_in='Discriminator Gradient'
+PASS G-004 (error): Wiring 'Generated Sample' (Generator -> Discriminator)
+PASS G-004 (error): Wiring 'Discriminator Gradient' (Discriminator -> Generator)
+PASS G-004 (error): Wiring 'Noise Vector' (Noise Distribution -> Generator)
+PASS G-004 (error): Wiring 'Real Sample' (Training Data -> Discriminator)
+PASS G-004 (error): Wiring 'Ground Truth Label' (Ground Truth Labels -> Discriminator)
+PASS G-005 (error): Stack Generator ; Discriminator: out='Generated Sample', in='Generated Sample + Real Sample', wiring='Generated Sample'
+PASS G-006 (error): Covariant flow graph is acyclic (DAG)
+
+=== Failed Checks (1) ===
+S-005 (warning): Decision game 'Discriminator': Y='Classification' — no incoming contravariant flow (no utility feedback)
+
+=== Assessment ===
+S-005 warning: Discriminator has no incoming contravariant flow from
+another game. This is expected for this topology — the Discriminator's
+utility signal (Ground Truth Label) comes from the external environment
+(training data labels), not from another player in the composition.
+S-005 checks for intra-game utility wiring; in feedback-loop games
+where one player's loss is externally provided, this check produces
+a false positive. The PatternInput "Ground Truth Labels" provides
+this signal via the pattern's input specification.

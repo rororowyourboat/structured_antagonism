@@ -37,7 +37,7 @@ from ogs.dsl.composition import (
     Flow,
     SequentialComposition,
 )
-from ogs.dsl.games import CovariantFunction, DecisionGame
+from ogs.dsl.games import DecisionGame
 from ogs.dsl.pattern import ActionSpace, Pattern, PatternInput, TerminalCondition
 from ogs.dsl.types import CompositionType, InputType, Signature, port
 from ogs.ir.models import PatternIR
@@ -60,7 +60,7 @@ generator = DecisionGame(
         "signal, which the generator uses to update its parameters toward "
         "producing samples that fool the discriminator."
     ),
-    tags={"role": "generator", "class": "symmetric_antagonism"},
+    tags={"role": "generator"},
 )
 
 discriminator = DecisionGame(
@@ -78,27 +78,7 @@ discriminator = DecisionGame(
         "channel carries the ground truth label, and the coutility "
         "(Discriminator Gradient) feeds back to the Generator."
     ),
-    tags={"role": "discriminator", "class": "symmetric_antagonism"},
-)
-
-noise_source = CovariantFunction(
-    name="Noise Source",
-    signature=Signature(
-        x=(),
-        y=(port("Noise Vector"),),
-    ),
-    logic="Samples z ~ p_z (typically standard normal or uniform).",
-    tags={"role": "environment"},
-)
-
-real_data = CovariantFunction(
-    name="Real Data Source",
-    signature=Signature(
-        x=(),
-        y=(port("Real Sample"),),
-    ),
-    logic="Samples x ~ p_data from the true data distribution.",
-    tags={"role": "environment"},
+    tags={"role": "discriminator"},
 )
 
 
@@ -170,6 +150,13 @@ def build_pattern() -> Pattern:
                 schema_hint="x ~ p_data (true data distribution)",
                 target_game="Discriminator",
                 flow_label="Real Sample",
+            ),
+            PatternInput(
+                name="Ground Truth Labels",
+                input_type=InputType.EXTERNAL_WORLD,
+                schema_hint="y = 1 for real samples, y = 0 for generated samples",
+                target_game="Discriminator",
+                flow_label="Ground Truth Label",
             ),
         ],
         composition_type=CompositionType.FEEDBACK,

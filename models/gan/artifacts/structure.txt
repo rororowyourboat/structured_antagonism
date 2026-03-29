@@ -1,7 +1,7 @@
 System: Generative Adversarial Network
 Operator class: .feedback() (symmetric antagonism)
 Blocks: 2
-Wirings: 4
+Wirings: 5
 Feedback wirings: 1
 Temporal wirings: 0
 
@@ -14,3 +14,4 @@ Wirings:
   Discriminator -> Generator [Discriminator Gradient] dir=contravariant feedback=True
   Noise Distribution -> Generator [Noise Vector] dir=covariant feedback=False
   Training Data -> Discriminator [Real Sample] dir=covariant feedback=False
+  Ground Truth Labels -> Discriminator [Ground Truth Label] dir=covariant feedback=False
