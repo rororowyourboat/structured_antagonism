@@ -28,12 +28,12 @@ Sophistry (the failure mode) is specifically unbounded growth without cycle — 
 
 ---
 
-## Schema (v2.0)
+## Schema (v3.0)
 
 ```json
 {
   "dialogue": "Euthyphro",
-  "schema_version": "2.0",
+  "schema_version": "3.0",
   "translation_base": "Jowett (Gutenberg #1642)",
   "translation_secondary": "Grube/Cooper (Hackett)",
   "normalization_rules": "see section below",
@@ -51,12 +51,18 @@ Sophistry (the failure mode) is specifically unbounded growth without cycle — 
   "state_ownership": {
     "character_state": {
       "euthyphro": "beliefs, current definition, goal prioritization",
-      "socrates": "strategy, question target, elenctic method"
+      "socrates": "strategy, question target, elenctic method, knowledge of derivations"
     },
     "world_state": {
       "owner": "Dialogue Logic (no agency — CovariantFunction in GDS)",
-      "contents": "commitment store, refutation history, consistency status",
-      "write_rule": "Speech acts from both players trigger writes. Conditionals enter on ratification, discharge on antecedent concession, retract on antecedent retraction."
+      "contents": "commitment store, derivation records, refutation history, consistency status",
+      "write_rules": {
+        "commitment": "Written when a speaker ratifies under questioning (question + affirmative response)",
+        "assertion": "Written when a speaker volunteers without being bound",
+        "presupposition": "Written when the annotator identifies an implicit assumption neither party has surfaced",
+        "conditional_commitment": "Written when a speaker ratifies an if/then structure as a unit (antecedent + consequent conceded together)",
+        "derivation": "Written when a speaker performs explicit reasoning from premises already in store, in monologue, without interruption or objection from the other party. The write trigger is monologue + silence, not question + ratification."
+      }
     }
   },
 
@@ -112,7 +118,7 @@ Sophistry (the failure mode) is specifically unbounded growth without cycle — 
     "type": "cycle",
     "cycle_closes_at": "D5",
     "cycle_closes_to": "D3",
-    "mechanism": "D5 reduces to 'what the gods love' which is D3, already shown to give attribute not essence. The discharged conditional from turn 6 (if god-love defines piety then we have attribute not essence) makes the cycle mechanically detectable.",
+    "mechanism": "D5 reduces to 'what the gods love' which is D3. The derivation record from 10a-11b (piety and god-lovedness have different causal structures, so D3 gives attribute not essence) was never objected to and remains invocable. Socrates invokes it at 15b-c to close the cycle.",
     "stephanus": "15b-c"
   },
 
@@ -135,14 +141,30 @@ Sophistry (the failure mode) is specifically unbounded growth without cycle — 
       "commitment_delta": {
         "added": [
           {
-            "holder": "Socrates | Euthyphro",
+            "id": "string — stable identifier e.g. 'C-12.3' (commitment, section 12, item 3)",
+            "holder": "Socrates | Euthyphro | Dialogue",
             "proposition": "string — normalized propositional form",
-            "type": "commitment | assertion | presupposition | conditional_commitment",
-            "antecedent": "string — for conditional_commitment only, or null",
-            "consequent": "string — for conditional_commitment only, or null",
-            "antecedent_status": "string — e.g. 'conceded at turn 6', or null",
-            "discharged": "boolean — true if antecedent conceded and consequent active, or null",
-            "source": "explicit | extracted | implicit",
+            "type": "commitment | assertion | presupposition | conditional_commitment | derivation",
+
+            "_if_conditional_commitment": {
+              "antecedent": "string — the if-clause",
+              "consequent": "string — the then-clause",
+              "antecedent_status": "string — e.g. 'conceded at T71'",
+              "discharged": "boolean — true if antecedent conceded",
+              "ratified_by": "Socrates | Euthyphro | null"
+            },
+
+            "_if_derivation": {
+              "premises": ["list of commitment IDs — e.g. 'C-12.1', 'C-12.2', 'C-12.3'"],
+              "conclusion": "string — what the premises jointly entail",
+              "derived_by": "Socrates | Euthyphro",
+              "presented_at": "string — stephanus reference",
+              "objected_to": "boolean — false means the other party did not block",
+              "ratified_by": "Socrates | Euthyphro | null — null if silence, name if explicit agreement",
+              "invocable_at": ["list of stephanus references where this derivation is later used"]
+            },
+
+            "source": "explicit | extracted | implicit | derived",
             "available_to": "both | socrates_only | euthyphro_only",
             "confidence": "high | medium | low",
             "note": "string — justification, especially for medium/low"
@@ -150,9 +172,9 @@ Sophistry (the failure mode) is specifically unbounded growth without cycle — 
         ],
         "removed": [
           {
-            "holder": "Socrates | Euthyphro",
+            "holder": "Socrates | Euthyphro | Dialogue",
             "proposition": "string — must match prior store exactly",
-            "removal_type": "retraction | superseded | refuted | discharged",
+            "removal_type": "retraction | superseded | refuted",
             "note": "string"
           }
         ],
@@ -165,16 +187,16 @@ Sophistry (the failure mode) is specifically unbounded growth without cycle — 
         ]
       },
       "commitment_store": {
-        "socrates": ["list of active propositions"],
-        "euthyphro": ["list of active propositions"],
-        "dialogue": ["list of world-state propositions (discharged conditionals, refutation records)"]
+        "socrates": ["list of active commitment IDs"],
+        "euthyphro": ["list of active commitment IDs"],
+        "dialogue": ["list of world-state entries: derivation records, conditional statuses, refutation records"]
       },
       "cycle_signal": {
         "flagged": "boolean",
         "current_definition": "string — definition ID e.g. 'D5'",
         "maps_to": "string — prior definition ID e.g. 'D3'",
         "via": "string — the chain of reductions",
-        "discharged_conditional": "string — the conditional that makes the cycle mechanically detectable"
+        "closing_derivation": "string — the derivation ID that makes the cycle mechanically detectable"
       },
       "annotation_confidence": "high | medium | low",
       "annotation_notes": "string — uncertain, contested, or requiring cross-check"
@@ -204,17 +226,43 @@ The GDS encoding needs this because the game's information structure depends on 
 
 Some commitment inferences are uncontroversial; some are genuinely contested in the scholarly literature. Low-confidence propositions are candidates for cross-checking against Grube and annotation notes.
 
-### Why `conditional_commitment` as a fourth type?
+### The five-type taxonomy
 
-Socrates introduces conditional propositions ("if piety is what pleases the gods, then...") and Euthyphro ratifies them by engaging with the consequent. A ratified conditional is the mechanism by which Socrates constructs the cycle — the Euthyphro dilemma ("is the pious loved because it is pious, or pious because it is loved?") is a conditional that, once Euthyphro picks a horn, binds everything downstream.
+The schema distinguishes five types of store entry. Each has a distinct write condition for the Dialogue entity:
 
-The Dialogue entity's write rule for conditionals:
+| Type | Write condition | Example |
+|------|----------------|---------|
+| `commitment` | Speaker ratifies under questioning (question + affirmative response) | Euthyphro: "Yes" to "Is piety loved because it is pious?" (T129) |
+| `assertion` | Speaker volunteers without being bound | Euthyphro: "Piety is doing as I am doing" (T41) |
+| `presupposition` | Annotator identifies implicit assumption neither party has surfaced | "Divine punishment is paradigmatic of piety" (implicit in T41's Zeus/Kronos appeal) |
+| `conditional_commitment` | Speaker ratifies an if/then structure as a unit | "If the gods disagree about justice, the same act is both dear and hateful" (Section 9) |
+| `derivation` | Speaker performs explicit reasoning from premises already in store, in monologue, without objection | Socrates' argument at T132-T138 deriving that D3 gives attribute not essence |
 
-1. **Entry:** Conditional enters the store when the speaker ratifies it (engages with consequent without rejecting antecedent). Type: `conditional_commitment`, `discharged: false`.
-2. **Discharge:** Conditional discharges to full commitment when the antecedent is independently conceded. `discharged: true`, consequent becomes active.
-3. **Retraction:** Conditional is retracted if the antecedent is retracted. `removal_type: discharged`.
+**The derivation/conditional distinction is critical.** The Euthyphro dilemma (Section 12) was initially analyzed as a conditional commitment. Working through the text turn by turn showed it is actually a derivation: Euthyphro concedes three independent premises under questioning, and Socrates derives the conclusion in monologue. The conditional structure lives in Socrates' argument, not in Euthyphro's store.
 
-This follows the natural deduction discharge rule: conditional introduction followed by modus ponens when the antecedent is established. Without this, the cycle graph cannot close mechanically — the link between "piety causes god-love" and "god-love cannot define piety" would require inference rather than store lookup.
+- `conditional_commitment`: one speech act ratifying an if/then structure (Section 9 pattern: "if gods disagree, then same act is both pious and impious")
+- `derivation`: multiple independent commitments + logical derivation performed by one party (Section 12 pattern: three premises → conclusion that D3 gives attribute not essence)
+
+### Why `conditional_commitment`?
+
+For cases where a speaker ratifies an if/then structure as a unit — not derived from separate premises. The Dialogue entity's write rule:
+
+1. **Entry:** Conditional enters when speaker engages with the consequent without rejecting the antecedent. `discharged: false`.
+2. **Discharge:** Conditional discharges when the antecedent is independently conceded. `discharged: true`, consequent becomes active.
+3. **Retraction:** Conditional is retracted if the antecedent is retracted.
+
+### Why `derivation`?
+
+For cases where a speaker derives a conclusion from premises already in the store, in monologue, without interruption or objection. The write trigger is **monologue + silence**, not question + ratification. This is where Socrates functions as a partial GM: he performs reasoning about the store that Euthyphro did not perform and may not have tracked.
+
+Key fields:
+- `premises`: list of commitment IDs the derivation depends on
+- `derived_by`: who performed the reasoning
+- `objected_to`: false means the other party did not block the derivation
+- `ratified_by`: null (silence) vs named (explicit agreement) — null is the more common case and is what makes the derivation `available_to: socrates_only`
+- `invocable_at`: where the derivation is later used (the cycle-closing move at 15b-c)
+
+The `objected_to` field replaces the earlier `discharged` concept for derivations. A derivation is not "discharged" (it has no antecedent) — it is *unopposed*. Euthyphro's failure to object at T132-T138 is itself a speech act: silence under a Socratic derivation is a form of passive ratification.
 
 ### Why `definition_map` as a top-level object?
 
@@ -230,11 +278,11 @@ Captures the information asymmetry at the commitment level. Most commitments are
 
 ### Why `dialogue` in the commitment store alongside `socrates` and `euthyphro`?
 
-The three-entity model requires world-state to be tracked separately from character-state. The `dialogue` store holds discharged conditionals, refutation records, and the consistency status — propositions that are properties of the argument structure, not of either player's beliefs. This is what the Dialogue entity (the CovariantFunction in GDS) writes.
+The three-entity model requires world-state to be tracked separately from character-state. The `dialogue` store holds derivation records, conditional commitment statuses, and refutation records — propositions that are properties of the argument structure, not of either player's beliefs. This is what the Dialogue entity (the CovariantFunction in GDS) writes. Derivations are the primary content of the dialogue store: they capture Socrates' reasoning about the commitment store, not commitments that either player made.
 
 ### Why `cycle_signal` instead of `aporia_signal`?
 
-The terminal condition is circularity (trajectory enters a cycle), not flat inconsistency (P and not-P). The cycle signal names: the current definition ID, the prior definition it maps to, the chain of reductions, and the discharged conditional that makes the cycle mechanically detectable.
+The terminal condition is circularity (trajectory enters a cycle), not flat inconsistency (P and not-P). The cycle signal names: the current definition ID, the prior definition it maps to, the chain of reductions, and the `closing_derivation` — the derivation record ID that makes the cycle mechanically detectable. At 15b-c, Socrates invokes the Section 12 derivation (D3 gives attribute not essence) against D5 (which reduces to D3), closing the cycle.
 
 ### Why normalized propositional form?
 
@@ -250,7 +298,7 @@ Define before annotating turn 1. Do not deviate.
 2. **Consistent entity naming.** Use: "piety", "the gods", "Euthyphro's father". Not: "it", "they", "him".
 3. **Strip indexicals and dialogue context.** Not "what I am doing now" but "prosecuting one's father for wrongdoing is an instance of piety."
 4. **Preserve semantic distinctions.** "Piety is what is dear to the gods" and "Piety is what all the gods love" are DIFFERENT propositions. The first is about individual gods; the second requires unanimity. Do not normalize to equivalence — Socrates exploits this exact distinction.
-5. **Conditionals stay conditional until discharged.** "If the gods disagree, the same act is both dear and hateful" stays conditional in the store as `type: "conditional_commitment"` with explicit `antecedent` and `consequent` fields. Do not flatten to "the same act is both dear and hateful" until `discharged: true`. When discharged, the consequent enters the store as a full commitment.
+5. **Conditionals stay conditional until discharged; derivations reference premise IDs.** "If the gods disagree, the same act is both dear and hateful" stays conditional as `type: "conditional_commitment"` until `discharged: true`. Derivations are normalized as conclusions with `premises` pointing to commitment IDs — the derivation's proposition is the conclusion, not the argument.
 6. **Mark scope explicitly.** "Care (therapeia) of X normally improves X" has universal scope. "The gods cannot be improved" is a specific claim about gods. Keep them separate.
 
 ---
