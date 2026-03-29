@@ -125,13 +125,47 @@ The philosophy and prompt instruments above are the first layer. The active rese
 
 The three systems under study:
 
-- **Socratic elenchus** (Euthyphro) — asymmetric feedback between questioner and respondent, with an implicit commitment store as state
-- **GANs** — symmetric feedback between generator and discriminator, with model parameters as state
-- **AI Co-Scientist** — hierarchical multi-agent with nested feedback loops, with a hypothesis population as state
+- **Socratic elenchus** (Euthyphro) — pursuit-evasion antagonism with accumulating commitment store, encoded as `CorecursiveLoop` (cross-timestep temporal iteration)
+- **GANs** — symmetric antagonism with within-timestep gradient feedback, encoded as `FeedbackLoop` (contravariant)
+- **AI Co-Scientist** — hierarchical antagonism with nested temporal loops (`CorecursiveLoop` inside `CorecursiveLoop`)
 
-The claim to test: these systems share identical feedback topology in GDS terms (same composition tree, different types on the wires), and systems with deeper loop nesting have richer fixed-point structure but are harder to certify convergent.
+The claim to test: different classes of antagonistic systems have different composition topologies in GDS, and the three-axis combination (operator class, observation symmetry, commitment enforcement) determines convergence dynamics and failure modes.
+
+All three models are compiled, verified (63/64 checks passed), and structurally compared via SPARQL on a merged RDF graph. The Euthyphro dialogue is annotated with a five-type commitment store taxonomy (commitment, assertion, presupposition, conditional_commitment, derivation) across 232 speaker-change turns.
 
 See the [research journal](docs/research-journal.md) for the full development of this direction.
+
+## References
+
+### Primary Sources
+
+- Plato, *Euthyphro*. Benjamin Jowett translation (Project Gutenberg #1642). [`references/euthyphro.txt`](references/euthyphro.txt)
+
+### Formal Frameworks
+
+- Goodfellow, I. et al. (2014). "Generative Adversarial Networks." *arXiv:1406.2661*.
+- Ghani, N., Hedges, J., Winschel, V., & Zahn, P. (2018). "Compositional Game Theory." *arXiv:1603.04641*.
+- Dung, P. M. (1995). "On the Acceptability of Arguments and its Fundamental Role in Nonmonotonic Reasoning, Logic Programming, and n-Person Games." *Artificial Intelligence*, 77(2), 321-357.
+- Zargham, M. & Shorish, J. (2022). "Generalized Dynamical Systems." Working paper, BlockScience.
+
+### Multi-Agent AI Systems
+
+- Gottweis, J. et al. (2025). "Towards an AI Co-Scientist." Google DeepMind.
+- AlphaEvolve (2025). Google DeepMind.
+- Leibo, J. Z. et al. (2021). "Scalable Evaluation of Multi-Agent Reinforcement Learning with Melting Pot." *ICML 2021*.
+
+### Euthyphro Scholarship
+
+- Ebrey, D. (2017). "Identity and Explanation in the *Euthyphro*." *Oxford Studies in Ancient Philosophy*, 52, 77-105. [`references/ebrey_2017_identity_and_explanation.pdf`](references/ebrey_2017_identity_and_explanation.pdf)
+- Sharvy, R. (1972). "Euthyphro 9d-11b: Analysis and Definition in Plato and Others." *Nous*, 6, 119-137.
+- Judson, L. (2010). "Carried Away in the *Euthyphro*." In D. Charles (ed.), *Definition in Greek Philosophy*, Oxford, 31-61.
+- Wolfsdorf, D. (2005). "'Euthyphro' 10a2-11b1: A Study in Platonic Metaphysics and its Reception since 1960." *Apeiron*, 38, 1-71.
+- Evans, M. (2012). "Lessons from *Euthyphro* 10a-11b." *Oxford Studies in Ancient Philosophy*, 42, 1-38.
+
+### Argumentation Theory
+
+- Walton, D. & Krabbe, E. (1995). *Commitment in Dialogue*. SUNY Press.
+- Hamblin, C. L. (1970). *Fallacies*. Methuen.
 
 ## License
 
