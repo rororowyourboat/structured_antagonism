@@ -185,6 +185,14 @@ For each candidate domain, we ask:
 
 **Note:** This is the critical test case for condition 2. Mycorrhizal networks have information asymmetry (each party has private knowledge of its resource state), accumulating state, and `.loop()` topology. Without the Pareto dominance criterion, the taxonomy would incorrectly classify this as pursuit-evasion. Condition 2 is what prevents the taxonomy from being "any feedback system."
 
+### Stable Marriage (Gale-Shapley Algorithm)
+
+**Domain:** Combinatorial optimization. Men and women rank each other; the algorithm produces a stable matching where no pair would prefer to leave their assigned partners for each other.
+
+**Why excluded:** Fails condition 2 (Pareto-dominant stable matching exists). The Gale-Shapley algorithm converges to a stable matching that is Pareto-optimal for the proposing side. The matching is a fixed point, not an adversarial equilibrium — no party's optimization degrades another's position once the matching is stable. Bistarelli & Santini modeled stable marriage via abstract argumentation (cited in Fan/Toni 2016), confirming that the fixed-point structure maps onto argumentation semantics — but the process is cooperative matching, not structured antagonism.
+
+**Note:** Stable marriage is `.loop()` topology (proposals accumulate across rounds) with information asymmetry (preferences are private) — the same structural profile as the elenchus. But condition 2 excludes it because the cooperative equilibrium is Pareto-dominant. This is the second case (after mutualism) where topology alone would produce a false positive without the antagonism precondition.
+
 ---
 
 ## Enforcement Pathologies: Antigenic Original Sin
@@ -246,12 +254,13 @@ This remains an open question. If `.lift()` cannot be captured without a new GDS
 | Peer review | `.loop().loop()` | Sycophantic consensus | Paradigm lock-in | Yes |
 | Niche construction | `.loop().loop()` | Sycophantic consensus | Ecological trap | Plausible |
 
-### What the taxonomy correctly excludes (2)
+### What the taxonomy correctly excludes (3)
 
 | System | Topology | Why excluded |
 |--------|----------|-------------|
 | Homeostasis | `.feedback()` | Fails condition 1 (single agent) |
-| Mycorrhizal mutualism | `.loop()` | Fails condition 2 (Pareto-dominant) |
+| Mycorrhizal mutualism | `.loop()` | Fails condition 2 (Pareto-dominant cooperative equilibrium) |
+| Stable marriage | `.loop()` | Fails condition 2 (Pareto-dominant stable matching) |
 
 ### What the taxonomy cannot yet classify (1)
 

@@ -162,8 +162,9 @@ See the [research journal](docs/research-journal.md) for the full development of
 - Wolfsdorf, D. (2005). "'Euthyphro' 10a2-11b1: A Study in Platonic Metaphysics and its Reception since 1960." *Apeiron*, 38, 1-71.
 - Evans, M. (2012). "Lessons from *Euthyphro* 10a-11b." *Oxford Studies in Ancient Philosophy*, 42, 1-38.
 
-### Argumentation Theory
+### Argumentation Theory and Games
 
+- Fan, X. & Toni, F. (2016). "On the Interplay between Games, Argumentation and Dialogues." *AAMAS 2016*, 260-268. Establishes static equivalence between Nash equilibria and admissible argument sets in ABA frameworks. Prior art for the argumentation-game bridge; distinct from this project's topology-level claim. See [Entry 10](docs/research-journal.md) for the precise scope distinction.
 - Walton, D. & Krabbe, E. (1995). *Commitment in Dialogue*. SUNY Press.
 - Hamblin, C. L. (1970). *Fallacies*. Methuen.
 
