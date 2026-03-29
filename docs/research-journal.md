@@ -361,14 +361,14 @@ The project has five phases, each producing a self-contained artifact:
 - Export to RDF, merge with GAN graph
 - Artifact: `models/euthyphro/model.py` + `models/euthyphro/aif.py`
 
-**Phase 5: AI Co-Scientist Model + Comparison**
+**Phase 5: AI Co-Scientist Model + Taxonomy**
 - Encode the hierarchical multi-agent system as an OGS Pattern
-- Nested composition: `(Gen >> Reflect >> Rank >> Evolve).feedback(via=MetaReview)`
+- Nested composition: `inner.loop(hypothesis_population).feedback(via=MetaReview)`
 - Export to RDF, merge all three into single graph
-- Write SPARQL queries for structural comparison
-- Write SHACL shapes for antagonism-specific properties
-- Derive structural invariants
-- Artifact: `models/co_scientist/model.py` + `models/compare.py` + SPARQL/SHACL files
+- Write SPARQL queries for structural comparison (operator type, loop depth, state dynamics)
+- Write SHACL shapes for each antagonism class
+- Validate taxonomy: do the composition trees differ as predicted? Do structural differences correspond to different convergence/failure properties?
+- Artifact: `models/co_scientist/model.py` + `models/compare.py` + SPARQL/SHACL files + taxonomy analysis
 
 ### Repo structure (target state)
 
@@ -408,25 +408,139 @@ structured-antagonism/
 └── pyproject.toml                      # gds-framework, gds-games, gds-owl, gds-viz
 ```
 
-### The contribution
+### The contribution (revised after Entry 7)
 
 If this works, the project produces:
 
-1. **A formal vocabulary** for structured antagonism grounded in compositional game theory
-2. **A machine-readable annotation** of a canonical Platonic dialogue with commitment stores
-3. **A computational proof** that Socratic elenchus and GANs share identical feedback topology (same GDS composition tree, different types on wires)
-4. **A structural result** about loop depth and fixed-point richness across antagonistic systems
-5. **An AIF bridge** connecting game-theoretic and argumentation-theoretic analyses of the same system
-6. **Custom SHACL shapes** defining what "productive antagonism" looks like structurally
+1. **A formal taxonomy** of antagonistic systems classified by GDS composition topology (`.feedback()` vs `.loop()` vs `.loop().feedback()`)
+2. **A structural result** linking composition topology to convergence dynamics and failure modes — the topology predicts whether the system fails via mode collapse, sophistry, or sycophantic consensus
+3. **A machine-readable annotation** of a canonical Platonic dialogue with commitment stores, treated as a contribution in its own right with explicit interpretive methodology
+4. **A computational demonstration** that elenchus and GANs are *not* topologically equivalent — they use different GDS operators, reflecting the pursuit-evasion vs. minimax distinction
+5. **Custom SHACL shapes** defining structural properties of each antagonism class
+6. **A clear open problem** — formalizing the information asymmetry condition that determines whether a system in any class converges or degenerates
 
 This sits at the intersection of compositional game theory, computational argumentation, and AI systems design — territory that is currently fragmented across fields that have not yet synthesized.
 
 ---
 
-## Open Questions
+## Entry 7: The Asymmetry Problem — Self-Audit
 
-- **Can we define "productive antagonism" purely structurally?** Or does the information asymmetry condition require semantic content that GDS topology alone can't capture?
-- **What does the Euthyphro terminal condition (aporia) look like in OGS terms?** Is it a state where no valid `y` exists in the interlocutor's action space, or is it a property of the commitment store entity?
-- **Can SHACL shapes express loop depth constraints?** SHACL operates on graph shape, not on recursive nesting. We may need SPARQL-based constraints (SHACL-SPARQL) for the deeper structural properties.
-- **Is the AIF bridge bijective?** Can every AIF argumentation framework be encoded as a GDS game, and vice versa? Or is the mapping lossy in one direction?
-- **What about Hegelian dialectic?** Aufhebung (sublation) doesn't just feed back — it *lifts* the state space to a higher level. Is this expressible as a GDS composition, or does it require a fundamentally different operator?
+**Date:** 2026-03-29
+
+### The critique
+
+An honest review of the project surfaced a blind spot that restructures the central claim.
+
+The project originally claimed that Socratic elenchus and GANs have "identical feedback topology" — same GDS composition tree, different types on the wires. But this claim conflates two structurally different relationships to game state:
+
+- In a **GAN**, both players are peers. The generator produces a sample; the discriminator classifies it; the gradient feeds back. Neither player accumulates a record. Each training step is relatively independent — the feedback is *within-timestep*.
+
+- In **Socratic elenchus**, the relationship is asymmetric. Socrates is not evaluating a proposal against ground truth (like a discriminator). He is *searching the commitment space for inconsistency*. His strategy is a function of the *entire commitment history* — he chooses questions that target specific earlier concessions to engineer contradiction. The commitment store *accumulates across turns* and constrains all future moves.
+
+This is pursuit-evasion, not minimax. And it maps to a different GDS operator.
+
+### Where the topology diverges
+
+In GDS, `.feedback()` and `.loop()` are different composition operators with different formal properties:
+
+- **`.feedback()`** — contravariant, within-timestep. The backward channel (r/s) carries a signal that influences the current step. The GAN discriminator's gradient is `.feedback()`.
+
+- **`.loop()`** — covariant, cross-timestep. The forward channel (x/y) carries state that persists and accumulates. The elenchus commitment store is `.loop()`.
+
+This means the three systems under study use *different composition operators*:
+
+```python
+# GAN — within-timestep feedback, symmetric players
+gan = (generator >> discriminator).feedback(gradient_signal)
+
+# Elenchus — cross-timestep accumulation, asymmetric observation
+elenchus = (euthyphro >> socrates).loop(commitment_store)
+
+# Co-Scientist — nested: temporal loop with inner feedback
+inner = gen >> reflect >> rank >> evolve
+co_scientist = inner.loop(hypothesis_population).feedback(via=meta_review)
+```
+
+Three different composition trees. Not "the same topology with different types on the wires."
+
+### The revised taxonomy
+
+The structural result is now a *classification* of antagonistic systems by composition topology, not a proof of topological equivalence:
+
+| Class | GDS Operator | State dynamics | Convergence criterion | Failure mode |
+|-------|-------------|----------------|----------------------|-------------|
+| **Symmetric antagonism** | `.feedback()` | Stateless per-step | Nash equilibrium | Mode collapse |
+| **Pursuit-evasion antagonism** | `.loop()` | Accumulating state | Aporia (inconsistency) | Sophistry |
+| **Hierarchical antagonism** | `.loop().feedback()` | Population + meta-signal | Elo-stable ranking | Sycophantic consensus |
+
+The failure modes are *predicted by* the composition topology:
+
+- **Mode collapse** occurs in `.feedback()` systems when the evaluator and generator share the same information channel — the feedback signal loses orthogonality.
+- **Sophistry** occurs in `.loop()` systems when the evader (interlocutor) escapes by shifting ground — retracting commitments or redefining terms to avoid the inconsistency the pursuer is navigating toward. The commitment store is not enforced.
+- **Sycophantic consensus** occurs in `.loop().feedback()` systems when the inner loop dominates the outer loop — agents converge on locally popular answers because the meta-review signal is too weak relative to the inner-loop reward.
+
+### What this means for the research plan
+
+The claim to test is no longer "these systems share a topology." It is: **different classes of antagonistic systems have different composition topologies in GDS, and the topology predicts the convergence dynamics and failure modes.**
+
+This is a stronger result. It also has a clear falsification condition: if the composition trees don't differ (all three systems reduce to the same operator), the taxonomy is trivial. If they differ but the structural differences don't predict convergence behavior, the taxonomy is uninformative.
+
+### Updated encodings
+
+The Entry 3 pseudocode needs revision:
+
+**Elenchus (revised):**
+
+```python
+euthyphro = DecisionGame(
+    name="Euthyphro",
+    signature=Signature(
+        x=(port("Commitment Store"),),        # full accumulated state
+        y=(port("Proposed Definition"),),      # current proposal
+        r=(port("Refutation"),),               # Socratic challenge
+        s=(port("Updated Commitments"),),      # state delta
+    ),
+)
+
+socrates = DecisionGame(
+    name="Socrates",
+    signature=Signature(
+        x=(port("Commitment Store"),           # ALSO sees full history
+           port("Proposed Definition"),),       # plus current proposal
+        y=(port("Refutation"),),               # engineered challenge
+        r=(port("Updated Commitments"),),      # commitment delta
+        s=(port("Next Question"),),            # probe targeting specific prior commitment
+    ),
+)
+
+# Cross-timestep loop, not within-timestep feedback
+elenchus = (euthyphro >> socrates).loop(
+    [Wiring("Socrates", "Updated Commitments",
+            "Euthyphro", "Commitment Store",
+            direction=FlowDirection.COVARIANT)],
+    exit_condition="commitment_store_inconsistent",
+)
+```
+
+Key differences from Entry 3:
+1. Socrates' `x` channel includes the full commitment store, not just the current proposal — asymmetric observation
+2. The composition uses `.loop()` (covariant, cross-timestep), not `.feedback()` (contravariant, within-timestep)
+3. The exit condition is commitment store inconsistency (aporia), not a Nash equilibrium
+
+### Remaining gaps
+
+**Information asymmetry is still the hard problem.** The composition algebra captures *that* there is feedback but not *what information it carries*. The orthogonality condition ("evaluator must access signals orthogonal to the generator's channel") would need to live as a property annotation on the wiring — metadata describing the information channel's characteristics — not something the type system enforces. This is an honest limitation and a clear target for extending the framework.
+
+**The AIF bridge is harder than originally planned.** Static Dung frameworks don't capture dialogue dynamics. We would need Walton & Krabbe's dialogue game protocols or Hamblin's commitment store formalism — dynamic extensions that track commitment evolution over time. This is a separate research question, not a Phase 4 sub-task. Flagging it as such.
+
+**The Euthyphro annotation is doing philosophical work.** Different interpretations of what Euthyphro has committed to at each step are not minor variations — they produce structurally different games. If the annotation is contested, the formal encoding inherits that contestation silently. This argues for treating the annotation as a contribution in its own right, with explicit methodology and documented interpretive choices, rather than a preprocessing step.
+
+---
+
+## Open Questions (revised)
+
+- **Can we define "productive antagonism" purely structurally?** The composition topology classifies systems. But whether a system in a given class converges or degenerates depends on the information asymmetry condition, which the topology cannot capture. The question is whether we can extend GDS with information-theoretic annotations that make the orthogonality condition formal.
+- **Is pursuit-evasion the right frame for elenchus?** The asymmetry is clear, but pursuit-evasion games have specific formal properties (e.g., the pursuer has guaranteed strategies under certain conditions). Does Socrates have a guaranteed strategy for reaching aporia, or can a sufficiently skilled interlocutor evade indefinitely?
+- **What does the Hegelian case look like?** Aufhebung (sublation) doesn't just accumulate state — it *transforms the state space itself*. A thesis-antithesis-synthesis loop produces a new level of abstraction, not just a new state in the same space. Is this expressible as `.loop()` with a state space that grows, or does it require a fundamentally new operator?
+- **How do SA's own instruments map onto this taxonomy?** SA's Design → Audit → Synthesize loop: is this `.feedback()`, `.loop()`, or `.loop().feedback()`? If SA is itself an instance of structured antagonism, its own composition topology should be classifiable. What class is it?
+- **Does the AIF bridge require temporal AIF?** If so, which formalism? Prakken's (2006) dialogue game protocols? Walton & Krabbe's (1995) commitment in dialogue? The choice of formalism shapes what properties are representable.
