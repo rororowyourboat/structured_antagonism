@@ -474,7 +474,7 @@
           "id": "D-12.1",
           "turn": "T132-T138",
           "holder": "Dialogue",
-          "proposition": "Piety and god-lovedness have different causal structures; D3 gives an attribute (being loved), not the essence of piety",
+          "proposition": "Holy and god-loved are not the same: substituting one for the other within 'because' contexts produces contradiction. D3 does not answer the 'what is it?' question.",
           "type": "derivation",
           "_if_derivation": {
             "premises": [
@@ -483,7 +483,7 @@
               "C-12.3",
               "C-11.1"
             ],
-            "conclusion": "Pious = loved because it is pious (nature \u2192 love). Dear-to-gods = dear because loved (love \u2192 state). These have opposite causal directions, so they are not the same thing. D3 ('piety = what all the gods love') gives the attribute of being loved, not the essence that causes it.",
+            "conclusion": "From C-12.2: holy things are loved because they are holy. From C-12.3: god-loved things are god-loved because they are loved. If holy = god-loved (D3/C-11.1), substitution produces: god-loved things are god-loved because they are god-loved \u2014 but C-12.3 says they are god-loved because loved (not because god-loved). Contradiction. Therefore holy \u2260 god-loved; D3 fails.",
             "derived_by": "Socrates",
             "presented_at": "10d-11b",
             "objected_to": false,
@@ -495,7 +495,7 @@
           "source": "derived",
           "available_to": "socrates_only",
           "confidence": "high",
-          "note": "Socrates performs the derivation in monologue (T132-T138). Euthyphro does not ratify \u2014 he responds 'I really do not know, Socrates, how to express what I mean' (T139). The derivation is unopposed but not explicitly accepted. This is the key asymmetry: Socrates knows the derivation is in the store; Euthyphro may not have tracked the logical structure."
+          "note": "Socrates performs the derivation in monologue (T132-T138). Euthyphro does not ratify \u2014 he responds 'I really do not know, Socrates, how to express what I mean' (T139). INTERPRETIVE NOTE: The scholarly literature divides on the argument's mechanism. (1) Aristotelian interpretation (Sharvy 1972, Judson 2010): Socrates wants an explanatorily prior feature; god-lovedness is not prior to holiness, so D3 gives an attribute (pathos), not the essence (ousia). (2) Strict identity interpretation (Ebrey 2017): Socrates' substitution works because he takes Euthyphro's proposal as claiming holy = god-loved (strict identity); substitution within 'because' contexts then produces contradiction. Ebrey argues the Aristotelian interpretation faces problems justifying the substitution step (pp. 91-94) and that ousia/pathos at 11a6-b1 means 'what it is' vs 'what is true of it', not Aristotelian essence vs attribute (p. 96). This annotation uses interpretation-neutral language: the derivation shows holy \u2260 god-loved via substitution contradiction. See references/ebrey_2017_identity_and_explanation.pdf."
         }
       ],
       "removed": [
@@ -951,8 +951,9 @@
       "stephanus": "9e",
       "introduced": "C-11.1",
       "refutation_id": "D-12.1",
-      "refutation_type": "attribute_not_essence",
-      "reduces_to": null
+      "refutation_type": "identity_or_priority_failure",
+      "reduces_to": null,
+      "refutation_note": "Holy and god-loved shown not to be the same via substitution contradiction. Whether this demonstrates explanatory priority (Aristotelian) or strict non-identity (Ebrey 2017) is contested. See D-12.1 annotation note."
     },
     "D4": {
       "text": "Piety is that part of justice which attends to the gods",
