@@ -86,7 +86,7 @@
       "stephanus": "9e-10a",
       "speaker": "Euthyphro",
       "speech_act": "propose",
-      "content": "Piety is what all the gods love. Impiety is what all the gods hate.",
+      "content": "Piety is what all the gods love. Impiety is what all the gods hate. (Socrates proposes the 'all gods' amendment to resolve the disagreement problem; Euthyphro adopts it.)",
       "commitment_delta": {
         "added": ["Piety = what ALL the gods love", "Impiety = what ALL the gods hate"],
         "removed": ["Piety = what is dear to the gods", "Impiety = what is hateful to the gods"]
