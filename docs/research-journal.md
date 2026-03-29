@@ -691,6 +691,59 @@ This is the direct path from the formal taxonomy back to the methodology: **the 
 
 ---
 
+## Entry 10: Prior Art — Fan/Toni (2016) and the Gap This Project Occupies
+
+**Date:** 2026-03-29
+
+### The closest prior work
+
+Fan & Toni, "On the Interplay between Games, Argumentation and Dialogues" (AAMAS 2016, pp. 260-268) establishes three formal results connecting game theory, argumentation, and dialogues:
+
+1. **Static equivalence (Theorem 3.1, 3.2):** By mapping a two-player normal-form game into an Assumption-Based Argumentation (ABA) framework, computing dominant solutions and Nash equilibria is provably equivalent to computing admissible sets of arguments. The payoff matrix becomes ABA rules; strategies become assumptions; preferences over outcomes become contraries.
+
+2. **Dynamic equivalence under incomplete information (Theorem 4.1):** When agents have private payoff functions and must exchange information to find Nash equilibria, constructing a successful ABA dialogue is equivalent to computing the equilibrium. A dialogue δ constructed with the thorough strategy is successful iff the claim pair is a dominant solution / Nash equilibrium.
+
+3. **Mechanism design on dialogues (Theorem 5.1, Corollary 6.1):** By treating the dialogue itself as a game and using reverse game theory, agents using specific utility definitions are incentivized to be truthful and disclose relevant information, guaranteeing convergence to Nash equilibria even when payoffs are private.
+
+### The precise distinction
+
+The distinction between Fan/Toni's result and ours can be stated exactly:
+
+- **Fan/Toni:** equilibrium ↔ admissible extension (output equivalence between solution concepts)
+- **This project:** `.feedback()` / `.loop()` / nested `.loop()` composition topology ↔ convergence dynamics ↔ failure modes (process topology equivalence)
+
+These are formally independent. Fan/Toni's result would be a *consequence* of ours if ours holds — if two systems share feedback topology, their fixed points should have equivalent structure — but their result does not imply ours. They prove the endpoints are equivalent; we claim the paths to those endpoints are the same shape.
+
+Fan/Toni's paper is exclusively about two-player normal-form games. It does not address feedback topology, repeated games, or iterative processes. The equivalence it establishes is between static objects (a solution concept and a set-theoretic property), not between dynamic processes. Theorem 4.1 does establish a dynamic result — dialogues converge to equilibria — but the dialogue is a specific ABA protocol, not an arbitrary feedback process. The result says "this specific protocol computes equilibria," not "any process with this topology converges."
+
+### The commitment-store asymmetry as a contribution not in Fan/Toni
+
+Fan/Toni model agents as symmetric with respect to dialogue history. Each agent has a private ABA framework, and the dialogue constructs a joint framework incrementally. There is no entity tracking the cumulative history of concessions in a way that is asymmetrically accessible.
+
+The Euthyphro annotation introduces exactly this: a three-entity model where the Dialogue entity owns the commitment store as world-state, Socrates has full trajectory access (via `Socrates View`), and Euthyphro only observes the current state (via `Euthyphro View`). This asymmetry is what makes aporia-as-cycle detectable — it requires comparing the current definition against a refutation history that one party has tracked and the other has not. Socrates can invoke D-12.1 at T225 because he performed the derivation and tracked it; Euthyphro needs to be reminded ("Have you forgotten?").
+
+This asymmetric world-state structure is absent from Fan/Toni, from the broader ABA dialogue literature, and from the existing argumentation-game equivalence results generally. It is a structural contribution of this project.
+
+### Position in the literature
+
+The existing literature establishes three pairwise bridges:
+
+| Bridge | Result | Level |
+|--------|--------|-------|
+| Game theory ↔ Argumentation | Fan/Toni 2016; Grossi 2013 | Solution concepts / proof procedures |
+| Game theory ↔ Biology | Evolutionary game theory (ESS, replicator equations) | Fitness dynamics |
+| Argumentation ↔ Biology | *None found* | — |
+
+What does not exist:
+- A unified taxonomy classifying game-theoretic, argumentation, and biological systems by *feedback topology*
+- Any cross-domain comparison that includes Socratic elenchus, GANs, and biological coevolution as instances of the same formal class
+- Any framework that predicts failure modes (mode collapse, sophistry, sycophantic consensus) as structurally equivalent across domains
+- Any connection between the argumentation-game equivalence and the Open Games / compositional game theory framework (GDS-Core)
+
+This project occupies the gap: a topology-level classification rather than a solution-concept-level equivalence, using compositional game theory (OGS/GDS) as the formal vocabulary rather than ABA or classical game theory.
+
+---
+
 ## Known Limitations of the Formalism
 
 ### Terminal conditions are strings, not computable predicates (F-006)
