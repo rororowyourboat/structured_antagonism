@@ -1,0 +1,22 @@
+%%{init:{"theme":"neutral"}}%%
+flowchart TD
+    classDef boundary fill:#93c5fd,stroke:#2563eb,stroke-width:2px,color:#1e3a5f
+    classDef policy fill:#fcd34d,stroke:#d97706,stroke-width:2px,color:#78350f
+    classDef mechanism fill:#86efac,stroke:#16a34a,stroke-width:2px,color:#14532d
+    classDef control fill:#d8b4fe,stroke:#9333ea,stroke-width:2px,color:#3b0764
+    classDef generic fill:#cbd5e1,stroke:#64748b,stroke-width:1px,color:#1e293b
+    Designer_View[Designer View]:::generic
+    Designer[Designer]:::generic
+    Auditor_View[Auditor View]:::generic
+    Auditor[Auditor]:::generic
+    Spec_Update[Spec Update]:::generic
+    Designer_View --Current Spec State--> Designer
+    Auditor_View --Spec History--> Auditor
+    Auditor_View --Current Spec State--> Auditor
+    Auditor_View --Prior Findings--> Auditor
+    Designer --Revised Spec--> Auditor
+    Designer --Revised Spec--> Spec_Update
+    Auditor --Audit Findings--> Spec_Update
+    Spec_Update -.Spec Store..-> Designer_View
+    Spec_Update -.Spec Store..-> Auditor_View
+    Initial_Requirements --Audit Findings--> Designer

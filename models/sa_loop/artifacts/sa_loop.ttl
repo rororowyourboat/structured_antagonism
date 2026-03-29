@@ -1,0 +1,182 @@
+@prefix gds-core: <https://gds.block.science/ontology/core/> .
+@prefix gds-ir: <https://gds.block.science/ontology/ir/> .
+@prefix inst: <https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+inst:system a gds-ir:SystemIR ;
+    gds-core:name "SA Design-Audit-Synthesize Loop" ;
+    gds-ir:compositionTypeSystem "temporal" ;
+    gds-ir:hasBlockIR <https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/block/Auditor>,
+        <https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/block/Auditor%20View>,
+        <https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/block/Designer>,
+        <https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/block/Designer%20View>,
+        <https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/block/Spec%20Update> ;
+    gds-ir:hasInputIR <https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/input/Initial%20Requirements> ;
+    gds-ir:hasWiringIR <https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/wiring/Auditor%20View-Auditor-1>,
+        <https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/wiring/Auditor%20View-Auditor-2>,
+        <https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/wiring/Auditor%20View-Auditor-3>,
+        <https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/wiring/Auditor-Spec%20Update-6>,
+        <https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/wiring/Designer%20View-Designer-0>,
+        <https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/wiring/Designer-Auditor-4>,
+        <https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/wiring/Designer-Spec%20Update-5>,
+        <https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/wiring/Initial%20Requirements-Designer-9>,
+        <https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/wiring/Spec%20Update-Auditor%20View-8>,
+        <https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/wiring/Spec%20Update-Designer%20View-7> ;
+    gds-ir:sourceLabel "dsl" .
+
+gds-core:name rdfs:label "name" .
+
+<https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/block/Auditor> a gds-ir:BlockIR ;
+    gds-core:name "Auditor" ;
+    gds-ir:blockType "decision" ;
+    gds-ir:colorCode 1 ;
+    gds-ir:logic "The auditor receives the full spec history, current state, prior findings, AND the latest revision. Produces structured findings: gaps, ambiguities, contradictions, unstated assumptions. Checks cross-layer compatibility. Does NOT prescribe solutions — only diagnoses. Audit before synthesis." ;
+    gds-ir:signatureBackwardIn "Design Quality Signal" ;
+    gds-ir:signatureBackwardOut "Audit Strategy Signal" ;
+    gds-ir:signatureForwardIn "Spec History + Current Spec State + Prior Findings + Revised Spec" ;
+    gds-ir:signatureForwardOut "Audit Findings" .
+
+<https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/block/Auditor%20View> a gds-ir:BlockIR ;
+    gds-core:name "Auditor View" ;
+    gds-ir:blockType "function_covariant" ;
+    gds-ir:colorCode 1 ;
+    gds-ir:logic "Projects the spec store into the auditor's view: the full history of spec revisions, the current state, AND all prior audit findings. This asymmetric access enables the auditor to detect cross-layer contradictions and track whether previously identified gaps have been addressed." ;
+    gds-ir:signatureBackwardIn "" ;
+    gds-ir:signatureBackwardOut "" ;
+    gds-ir:signatureForwardIn "Spec Store" ;
+    gds-ir:signatureForwardOut "Spec History + Current Spec State + Prior Findings" .
+
+<https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/block/Designer> a gds-ir:BlockIR ;
+    gds-core:name "Designer" ;
+    gds-ir:blockType "decision" ;
+    gds-ir:colorCode 1 ;
+    gds-ir:logic "The designer receives the current spec state and the latest audit findings. Produces a revised specification that addresses identified gaps, resolves ambiguities, and attempts to satisfy all halt gate conditions. Strategy: ontology first, then boundaries, then behaviors, then views — epistemic sequencing." ;
+    gds-ir:signatureBackwardIn "Audit Findings" ;
+    gds-ir:signatureBackwardOut "Design Quality Signal" ;
+    gds-ir:signatureForwardIn "Current Spec State + Audit Findings" ;
+    gds-ir:signatureForwardOut "Revised Spec" .
+
+<https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/block/Designer%20View> a gds-ir:BlockIR ;
+    gds-core:name "Designer View" ;
+    gds-ir:blockType "function_covariant" ;
+    gds-ir:colorCode 1 ;
+    gds-ir:logic "Projects the spec store into the designer's view: the current state of the specification without the full audit history. The designer sees what the spec contains but not the structural analysis of its gaps and contradictions." ;
+    gds-ir:signatureBackwardIn "" ;
+    gds-ir:signatureBackwardOut "" ;
+    gds-ir:signatureForwardIn "Spec Store" ;
+    gds-ir:signatureForwardOut "Current Spec State" .
+
+<https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/block/Spec%20Update> a gds-ir:BlockIR ;
+    gds-core:name "Spec Update" ;
+    gds-ir:blockType "function_covariant" ;
+    gds-ir:colorCode 1 ;
+    gds-ir:logic "Updates the spec store with the revised specification and audit findings. The store is append-only: new spec sections are added, findings accumulate, halt gate decisions are recorded. Addressed findings are marked resolved but not deleted. This monotonicity is the Halt on Uncertainty principle made structural — once a gap is surfaced, it cannot be papered over." ;
+    gds-ir:signatureBackwardIn "" ;
+    gds-ir:signatureBackwardOut "" ;
+    gds-ir:signatureForwardIn "Revised Spec + Audit Findings + Spec Store" ;
+    gds-ir:signatureForwardOut "Spec Store" .
+
+<https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/input/Initial%20Requirements> a gds-ir:InputIR ;
+    gds-core:name "Initial Requirements" .
+
+<https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/wiring/Auditor%20View-Auditor-1> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal false ;
+    gds-ir:label "Spec History" ;
+    gds-ir:source "Auditor View" ;
+    gds-ir:target "Auditor" ;
+    gds-ir:wiringType "observation" .
+
+<https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/wiring/Auditor%20View-Auditor-2> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal false ;
+    gds-ir:label "Current Spec State" ;
+    gds-ir:source "Auditor View" ;
+    gds-ir:target "Auditor" ;
+    gds-ir:wiringType "observation" .
+
+<https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/wiring/Auditor%20View-Auditor-3> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal false ;
+    gds-ir:label "Prior Findings" ;
+    gds-ir:source "Auditor View" ;
+    gds-ir:target "Auditor" ;
+    gds-ir:wiringType "observation" .
+
+<https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/wiring/Auditor-Spec%20Update-6> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal false ;
+    gds-ir:label "Audit Findings" ;
+    gds-ir:source "Auditor" ;
+    gds-ir:target "Spec Update" ;
+    gds-ir:wiringType "observation" .
+
+<https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/wiring/Designer%20View-Designer-0> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal false ;
+    gds-ir:label "Current Spec State" ;
+    gds-ir:source "Designer View" ;
+    gds-ir:target "Designer" ;
+    gds-ir:wiringType "observation" .
+
+<https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/wiring/Designer-Auditor-4> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal false ;
+    gds-ir:label "Revised Spec" ;
+    gds-ir:source "Designer" ;
+    gds-ir:target "Auditor" ;
+    gds-ir:wiringType "observation" .
+
+<https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/wiring/Designer-Spec%20Update-5> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal false ;
+    gds-ir:label "Revised Spec" ;
+    gds-ir:source "Designer" ;
+    gds-ir:target "Spec Update" ;
+    gds-ir:wiringType "observation" .
+
+<https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/wiring/Initial%20Requirements-Designer-9> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal false ;
+    gds-ir:label "Audit Findings" ;
+    gds-ir:source "Initial Requirements" ;
+    gds-ir:target "Designer" ;
+    gds-ir:wiringType "observation" .
+
+<https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/wiring/Spec%20Update-Auditor%20View-8> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal true ;
+    gds-ir:label "Spec Store" ;
+    gds-ir:source "Spec Update" ;
+    gds-ir:target "Auditor View" ;
+    gds-ir:wiringType "observation" .
+
+<https://gds.block.science/instance/SA%20Design-Audit-Synthesize%20Loop/wiring/Spec%20Update-Designer%20View-7> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal true ;
+    gds-ir:label "Spec Store" ;
+    gds-ir:source "Spec Update" ;
+    gds-ir:target "Designer View" ;
+    gds-ir:wiringType "observation" .
+

@@ -1,0 +1,88 @@
+System: SA Design-Audit-Synthesize Loop
+Verification run: full suite (OGS + GDS)
+
+OGS: 48/50 passed
+PASS T-003 (error): Covariant flow 'Current Spec State' (Designer View -> Designer) has type observation
+PASS T-003 (error): Covariant flow 'Spec History' (Auditor View -> Auditor) has type observation
+PASS T-003 (error): Covariant flow 'Current Spec State' (Auditor View -> Auditor) has type observation
+PASS T-003 (error): Covariant flow 'Prior Findings' (Auditor View -> Auditor) has type observation
+PASS T-003 (error): Covariant flow 'Revised Spec' (Designer -> Auditor) has type observation
+PASS T-003 (error): Covariant flow 'Revised Spec' (Designer -> Spec Update) has type observation
+PASS T-003 (error): Covariant flow 'Audit Findings' (Auditor -> Spec Update) has type observation
+PASS T-003 (error): Covariant flow 'Spec Store' (Spec Update -> Designer View) has type observation
+PASS T-003 (error): Covariant flow 'Spec Store' (Spec Update -> Auditor View) has type observation
+PASS T-003 (error): Covariant flow 'Audit Findings' (Initial Requirements -> Designer) has type observation
+PASS T-004 (warning): Input 'Initial Requirements': schema_hint='Domain description, stakeholder needs, constraints'
+PASS T-005 (info): Input 'Initial Requirements'
+PASS S-002 (warning): Pattern is not parallel composition — S-002 not applicable
+FAIL S-005 (warning): Decision game 'Designer': Y='Revised Spec' — no incoming contravariant flow (no utility feedback)
+FAIL S-005 (warning): Decision game 'Auditor': Y='Audit Findings' — no incoming contravariant flow (no utility feedback)
+PASS S-006 (error): Corecursive flow Spec Update → Designer View: Y='Spec Store', X='Spec Store', flow='Spec Store'
+PASS S-006 (error): Corecursive flow Spec Update → Auditor View: Y='Spec Store', X='Spec Store', flow='Spec Store'
+PASS S-007 (warning): No initialization inputs found
+PASS G-001 (error): Wiring 'Current Spec State': Designer View out='Current Spec State' -> Designer in='Current Spec State + Audit Findings'
+PASS G-001 (error): Wiring 'Spec History': Auditor View out='Spec History + Current Spec State + Prior Findings' -> Auditor in='Spec History + Current Spec State + Prior Findings + Revised Spec'
+PASS G-001 (error): Wiring 'Current Spec State': Auditor View out='Spec History + Current Spec State + Prior Findings' -> Auditor in='Spec History + Current Spec State + Prior Findings + Revised Spec'
+PASS G-001 (error): Wiring 'Prior Findings': Auditor View out='Spec History + Current Spec State + Prior Findings' -> Auditor in='Spec History + Current Spec State + Prior Findings + Revised Spec'
+PASS G-001 (error): Wiring 'Revised Spec': Designer out='Revised Spec' -> Auditor in='Spec History + Current Spec State + Prior Findings + Revised Spec'
+PASS G-001 (error): Wiring 'Revised Spec': Designer out='Revised Spec' -> Spec Update in='Revised Spec + Audit Findings + Spec Store'
+PASS G-001 (error): Wiring 'Audit Findings': Auditor out='Audit Findings' -> Spec Update in='Revised Spec + Audit Findings + Spec Store'
+PASS G-001 (error): Wiring 'Spec Store': Spec Update out='Spec Store' -> Designer View in='Spec Store'
+PASS G-001 (error): Wiring 'Spec Store': Spec Update out='Spec Store' -> Auditor View in='Spec Store'
+PASS G-002 (error): Designer View: signature ('Spec Store', 'Current Spec State', '', '')
+PASS G-002 (error): Designer: signature ('Current Spec State + Audit Findings', 'Revised Spec', 'Audit Findings', 'Design Quality Signal')
+PASS G-002 (error): Auditor View: signature ('Spec Store', 'Spec History + Current Spec State + Prior Findings', '', '')
+PASS G-002 (error): Auditor: signature ('Spec History + Current Spec State + Prior Findings + Revised Spec', 'Audit Findings', 'Design Quality Signal', 'Audit Strategy Signal')
+PASS G-002 (error): Spec Update: signature ('Revised Spec + Audit Findings + Spec Store', 'Spec Store', '', '')
+PASS G-004 (error): Wiring 'Current Spec State' (Designer View -> Designer)
+PASS G-004 (error): Wiring 'Spec History' (Auditor View -> Auditor)
+PASS G-004 (error): Wiring 'Current Spec State' (Auditor View -> Auditor)
+PASS G-004 (error): Wiring 'Prior Findings' (Auditor View -> Auditor)
+PASS G-004 (error): Wiring 'Revised Spec' (Designer -> Auditor)
+PASS G-004 (error): Wiring 'Revised Spec' (Designer -> Spec Update)
+PASS G-004 (error): Wiring 'Audit Findings' (Auditor -> Spec Update)
+PASS G-004 (error): Wiring 'Spec Store' (Spec Update -> Designer View)
+PASS G-004 (error): Wiring 'Spec Store' (Spec Update -> Auditor View)
+PASS G-004 (error): Wiring 'Audit Findings' (Initial Requirements -> Designer)
+PASS G-005 (error): Stack Designer View ; Designer: out='Current Spec State', in='Current Spec State + Audit Findings', wiring='Current Spec State'
+PASS G-005 (error): Stack Auditor View ; Auditor: out='Spec History + Current Spec State + Prior Findings', in='Spec History + Current Spec State + Prior Findings + Revised Spec', wiring='Spec History'
+PASS G-005 (error): Stack Auditor View ; Auditor: out='Spec History + Current Spec State + Prior Findings', in='Spec History + Current Spec State + Prior Findings + Revised Spec', wiring='Current Spec State'
+PASS G-005 (error): Stack Auditor View ; Auditor: out='Spec History + Current Spec State + Prior Findings', in='Spec History + Current Spec State + Prior Findings + Revised Spec', wiring='Prior Findings'
+PASS G-005 (error): Stack Designer ; Auditor: out='Revised Spec', in='Spec History + Current Spec State + Prior Findings + Revised Spec', wiring='Revised Spec'
+PASS G-005 (error): Stack Designer ; Spec Update: out='Revised Spec', in='Revised Spec + Audit Findings + Spec Store', wiring='Revised Spec'
+PASS G-005 (error): Stack Auditor ; Spec Update: out='Audit Findings', in='Revised Spec + Audit Findings + Spec Store', wiring='Audit Findings'
+PASS G-006 (error): Covariant flow graph is acyclic (DAG)
+
+GDS: 32/32 passed
+PASS G-001 (error): Wiring 'Current Spec State': Designer View out='Current Spec State' -> Designer in='Current Spec State + Audit Findings'
+PASS G-001 (error): Wiring 'Spec History': Auditor View out='Spec History + Current Spec State + Prior Findings' -> Auditor in='Spec History + Current Spec State + Prior Findings + Revised Spec'
+PASS G-001 (error): Wiring 'Current Spec State': Auditor View out='Spec History + Current Spec State + Prior Findings' -> Auditor in='Spec History + Current Spec State + Prior Findings + Revised Spec'
+PASS G-001 (error): Wiring 'Prior Findings': Auditor View out='Spec History + Current Spec State + Prior Findings' -> Auditor in='Spec History + Current Spec State + Prior Findings + Revised Spec'
+PASS G-001 (error): Wiring 'Revised Spec': Designer out='Revised Spec' -> Auditor in='Spec History + Current Spec State + Prior Findings + Revised Spec'
+PASS G-001 (error): Wiring 'Revised Spec': Designer out='Revised Spec' -> Spec Update in='Revised Spec + Audit Findings + Spec Store'
+PASS G-001 (error): Wiring 'Audit Findings': Auditor out='Audit Findings' -> Spec Update in='Revised Spec + Audit Findings + Spec Store'
+PASS G-001 (error): Wiring 'Spec Store': Spec Update out='Spec Store' -> Designer View in='Spec Store'
+PASS G-001 (error): Wiring 'Spec Store': Spec Update out='Spec Store' -> Auditor View in='Spec Store'
+PASS G-002 (error): Designer View: signature ('Spec Store', 'Current Spec State', '', '')
+PASS G-002 (error): Designer: signature ('Current Spec State + Audit Findings', 'Revised Spec', 'Audit Findings', 'Design Quality Signal')
+PASS G-002 (error): Auditor View: signature ('Spec Store', 'Spec History + Current Spec State + Prior Findings', '', '')
+PASS G-002 (error): Auditor: signature ('Spec History + Current Spec State + Prior Findings + Revised Spec', 'Audit Findings', 'Design Quality Signal', 'Audit Strategy Signal')
+PASS G-002 (error): Spec Update: signature ('Revised Spec + Audit Findings + Spec Store', 'Spec Store', '', '')
+PASS G-004 (error): Wiring 'Current Spec State' (Designer View -> Designer)
+PASS G-004 (error): Wiring 'Spec History' (Auditor View -> Auditor)
+PASS G-004 (error): Wiring 'Current Spec State' (Auditor View -> Auditor)
+PASS G-004 (error): Wiring 'Prior Findings' (Auditor View -> Auditor)
+PASS G-004 (error): Wiring 'Revised Spec' (Designer -> Auditor)
+PASS G-004 (error): Wiring 'Revised Spec' (Designer -> Spec Update)
+PASS G-004 (error): Wiring 'Audit Findings' (Auditor -> Spec Update)
+PASS G-004 (error): Wiring 'Spec Store' (Spec Update -> Designer View)
+PASS G-004 (error): Wiring 'Spec Store' (Spec Update -> Auditor View)
+PASS G-004 (error): Wiring 'Audit Findings' (Initial Requirements -> Designer)
+PASS G-005 (error): Stack Designer View ; Designer: out='Current Spec State', in='Current Spec State + Audit Findings', wiring='Current Spec State'
+PASS G-005 (error): Stack Auditor View ; Auditor: out='Spec History + Current Spec State + Prior Findings', in='Spec History + Current Spec State + Prior Findings + Revised Spec', wiring='Spec History'
+PASS G-005 (error): Stack Auditor View ; Auditor: out='Spec History + Current Spec State + Prior Findings', in='Spec History + Current Spec State + Prior Findings + Revised Spec', wiring='Current Spec State'
+PASS G-005 (error): Stack Auditor View ; Auditor: out='Spec History + Current Spec State + Prior Findings', in='Spec History + Current Spec State + Prior Findings + Revised Spec', wiring='Prior Findings'
+PASS G-005 (error): Stack Designer ; Auditor: out='Revised Spec', in='Spec History + Current Spec State + Prior Findings + Revised Spec', wiring='Revised Spec'
+PASS G-005 (error): Stack Designer ; Spec Update: out='Revised Spec', in='Revised Spec + Audit Findings + Spec Store', wiring='Revised Spec'
+PASS G-005 (error): Stack Auditor ; Spec Update: out='Audit Findings', in='Revised Spec + Audit Findings + Spec Store', wiring='Audit Findings'
+PASS G-006 (error): Covariant flow graph is acyclic (DAG)

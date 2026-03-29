@@ -1,0 +1,26 @@
+System: SA Design-Audit-Synthesize Loop
+Predicted class: pursuit_evasion
+Predicted failure: sophistry (if enforcement fails)
+Blocks: 5
+Wirings: 10
+Feedback wirings: 0
+Temporal wirings: 2
+
+Blocks:
+  Designer View (function_covariant)
+  Designer (decision)
+  Auditor View (function_covariant)
+  Auditor (decision)
+  Spec Update (function_covariant)
+
+Wirings:
+  Designer View -> Designer [Current Spec State] covariant
+  Auditor View -> Auditor [Spec History] covariant
+  Auditor View -> Auditor [Current Spec State] covariant
+  Auditor View -> Auditor [Prior Findings] covariant
+  Designer -> Auditor [Revised Spec] covariant
+  Designer -> Spec Update [Revised Spec] covariant
+  Auditor -> Spec Update [Audit Findings] covariant
+  Spec Update -> Designer View [Spec Store] covariant [TEMPORAL]
+  Spec Update -> Auditor View [Spec Store] covariant [TEMPORAL]
+  Initial Requirements -> Designer [Audit Findings] covariant
