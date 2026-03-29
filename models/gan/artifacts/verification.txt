@@ -1,0 +1,13 @@
+System: Generative Adversarial Network
+Checks: 10/10 passed
+
+PASS G-001 (error): Wiring 'Generated Sample': Generator out='Generated Sample' -> Discriminator in='Generated Sample + Real Sample'
+PASS G-002 (error): Generator: signature ('Noise Vector', 'Generated Sample', 'Discriminator Gradient', 'Generator Loss')
+PASS G-002 (error): Discriminator: signature ('Generated Sample + Real Sample', 'Classification', 'Ground Truth Label', 'Discriminator Gradient')
+PASS G-003 (error): Wiring 'Discriminator Gradient': Discriminator bwd_out='Discriminator Gradient' -> Generator bwd_in='Discriminator Gradient'
+PASS G-004 (error): Wiring 'Generated Sample' (Generator -> Discriminator)
+PASS G-004 (error): Wiring 'Discriminator Gradient' (Discriminator -> Generator)
+PASS G-004 (error): Wiring 'Noise Vector' (Noise Distribution -> Generator)
+PASS G-004 (error): Wiring 'Real Sample' (Training Data -> Discriminator)
+PASS G-005 (error): Stack Generator ; Discriminator: out='Generated Sample', in='Generated Sample + Real Sample', wiring='Generated Sample'
+PASS G-006 (error): Covariant flow graph is acyclic (DAG)

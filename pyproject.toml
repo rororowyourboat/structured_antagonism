@@ -1,0 +1,24 @@
+[project]
+name = "structured-antagonism"
+version = "0.1.0"
+description = "Structured antagonism as compositional game theory — formal taxonomy of adversarial feedback systems"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.12"
+
+dependencies = [
+    "gds-framework>=0.2.3",
+    "gds-games>=0.2.0",
+    "gds-viz>=0.1.2",
+    "gds-owl>=0.1.0",
+]
+
+[project.optional-dependencies]
+shacl = ["pyshacl>=0.27"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["models"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

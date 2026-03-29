@@ -1,0 +1,87 @@
+@prefix gds-core: <https://gds.block.science/ontology/core/> .
+@prefix gds-ir: <https://gds.block.science/ontology/ir/> .
+@prefix inst: <https://gds.block.science/instance/Generative%20Adversarial%20Network/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+inst:system a gds-ir:SystemIR ;
+    gds-core:name "Generative Adversarial Network" ;
+    gds-ir:compositionTypeSystem "feedback" ;
+    gds-ir:hasBlockIR <https://gds.block.science/instance/Generative%20Adversarial%20Network/block/Discriminator>,
+        <https://gds.block.science/instance/Generative%20Adversarial%20Network/block/Generator> ;
+    gds-ir:hasInputIR <https://gds.block.science/instance/Generative%20Adversarial%20Network/input/Noise%20Distribution>,
+        <https://gds.block.science/instance/Generative%20Adversarial%20Network/input/Training%20Data> ;
+    gds-ir:hasWiringIR <https://gds.block.science/instance/Generative%20Adversarial%20Network/wiring/Discriminator-Generator-1>,
+        <https://gds.block.science/instance/Generative%20Adversarial%20Network/wiring/Generator-Discriminator-0>,
+        <https://gds.block.science/instance/Generative%20Adversarial%20Network/wiring/Noise%20Distribution-Generator-2>,
+        <https://gds.block.science/instance/Generative%20Adversarial%20Network/wiring/Training%20Data-Discriminator-3> ;
+    gds-ir:sourceLabel "dsl" .
+
+gds-core:name rdfs:label "name" .
+
+<https://gds.block.science/instance/Generative%20Adversarial%20Network/block/Discriminator> a gds-ir:BlockIR ;
+    gds-core:name "Discriminator" ;
+    gds-ir:blockType "decision" ;
+    gds-ir:colorCode 1 ;
+    gds-ir:logic "Discriminator receives both a generated sample G(z) and a real sample x ~ p_data. It outputs a classification D(x) in [0, 1] estimating the probability that the input is real. The backward channel carries the ground truth label, and the coutility (Discriminator Gradient) feeds back to the Generator." ;
+    gds-ir:signatureBackwardIn "Ground Truth Label" ;
+    gds-ir:signatureBackwardOut "Discriminator Gradient" ;
+    gds-ir:signatureForwardIn "Generated Sample + Real Sample" ;
+    gds-ir:signatureForwardOut "Classification" .
+
+<https://gds.block.science/instance/Generative%20Adversarial%20Network/block/Generator> a gds-ir:BlockIR ;
+    gds-core:name "Generator" ;
+    gds-ir:blockType "decision" ;
+    gds-ir:colorCode 1 ;
+    gds-ir:logic "Generator receives a noise vector z ~ p_z and produces a sample G(z). The backward channel carries the discriminator's gradient signal, which the generator uses to update its parameters toward producing samples that fool the discriminator." ;
+    gds-ir:signatureBackwardIn "Discriminator Gradient" ;
+    gds-ir:signatureBackwardOut "Generator Loss" ;
+    gds-ir:signatureForwardIn "Noise Vector" ;
+    gds-ir:signatureForwardOut "Generated Sample" .
+
+<https://gds.block.science/instance/Generative%20Adversarial%20Network/input/Noise%20Distribution> a gds-ir:InputIR ;
+    gds-core:name "Noise Distribution" .
+
+<https://gds.block.science/instance/Generative%20Adversarial%20Network/input/Training%20Data> a gds-ir:InputIR ;
+    gds-core:name "Training Data" .
+
+<https://gds.block.science/instance/Generative%20Adversarial%20Network/wiring/Discriminator-Generator-1> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "contravariant" ;
+    gds-ir:isFeedback true ;
+    gds-ir:isTemporal false ;
+    gds-ir:label "Discriminator Gradient" ;
+    gds-ir:source "Discriminator" ;
+    gds-ir:target "Generator" ;
+    gds-ir:wiringType "utility_coutility" .
+
+<https://gds.block.science/instance/Generative%20Adversarial%20Network/wiring/Generator-Discriminator-0> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal false ;
+    gds-ir:label "Generated Sample" ;
+    gds-ir:source "Generator" ;
+    gds-ir:target "Discriminator" ;
+    gds-ir:wiringType "observation" .
+
+<https://gds.block.science/instance/Generative%20Adversarial%20Network/wiring/Noise%20Distribution-Generator-2> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal false ;
+    gds-ir:label "Noise Vector" ;
+    gds-ir:source "Noise Distribution" ;
+    gds-ir:target "Generator" ;
+    gds-ir:wiringType "observation" .
+
+<https://gds.block.science/instance/Generative%20Adversarial%20Network/wiring/Training%20Data-Discriminator-3> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal false ;
+    gds-ir:label "Real Sample" ;
+    gds-ir:source "Training Data" ;
+    gds-ir:target "Discriminator" ;
+    gds-ir:wiringType "observation" .
+

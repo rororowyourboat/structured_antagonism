@@ -1,0 +1,16 @@
+System: Generative Adversarial Network
+Operator class: .feedback() (symmetric antagonism)
+Blocks: 2
+Wirings: 4
+Feedback wirings: 1
+Temporal wirings: 0
+
+Blocks:
+  Generator (decision)
+  Discriminator (decision)
+
+Wirings:
+  Generator -> Discriminator [Generated Sample] dir=covariant feedback=False
+  Discriminator -> Generator [Discriminator Gradient] dir=contravariant feedback=True
+  Noise Distribution -> Generator [Noise Vector] dir=covariant feedback=False
+  Training Data -> Discriminator [Real Sample] dir=covariant feedback=False
