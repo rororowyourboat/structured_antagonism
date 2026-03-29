@@ -1,0 +1,16 @@
+System: Orthogonal Evaluator Model
+Blocks: 5
+Wirings: 8
+Feedback: 0
+Temporal: 3
+
+Canonical form: h = f ∘ g with θ ∈ Θ
+Parameters: ρ(E,T), ρ(G,T), |I|, threshold
+
+Key structural property: evaluator observes strict superset of generator
+  Generator:  Store State + Random Seed (2 channels)
+  Evaluator:  Hypothesis + Store State + Store History + Ground Truth (4 channels)
+  Evaluator-only: Hypothesis, Store History, Ground Truth
+
+Classification: hierarchical_antagonism
+Predicted failure: sycophantic_consensus

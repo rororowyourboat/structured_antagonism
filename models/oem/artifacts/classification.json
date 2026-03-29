@@ -1,0 +1,16 @@
+[
+  {
+    "system": "Orthogonal Evaluator Model",
+    "blocks": 5,
+    "feedback_wirings": 0,
+    "temporal_wirings": 3,
+    "operator_class": "temporal (CorecursiveLoop)",
+    "observation": "single_player",
+    "observation_detail": [],
+    "state_update_blocks": [],
+    "has_state_update": false,
+    "has_nested_loops": true,
+    "predicted_failure": "sycophantic_consensus",
+    "predicted_class": "hierarchical_antagonism"
+  }
+]

@@ -1,0 +1,196 @@
+@prefix gds-core: <https://gds.block.science/ontology/core/> .
+@prefix gds-ir: <https://gds.block.science/ontology/ir/> .
+@prefix inst: <https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+inst:system a gds-ir:SystemIR ;
+    gds-core:name "Orthogonal Evaluator Model" ;
+    gds-ir:compositionTypeSystem "sequential" ;
+    gds-ir:hasBlockIR <https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/block/Evaluator%20Policy>,
+        <https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/block/Generator%20Policy>,
+        <https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/block/Noise>,
+        <https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/block/Store%20Update>,
+        <https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/block/Truth%20Signal> ;
+    gds-ir:hasHierarchy <https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/hierarchy/group_1> ;
+    gds-ir:hasWiringIR <https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/wiring/Evaluator%20Policy-Store%20Update-4>,
+        <https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/wiring/Generator%20Policy-Evaluator%20Policy-1>,
+        <https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/wiring/Generator%20Policy-Store%20Update-3>,
+        <https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/wiring/Noise-Generator%20Policy-0>,
+        <https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/wiring/Store%20Update-Evaluator%20Policy-6>,
+        <https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/wiring/Store%20Update-Evaluator%20Policy-7>,
+        <https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/wiring/Store%20Update-Generator%20Policy-5>,
+        <https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/wiring/Truth%20Signal-Evaluator%20Policy-2> .
+
+gds-core:name rdfs:label "name" .
+
+<https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/block/Evaluator%20Policy> a gds-ir:BlockIR ;
+    gds-core:name "Evaluator Policy" ;
+    gds-ir:blockType "" ;
+    gds-ir:colorCode 1 ;
+    gds-ir:logic "" ;
+    gds-ir:signatureBackwardIn "" ;
+    gds-ir:signatureBackwardOut "" ;
+    gds-ir:signatureForwardIn "Hypothesis + Store State + Store History + Ground Truth" ;
+    gds-ir:signatureForwardOut "Evaluation Signal" .
+
+<https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/block/Generator%20Policy> a gds-ir:BlockIR ;
+    gds-core:name "Generator Policy" ;
+    gds-ir:blockType "" ;
+    gds-ir:colorCode 1 ;
+    gds-ir:logic "" ;
+    gds-ir:signatureBackwardIn "" ;
+    gds-ir:signatureBackwardOut "" ;
+    gds-ir:signatureForwardIn "Store State + Random Seed" ;
+    gds-ir:signatureForwardOut "Hypothesis" .
+
+<https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/block/Noise> a gds-ir:BlockIR ;
+    gds-core:name "Noise" ;
+    gds-ir:blockType "" ;
+    gds-ir:colorCode 1 ;
+    gds-ir:logic "" ;
+    gds-ir:signatureBackwardIn "" ;
+    gds-ir:signatureBackwardOut "" ;
+    gds-ir:signatureForwardIn "" ;
+    gds-ir:signatureForwardOut "Random Seed" .
+
+<https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/block/Store%20Update> a gds-ir:BlockIR ;
+    gds-core:name "Store Update" ;
+    gds-ir:blockType "" ;
+    gds-ir:colorCode 1 ;
+    gds-ir:logic "" ;
+    gds-ir:signatureBackwardIn "" ;
+    gds-ir:signatureBackwardOut "" ;
+    gds-ir:signatureForwardIn "Hypothesis + Evaluation Signal" ;
+    gds-ir:signatureForwardOut "Store State + Store History" .
+
+<https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/block/Truth%20Signal> a gds-ir:BlockIR ;
+    gds-core:name "Truth Signal" ;
+    gds-ir:blockType "" ;
+    gds-ir:colorCode 1 ;
+    gds-ir:logic "" ;
+    gds-ir:signatureBackwardIn "" ;
+    gds-ir:signatureBackwardOut "" ;
+    gds-ir:signatureForwardIn "" ;
+    gds-ir:signatureForwardOut "Ground Truth" .
+
+<https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/hierarchy/group_1> a gds-ir:HierarchyNodeIR ;
+    gds-core:name "OEM Loop" ;
+    gds-ir:compositionType "temporal" ;
+    gds-ir:exitCondition "Store inconsistency reaches zero (convergence) or store size exceeds bound without convergence (sophistry)" ;
+    gds-ir:hasChild <https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/hierarchy/group_2> .
+
+<https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/hierarchy/group_2> a gds-ir:HierarchyNodeIR ;
+    gds-core:name "OEM Pipeline" ;
+    gds-ir:compositionType "sequential" ;
+    gds-ir:hasChild <https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/hierarchy/group_5>,
+        <https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/hierarchy/leaf_Evaluator_Policy>,
+        <https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/hierarchy/leaf_Generator_Policy>,
+        <https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/hierarchy/leaf_Store_Update> .
+
+<https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/hierarchy/group_5> a gds-ir:HierarchyNodeIR ;
+    gds-core:name "Inputs" ;
+    gds-ir:compositionType "parallel" ;
+    gds-ir:hasChild <https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/hierarchy/leaf_Noise>,
+        <https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/hierarchy/leaf_Truth_Signal> .
+
+<https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/hierarchy/leaf_Evaluator_Policy> a gds-ir:HierarchyNodeIR ;
+    gds-core:name "Evaluator Policy" ;
+    gds-ir:blockName "Evaluator Policy" .
+
+<https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/hierarchy/leaf_Generator_Policy> a gds-ir:HierarchyNodeIR ;
+    gds-core:name "Generator Policy" ;
+    gds-ir:blockName "Generator Policy" .
+
+<https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/hierarchy/leaf_Noise> a gds-ir:HierarchyNodeIR ;
+    gds-core:name "Noise" ;
+    gds-ir:blockName "Noise" .
+
+<https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/hierarchy/leaf_Store_Update> a gds-ir:HierarchyNodeIR ;
+    gds-core:name "Store Update" ;
+    gds-ir:blockName "Store Update" .
+
+<https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/hierarchy/leaf_Truth_Signal> a gds-ir:HierarchyNodeIR ;
+    gds-core:name "Truth Signal" ;
+    gds-ir:blockName "Truth Signal" .
+
+<https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/wiring/Evaluator%20Policy-Store%20Update-4> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal false ;
+    gds-ir:label "Evaluation Signal" ;
+    gds-ir:source "Evaluator Policy" ;
+    gds-ir:target "Store Update" ;
+    gds-ir:wiringType "" .
+
+<https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/wiring/Generator%20Policy-Evaluator%20Policy-1> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal false ;
+    gds-ir:label "Hypothesis" ;
+    gds-ir:source "Generator Policy" ;
+    gds-ir:target "Evaluator Policy" ;
+    gds-ir:wiringType "" .
+
+<https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/wiring/Generator%20Policy-Store%20Update-3> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal false ;
+    gds-ir:label "Hypothesis" ;
+    gds-ir:source "Generator Policy" ;
+    gds-ir:target "Store Update" ;
+    gds-ir:wiringType "" .
+
+<https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/wiring/Noise-Generator%20Policy-0> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal false ;
+    gds-ir:label "Random Seed" ;
+    gds-ir:source "Noise" ;
+    gds-ir:target "Generator Policy" ;
+    gds-ir:wiringType "" .
+
+<https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/wiring/Store%20Update-Evaluator%20Policy-6> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal true ;
+    gds-ir:label "Store State" ;
+    gds-ir:source "Store Update" ;
+    gds-ir:target "Evaluator Policy" ;
+    gds-ir:wiringType "" .
+
+<https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/wiring/Store%20Update-Evaluator%20Policy-7> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal true ;
+    gds-ir:label "Store History" ;
+    gds-ir:source "Store Update" ;
+    gds-ir:target "Evaluator Policy" ;
+    gds-ir:wiringType "" .
+
+<https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/wiring/Store%20Update-Generator%20Policy-5> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal true ;
+    gds-ir:label "Store State" ;
+    gds-ir:source "Store Update" ;
+    gds-ir:target "Generator Policy" ;
+    gds-ir:wiringType "" .
+
+<https://gds.block.science/instance/Orthogonal%20Evaluator%20Model/wiring/Truth%20Signal-Evaluator%20Policy-2> a gds-ir:WiringIR ;
+    gds-ir:category "dataflow" ;
+    gds-ir:direction "covariant" ;
+    gds-ir:isFeedback false ;
+    gds-ir:isTemporal false ;
+    gds-ir:label "Ground Truth" ;
+    gds-ir:source "Truth Signal" ;
+    gds-ir:target "Evaluator Policy" ;
+    gds-ir:wiringType "" .
+

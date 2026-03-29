@@ -1,0 +1,34 @@
+System: Orthogonal Evaluator Model
+GDS: 25/27 passed
+G-002 failures are expected: BoundaryActions have no inputs by design.
+
+PASS G-001 (error): Wiring 'Random Seed': Noise out='Random Seed' -> Generator Policy in='Store State + Random Seed'
+PASS G-001 (error): Wiring 'Hypothesis': Generator Policy out='Hypothesis' -> Evaluator Policy in='Hypothesis + Store State + Store History + Ground Truth'
+PASS G-001 (error): Wiring 'Ground Truth': Truth Signal out='Ground Truth' -> Evaluator Policy in='Hypothesis + Store State + Store History + Ground Truth'
+PASS G-001 (error): Wiring 'Hypothesis': Generator Policy out='Hypothesis' -> Store Update in='Hypothesis + Evaluation Signal'
+PASS G-001 (error): Wiring 'Evaluation Signal': Evaluator Policy out='Evaluation Signal' -> Store Update in='Hypothesis + Evaluation Signal'
+PASS G-001 (error): Wiring 'Store State': Store Update out='Store State + Store History' -> Generator Policy in='Store State + Random Seed'
+PASS G-001 (error): Wiring 'Store State': Store Update out='Store State + Store History' -> Evaluator Policy in='Hypothesis + Store State + Store History + Ground Truth'
+PASS G-001 (error): Wiring 'Store History': Store Update out='Store State + Store History' -> Evaluator Policy in='Hypothesis + Store State + Store History + Ground Truth'
+FAIL G-002 (error): Truth Signal: signature ('', 'Ground Truth', '', '') — no inputs
+FAIL G-002 (error): Noise: signature ('', 'Random Seed', '', '') — no inputs
+PASS G-002 (error): Generator Policy: signature ('Store State + Random Seed', 'Hypothesis', '', '')
+PASS G-002 (error): Evaluator Policy: signature ('Hypothesis + Store State + Store History + Ground Truth', 'Evaluation Signal', '', '')
+PASS G-002 (error): Store Update: signature ('Hypothesis + Evaluation Signal', 'Store State + Store History', '', '')
+PASS G-004 (error): Wiring 'Random Seed' (Noise -> Generator Policy)
+PASS G-004 (error): Wiring 'Hypothesis' (Generator Policy -> Evaluator Policy)
+PASS G-004 (error): Wiring 'Ground Truth' (Truth Signal -> Evaluator Policy)
+PASS G-004 (error): Wiring 'Hypothesis' (Generator Policy -> Store Update)
+PASS G-004 (error): Wiring 'Evaluation Signal' (Evaluator Policy -> Store Update)
+PASS G-004 (error): Wiring 'Store State' (Store Update -> Generator Policy)
+PASS G-004 (error): Wiring 'Store State' (Store Update -> Evaluator Policy)
+PASS G-004 (error): Wiring 'Store History' (Store Update -> Evaluator Policy)
+PASS G-005 (error): Stack Noise ; Generator Policy: out='Random Seed', in='Store State + Random Seed', wiring='Random Seed'
+PASS G-005 (error): Stack Generator Policy ; Evaluator Policy: out='Hypothesis', in='Hypothesis + Store State + Store History + Ground Truth', wiring='Hypothesis'
+PASS G-005 (error): Stack Truth Signal ; Evaluator Policy: out='Ground Truth', in='Hypothesis + Store State + Store History + Ground Truth', wiring='Ground Truth'
+PASS G-005 (error): Stack Generator Policy ; Store Update: out='Hypothesis', in='Hypothesis + Evaluation Signal', wiring='Hypothesis'
+PASS G-005 (error): Stack Evaluator Policy ; Store Update: out='Evaluation Signal', in='Hypothesis + Evaluation Signal', wiring='Evaluation Signal'
+PASS G-006 (error): Covariant flow graph is acyclic (DAG)
+
+Custom checks:
+PASS SA-OEM-001 (info): Evaluator observes 3 additional channel(s) not visible to generator: {'Hypothesis', 'Ground Truth', 'Store History'}. Small |I| — productive antagonism precondition met.
