@@ -1,0 +1,710 @@
+{
+  "_meta": "Phase C draft — human commitment judgments. Covers Sections 6-18 (D1 through aporia). Preamble sections (1-5) contain no definitional commitments. Schema v3.0, five-type taxonomy.",
+  "_finding": "conditional_commitment has zero instances in the Euthyphro. Every apparent conditional is actually a derivation from independently conceded premises. Type retained in schema for other dialogues.",
+
+  "sections": [
+    {
+      "section": 6,
+      "title": "Definition 1: piety as example",
+      "stephanus": "5d-6a",
+      "turn_range": "T41-T45",
+      "entries": [
+        {
+          "id": "C-6.1",
+          "turn": "T41",
+          "holder": "Euthyphro",
+          "proposition": "Piety is prosecuting anyone guilty of murder, sacrilege, or similar crimes, regardless of relation",
+          "type": "assertion",
+          "source": "explicit",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "Euthyphro volunteers this as D1. It is an assertion, not a commitment, because Socrates has not yet bound him to it under questioning — he offered it freely."
+        },
+        {
+          "id": "C-6.2",
+          "turn": "T41",
+          "holder": "Euthyphro",
+          "proposition": "Not prosecuting the guilty is impiety",
+          "type": "assertion",
+          "source": "explicit",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "Contrapositive of C-6.1, volunteered in the same speech."
+        },
+        {
+          "id": "P-6.1",
+          "turn": "T41",
+          "holder": "Euthyphro",
+          "proposition": "The actions of the gods (Zeus punishing Kronos) provide moral precedent for human conduct",
+          "type": "presupposition",
+          "source": "implicit",
+          "available_to": "socrates_only",
+          "confidence": "medium",
+          "note": "Euthyphro appeals to Zeus/Kronos as justification. The presupposition that divine action is paradigmatic is not challenged here but is available for exploitation. Socrates declines to challenge it (T42-T44), saving it."
+        }
+      ],
+      "store_after": {
+        "euthyphro": ["C-6.1", "C-6.2"],
+        "socrates": [],
+        "dialogue": ["P-6.1"]
+      }
+    },
+
+    {
+      "section": 7,
+      "title": "Refutation of D1: example is not definition",
+      "stephanus": "6a-6e",
+      "turn_range": "T46-T54",
+      "entries": [
+        {
+          "id": "C-7.1",
+          "turn": "T49",
+          "holder": "Euthyphro",
+          "proposition": "There are many pious acts besides prosecuting one's father",
+          "type": "commitment",
+          "source": "extracted",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "Socrates asks 'you would admit that there are many other pious acts?' Euthyphro: 'There are.' Extracted under questioning."
+        },
+        {
+          "id": "C-7.2",
+          "turn": "T51",
+          "holder": "Euthyphro",
+          "proposition": "There is one idea (eidos) that makes all pious things pious",
+          "type": "commitment",
+          "source": "extracted",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "Socrates: 'Do you not recollect that there was one idea which made the impious impious, and the pious pious?' Euthyphro: 'I remember.' Ratified under questioning."
+        },
+        {
+          "id": "D-7.1",
+          "turn": "T46-T52",
+          "holder": "Dialogue",
+          "proposition": "D1 fails: an example of a pious act is not the general idea (eidos) of piety",
+          "type": "derivation",
+          "_if_derivation": {
+            "premises": ["C-7.1", "C-7.2"],
+            "conclusion": "D1 (piety = prosecuting wrongdoers) gives an example, not a definition. The eidos requirement is unmet.",
+            "derived_by": "Socrates",
+            "presented_at": "6d-6e",
+            "objected_to": false,
+            "ratified_by": null,
+            "invocable_at": []
+          },
+          "source": "derived",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "Euthyphro does not object. He proceeds to offer D2, implicitly accepting that D1 was inadequate."
+        }
+      ],
+      "removed": [
+        {
+          "id": "C-6.1",
+          "removal_type": "superseded",
+          "note": "D1 is superseded by D2, not formally retracted. Euthyphro never says 'I was wrong about D1.'"
+        },
+        {
+          "id": "C-6.2",
+          "removal_type": "superseded",
+          "note": "Follows C-6.1."
+        }
+      ],
+      "store_after": {
+        "euthyphro": ["C-7.1", "C-7.2"],
+        "socrates": [],
+        "dialogue": ["P-6.1", "D-7.1"]
+      }
+    },
+
+    {
+      "section": 8,
+      "title": "Definition 2: what is dear to the gods",
+      "stephanus": "6e",
+      "turn_range": "T55",
+      "entries": [
+        {
+          "id": "C-8.1",
+          "turn": "T55",
+          "holder": "Euthyphro",
+          "proposition": "Piety is what is dear to the gods",
+          "type": "commitment",
+          "source": "explicit",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "Euthyphro: 'Piety, then, is that which is dear to the gods.' This is D2. Volunteered but in response to Socratic demand for a definition, so it functions as a commitment — Socrates treats it as binding."
+        },
+        {
+          "id": "C-8.2",
+          "turn": "T55",
+          "holder": "Euthyphro",
+          "proposition": "Impiety is what is not dear to the gods",
+          "type": "commitment",
+          "source": "explicit",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "Contrapositive of C-8.1, stated in the same turn."
+        }
+      ],
+      "store_after": {
+        "euthyphro": ["C-7.1", "C-7.2", "C-8.1", "C-8.2"],
+        "socrates": [],
+        "dialogue": ["P-6.1", "D-7.1"]
+      }
+    },
+
+    {
+      "section": 9,
+      "title": "Refutation of D2: gods disagree",
+      "stephanus": "7a-8a",
+      "turn_range": "T58-T84",
+      "entries": [
+        {
+          "id": "C-9.1",
+          "turn": "T63",
+          "holder": "Euthyphro",
+          "proposition": "The gods have enmities, hatreds, and differences",
+          "type": "commitment",
+          "source": "extracted",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "Socrates: 'the gods were admitted to have enmities and hatreds and differences?' Euthyphro: 'Yes, that was also said.' Re-affirming a prior concession."
+        },
+        {
+          "id": "C-9.2",
+          "turn": "T71",
+          "holder": "Euthyphro",
+          "proposition": "Disputes about the just, the good, and the honorable cannot be resolved by measurement",
+          "type": "commitment",
+          "source": "extracted",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "Socrates proposes this; Euthyphro: 'Yes, Socrates, the nature of the differences about which we quarrel is such as you describe.'"
+        },
+        {
+          "id": "C-9.3",
+          "turn": "T73",
+          "holder": "Euthyphro",
+          "proposition": "The gods quarrel about the just, the good, and the honorable",
+          "type": "commitment",
+          "source": "extracted",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "Socrates: 'And the quarrels of the gods, noble Euthyphro, when they occur, are of a like nature?' Euthyphro: 'Certainly they are.' Application of C-9.2 to the divine case."
+        },
+        {
+          "id": "C-9.4",
+          "turn": "T77",
+          "holder": "Euthyphro",
+          "proposition": "Every agent loves what it deems noble and just, and hates the opposite",
+          "type": "commitment",
+          "source": "extracted",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "General principle. Socrates: 'Does not every man love that which he deems noble and just and good, and hate the opposite of them?' Euthyphro: 'Very true.'"
+        },
+        {
+          "id": "C-9.5",
+          "turn": "T79",
+          "holder": "Euthyphro",
+          "proposition": "The same things are regarded as just by some and unjust by others",
+          "type": "commitment",
+          "source": "extracted",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "Euthyphro: 'Very true.' Conceding that value judgments diverge."
+        },
+        {
+          "id": "D-9.1",
+          "turn": "T80-T81",
+          "holder": "Dialogue",
+          "proposition": "The same things are both hated and loved by the gods",
+          "type": "derivation",
+          "_if_derivation": {
+            "premises": ["C-9.1", "C-9.3", "C-9.4", "C-9.5"],
+            "conclusion": "The same things are hated by the gods and loved by the gods, and are both hateful and dear to them.",
+            "derived_by": "Socrates",
+            "presented_at": "7e-8a",
+            "objected_to": false,
+            "ratified_by": "Euthyphro",
+            "invocable_at": ["8a"]
+          },
+          "source": "derived",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "Socrates: 'Then the same things are hated by the gods and loved by the gods?' Euthyphro: 'True.' Derivation ratified — available to both."
+        },
+        {
+          "id": "D-9.2",
+          "turn": "T82-T83",
+          "holder": "Dialogue",
+          "proposition": "Under D2, the same things are both pious and impious",
+          "type": "derivation",
+          "_if_derivation": {
+            "premises": ["C-8.1", "C-8.2", "D-9.1"],
+            "conclusion": "Under D2 (piety = dear to gods, impiety = not dear to gods), the same things will be both pious and impious.",
+            "derived_by": "Socrates",
+            "presented_at": "8a",
+            "objected_to": false,
+            "ratified_by": "Euthyphro",
+            "invocable_at": ["8a"]
+          },
+          "source": "derived",
+          "available_to": "both",
+          "confidence": "medium",
+          "note": "Euthyphro: 'So I should suppose.' The hedge ('I should suppose') is weaker than his usual 'True' or 'Certainly' — he is beginning to see the problem but has not fully conceded. Marked medium confidence."
+        }
+      ],
+      "removed": [
+        {
+          "id": "C-8.1",
+          "removal_type": "refuted",
+          "note": "D2 produces contradiction via D-9.2. Not formally retracted by Euthyphro — he moves to D3 (the 'all gods' amendment)."
+        },
+        {
+          "id": "C-8.2",
+          "removal_type": "refuted",
+          "note": "Follows C-8.1."
+        }
+      ],
+      "store_after": {
+        "euthyphro": ["C-7.1", "C-7.2", "C-9.1", "C-9.2", "C-9.3", "C-9.4", "C-9.5"],
+        "socrates": [],
+        "dialogue": ["P-6.1", "D-7.1", "D-9.1", "D-9.2"]
+      }
+    },
+
+    {
+      "section": 10,
+      "title": "Amendment: what ALL the gods love",
+      "stephanus": "8a-9d",
+      "turn_range": "T85-T104",
+      "entries": [
+        {
+          "id": "C-10.1",
+          "turn": "T85",
+          "holder": "Euthyphro",
+          "proposition": "All the gods agree that a murderer should be punished",
+          "type": "assertion",
+          "source": "explicit",
+          "available_to": "both",
+          "confidence": "medium",
+          "note": "Euthyphro objects to D2's refutation by asserting divine unanimity on murder. This is an assertion (volunteered as a defense), not a commitment (not extracted). Socrates does not accept it — he presses on the particular case. Confidence medium because the assertion is strategic, not philosophical."
+        },
+        {
+          "id": "C-10.2",
+          "turn": "T95",
+          "holder": "Euthyphro",
+          "proposition": "Gods and men disagree about who the wrongdoer is in specific cases, not about whether wrongdoers should be punished",
+          "type": "commitment",
+          "source": "extracted",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "Socrates draws this out through T86-T94. Euthyphro: 'That is true, Socrates, in the main.' The distinction between general principle and particular application."
+        }
+      ],
+      "store_after": {
+        "euthyphro": ["C-7.1", "C-7.2", "C-9.1", "C-9.2", "C-9.3", "C-9.4", "C-9.5", "C-10.1", "C-10.2"],
+        "socrates": [],
+        "dialogue": ["P-6.1", "D-7.1", "D-9.1", "D-9.2"]
+      }
+    },
+
+    {
+      "section": 11,
+      "title": "Definition 3: what all the gods love",
+      "stephanus": "9e",
+      "turn_range": "T105-T107",
+      "entries": [
+        {
+          "id": "C-11.1",
+          "turn": "T105",
+          "holder": "Euthyphro",
+          "proposition": "Piety is what all the gods love",
+          "type": "commitment",
+          "source": "explicit",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "D3. Euthyphro: 'Yes, I should say that what all the gods love is pious and holy.' Adopts Socrates' amendment (T102). Note: this is DIFFERENT from C-8.1 ('dear to the gods' vs 'all the gods love') — semantic distinction preserved per normalization rule 4."
+        },
+        {
+          "id": "C-11.2",
+          "turn": "T105",
+          "holder": "Euthyphro",
+          "proposition": "Impiety is what all the gods hate",
+          "type": "commitment",
+          "source": "explicit",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "Contrapositive of C-11.1."
+        },
+        {
+          "id": "C-11.3",
+          "turn": "T107",
+          "holder": "Euthyphro",
+          "proposition": "The definition 'piety is what all the gods love' will stand the test of enquiry",
+          "type": "commitment",
+          "source": "extracted",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "Socrates: 'Ought we to enquire into the truth of this?' Euthyphro: 'We should enquire; and I believe that the statement will stand the test.' Commits to the definition being defensible."
+        }
+      ],
+      "store_after": {
+        "euthyphro": ["C-7.1", "C-7.2", "C-9.1", "C-9.2", "C-9.3", "C-9.4", "C-9.5", "C-10.1", "C-10.2", "C-11.1", "C-11.2", "C-11.3"],
+        "socrates": [],
+        "dialogue": ["P-6.1", "D-7.1", "D-9.1", "D-9.2"]
+      }
+    },
+
+    {
+      "section": 12,
+      "title": "Refutation of D3: the Euthyphro dilemma",
+      "stephanus": "10a-11b",
+      "turn_range": "T108-T138",
+      "entries": [
+        {
+          "id": "C-12.1",
+          "turn": "T118-T119",
+          "holder": "Euthyphro",
+          "proposition": "Any state of action or passion implies previous action or passion (the state follows the act, not the reverse)",
+          "type": "commitment",
+          "source": "extracted",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "General principle established through carrying/being-carried, seeing/being-seen analogies. Euthyphro: 'Yes' (T119). This is the modus ponens machinery."
+        },
+        {
+          "id": "C-12.2",
+          "turn": "T128-T129",
+          "holder": "Euthyphro",
+          "proposition": "Piety is loved by the gods because it is pious (not pious because it is loved)",
+          "type": "commitment",
+          "source": "extracted",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "The critical fork. Socrates: 'It is loved because it is holy, not holy because it is loved?' Euthyphro: 'Yes.' Euthyphro has picked a horn: the causal direction runs from piety's nature to the gods' love."
+        },
+        {
+          "id": "C-12.3",
+          "turn": "T130-T131",
+          "holder": "Euthyphro",
+          "proposition": "What is dear to the gods is dear because it is loved by them (not loved because it is dear)",
+          "type": "commitment",
+          "source": "extracted",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "The other direction. 'Dear to the gods' is a state that follows from the act of being loved. Euthyphro: 'Certainly.'"
+        },
+        {
+          "id": "D-12.1",
+          "turn": "T132-T138",
+          "holder": "Dialogue",
+          "proposition": "Piety and god-lovedness have different causal structures; D3 gives an attribute (being loved), not the essence of piety",
+          "type": "derivation",
+          "_if_derivation": {
+            "premises": ["C-12.1", "C-12.2", "C-12.3", "C-11.1"],
+            "conclusion": "Pious = loved because it is pious (nature → love). Dear-to-gods = dear because loved (love → state). These have opposite causal directions, so they are not the same thing. D3 ('piety = what all the gods love') gives the attribute of being loved, not the essence that causes it.",
+            "derived_by": "Socrates",
+            "presented_at": "10d-11b",
+            "objected_to": false,
+            "ratified_by": null,
+            "invocable_at": ["15b-c"]
+          },
+          "source": "derived",
+          "available_to": "socrates_only",
+          "confidence": "high",
+          "note": "Socrates performs the derivation in monologue (T132-T138). Euthyphro does not ratify — he responds 'I really do not know, Socrates, how to express what I mean' (T139). The derivation is unopposed but not explicitly accepted. This is the key asymmetry: Socrates knows the derivation is in the store; Euthyphro may not have tracked the logical structure."
+        }
+      ],
+      "removed": [
+        {
+          "id": "C-11.1",
+          "removal_type": "refuted",
+          "note": "D3 is refuted by D-12.1 (gives attribute not essence). Euthyphro does not formally retract — he says arguments 'walk away' (T139)."
+        },
+        {
+          "id": "C-11.2",
+          "removal_type": "refuted",
+          "note": "Follows C-11.1."
+        },
+        {
+          "id": "C-11.3",
+          "removal_type": "refuted",
+          "note": "C-11.3 committed to D3 standing the test. D-12.1 shows it failed."
+        }
+      ],
+      "store_after": {
+        "euthyphro": ["C-7.1", "C-7.2", "C-9.1", "C-9.2", "C-9.3", "C-9.4", "C-9.5", "C-10.1", "C-10.2", "C-12.1", "C-12.2", "C-12.3"],
+        "socrates": [],
+        "dialogue": ["P-6.1", "D-7.1", "D-9.1", "D-9.2", "D-12.1"]
+      }
+    },
+
+    {
+      "section": "13-14",
+      "title": "Definition 4: piety as part of justice / care of gods",
+      "stephanus": "12d-13a",
+      "turn_range": "T142-T159",
+      "entries": [
+        {
+          "id": "C-14.1",
+          "turn": "T143",
+          "holder": "Euthyphro",
+          "proposition": "The pious is necessarily just",
+          "type": "commitment",
+          "source": "extracted",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "Socrates: 'Is not that which is pious necessarily just?' Euthyphro: 'Yes.' (T143)"
+        },
+        {
+          "id": "C-14.2",
+          "turn": "T155",
+          "holder": "Euthyphro",
+          "proposition": "Piety is a part of justice (not all justice is pious)",
+          "type": "commitment",
+          "source": "extracted",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "Established through the fear/reverence analogy. Euthyphro: 'No, I think that you are quite right.' (T155)"
+        },
+        {
+          "id": "C-14.3",
+          "turn": "T159",
+          "holder": "Euthyphro",
+          "proposition": "Piety is that part of justice which attends to the gods",
+          "type": "commitment",
+          "source": "explicit",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "D4. Euthyphro: 'Piety or holiness, Socrates, appears to me to be that part of justice which attends to the gods.' (T159)"
+        }
+      ],
+      "store_after": {
+        "euthyphro": ["C-7.1", "C-7.2", "C-9.1", "C-9.2", "C-9.3", "C-9.4", "C-9.5", "C-10.1", "C-10.2", "C-12.1", "C-12.2", "C-12.3", "C-14.1", "C-14.2", "C-14.3"],
+        "socrates": [],
+        "dialogue": ["P-6.1", "D-7.1", "D-9.1", "D-9.2", "D-12.1"]
+      }
+    },
+
+    {
+      "section": 15,
+      "title": "Refutation of D4: care cannot improve the gods",
+      "stephanus": "13a-13d",
+      "turn_range": "T160-T181",
+      "entries": [
+        {
+          "id": "C-15.1",
+          "turn": "T173",
+          "holder": "Euthyphro",
+          "proposition": "Care (therapeia) of a thing is intended for the benefit and improvement of that thing",
+          "type": "commitment",
+          "source": "extracted",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "Established through horses/dogs/oxen analogies. Euthyphro concedes each: 'True' (T173), 'Certainly, not for their hurt' (T175), 'Of course' (T177)."
+        },
+        {
+          "id": "C-15.2",
+          "turn": "T179",
+          "holder": "Euthyphro",
+          "proposition": "Pious acts do not make the gods better",
+          "type": "commitment",
+          "source": "extracted",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "Socrates: 'Would you say that when you do a holy act you make any of the gods better?' Euthyphro: 'No, no; that was certainly not what I meant.' (T179)"
+        },
+        {
+          "id": "D-15.1",
+          "turn": "T178-T179",
+          "holder": "Dialogue",
+          "proposition": "D4's 'care of the gods' cannot mean what care normally means, since care improves its object and the gods cannot be improved",
+          "type": "derivation",
+          "_if_derivation": {
+            "premises": ["C-14.3", "C-15.1", "C-15.2"],
+            "conclusion": "D4 uses 'care' (therapeia) but care improves its object; the gods cannot be improved; therefore 'care' is inapplicable in its normal sense.",
+            "derived_by": "Socrates",
+            "presented_at": "13b-c",
+            "objected_to": false,
+            "ratified_by": "Euthyphro",
+            "invocable_at": []
+          },
+          "source": "derived",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "Euthyphro ratifies by saying 'that was certainly not what I meant' — acknowledging the refutation. Available to both because Euthyphro understands the point."
+        },
+        {
+          "id": "P-15.1",
+          "turn": "T179",
+          "holder": "Euthyphro",
+          "proposition": "The gods are already perfect and cannot be improved",
+          "type": "presupposition",
+          "source": "implicit",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "Never explicitly stated by either party but presupposed by Euthyphro's denial at T179. If the gods could be improved, his 'No, no' would not follow."
+        }
+      ],
+      "removed": [
+        {
+          "id": "C-14.3",
+          "removal_type": "refuted",
+          "note": "D4 refuted by D-15.1. Euthyphro shifts to 'service/ministration' (T183) rather than formally retracting."
+        }
+      ],
+      "store_after": {
+        "euthyphro": ["C-7.1", "C-7.2", "C-9.1", "C-9.2", "C-9.3", "C-9.4", "C-9.5", "C-10.1", "C-10.2", "C-12.1", "C-12.2", "C-12.3", "C-14.1", "C-14.2", "C-15.1", "C-15.2"],
+        "socrates": [],
+        "dialogue": ["P-6.1", "D-7.1", "D-9.1", "D-9.2", "D-12.1", "D-15.1", "P-15.1"]
+      }
+    },
+
+    {
+      "section": "16-17",
+      "title": "Definition 5 + reduction to D3",
+      "stephanus": "13d-15b",
+      "turn_range": "T182-T223",
+      "entries": [
+        {
+          "id": "C-16.1",
+          "turn": "T183",
+          "holder": "Euthyphro",
+          "proposition": "Piety is a kind of service (hyperetike) that servants show to their masters",
+          "type": "assertion",
+          "source": "explicit",
+          "available_to": "both",
+          "confidence": "medium",
+          "note": "Euthyphro shifts from 'care' to 'service' after D4's refutation. This is a repair attempt, not deeply committed — he is trying alternatives."
+        },
+        {
+          "id": "C-16.2",
+          "turn": "T201",
+          "holder": "Euthyphro",
+          "proposition": "Piety is learning how to please the gods in word and deed, by prayers and sacrifices",
+          "type": "commitment",
+          "source": "explicit",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "D5. Euthyphro: 'Let me simply say that piety or holiness is learning how to please the gods in word and deed, by prayers and sacrifices.' (T201) This is an evasion — he refuses to answer what work the gods accomplish — but it is an explicit commitment to a definition."
+        },
+        {
+          "id": "C-16.3",
+          "turn": "T207",
+          "holder": "Euthyphro",
+          "proposition": "Piety is a science of asking and giving",
+          "type": "commitment",
+          "source": "extracted",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "Socrates reformulates D5; Euthyphro: 'You understand me capitally, Socrates.' (T207)"
+        },
+        {
+          "id": "C-16.4",
+          "turn": "T219",
+          "holder": "Euthyphro",
+          "proposition": "Our gifts to the gods are tributes of honor and what pleases them",
+          "type": "commitment",
+          "source": "extracted",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "Socrates: 'what is the meaning of gifts which are conferred by us upon the gods?' Euthyphro: 'What else, but tributes of honour; and, as I was just now saying, what pleases them?' (T219)"
+        },
+        {
+          "id": "C-16.5",
+          "turn": "T221",
+          "holder": "Euthyphro",
+          "proposition": "Piety is what is dear to the gods",
+          "type": "commitment",
+          "source": "extracted",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "Socrates: 'Piety, then, is pleasing to the gods, but not beneficial or dear to them?' Euthyphro: 'I should say that nothing could be dearer.' (T221) Euthyphro has arrived back at the language of D2/D3 without realizing it."
+        },
+        {
+          "id": "D-16.1",
+          "turn": "T220-T223",
+          "holder": "Dialogue",
+          "proposition": "D5 reduces to 'piety is what is dear to the gods', which is D3/D2",
+          "type": "derivation",
+          "_if_derivation": {
+            "premises": ["C-16.3", "C-16.4", "C-16.5"],
+            "conclusion": "D5 (science of asking and giving) → giving what pleases the gods → what is dear to the gods → D3 (what all the gods love) / D2 (what is dear to the gods). The chain of reductions returns to a prior definition.",
+            "derived_by": "Socrates",
+            "presented_at": "15a-b",
+            "objected_to": false,
+            "ratified_by": "Euthyphro",
+            "invocable_at": ["15b-c"]
+          },
+          "source": "derived",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "Socrates: 'Then once more the assertion is repeated that piety is dear to the gods?' Euthyphro: 'Certainly.' (T222-T223) Euthyphro ratifies without recognizing the circularity."
+        }
+      ],
+      "removed": [],
+      "store_after": {
+        "euthyphro": ["C-7.1", "C-7.2", "C-9.1", "C-9.2", "C-9.3", "C-9.4", "C-9.5", "C-10.1", "C-10.2", "C-12.1", "C-12.2", "C-12.3", "C-14.1", "C-14.2", "C-15.1", "C-15.2", "C-16.2", "C-16.3", "C-16.4", "C-16.5"],
+        "socrates": [],
+        "dialogue": ["P-6.1", "D-7.1", "D-9.1", "D-9.2", "D-12.1", "D-15.1", "P-15.1", "D-16.1"]
+      }
+    },
+
+    {
+      "section": 18,
+      "title": "Circularity demonstrated — aporia",
+      "stephanus": "15b-16a",
+      "turn_range": "T224-T232",
+      "entries": [
+        {
+          "id": "C-18.1",
+          "turn": "T225",
+          "holder": "Euthyphro",
+          "proposition": "It was previously established that piety is not the same as what is loved by the gods",
+          "type": "commitment",
+          "source": "extracted",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "Socrates: 'Were we not saying that the holy or pious was not the same with that which is loved of the gods? Have you forgotten?' Euthyphro: 'I quite remember.' (T224-T225) Re-affirming D-12.1."
+        },
+        {
+          "id": "C-18.2",
+          "turn": "T227",
+          "holder": "Euthyphro",
+          "proposition": "The current position is that what is loved of the gods is holy",
+          "type": "commitment",
+          "source": "extracted",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "Socrates: 'And are you not saying that what is loved of the gods is holy?' Euthyphro: 'True.' (T226-T227)"
+        },
+        {
+          "id": "C-18.3",
+          "turn": "T229",
+          "holder": "Euthyphro",
+          "proposition": "Either the earlier refutation was wrong, or the current position is wrong",
+          "type": "commitment",
+          "source": "extracted",
+          "available_to": "both",
+          "confidence": "high",
+          "note": "Socrates: 'Then either we were wrong in our former assertion; or, if we were right then, we are wrong now.' Euthyphro: 'One of the two must be true.' (T228-T229)"
+        }
+      ],
+      "cycle_signal": {
+        "flagged": true,
+        "current_definition": "D5",
+        "maps_to": "D3",
+        "via": "D5 (science of asking/giving) → giving what pleases the gods (C-16.4) → what is dear to the gods (C-16.5) → D3 (what all the gods love). D3 was refuted by D-12.1 (gives attribute not essence).",
+        "closing_derivation": "D-12.1"
+      },
+      "store_after": {
+        "euthyphro": ["C-7.1", "C-7.2", "C-9.1", "C-9.2", "C-9.3", "C-9.4", "C-9.5", "C-10.1", "C-10.2", "C-12.1", "C-12.2", "C-12.3", "C-14.1", "C-14.2", "C-15.1", "C-15.2", "C-16.2", "C-16.3", "C-16.4", "C-16.5", "C-18.1", "C-18.2", "C-18.3"],
+        "socrates": [],
+        "dialogue": ["P-6.1", "D-7.1", "D-9.1", "D-9.2", "D-12.1", "D-15.1", "P-15.1", "D-16.1"]
+      }
+    }
+  ]
+}
