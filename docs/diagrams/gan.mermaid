@@ -1,0 +1,14 @@
+%%{init:{"theme":"neutral"}}%%
+flowchart TD
+    classDef boundary fill:#93c5fd,stroke:#2563eb,stroke-width:2px,color:#1e3a5f
+    classDef policy fill:#fcd34d,stroke:#d97706,stroke-width:2px,color:#78350f
+    classDef mechanism fill:#86efac,stroke:#16a34a,stroke-width:2px,color:#14532d
+    classDef control fill:#d8b4fe,stroke:#9333ea,stroke-width:2px,color:#3b0764
+    classDef generic fill:#cbd5e1,stroke:#64748b,stroke-width:1px,color:#1e293b
+    Generator[Generator]:::generic
+    Discriminator[Discriminator]:::generic
+    Generator --Generated Sample--> Discriminator
+    Discriminator ==Discriminator Gradient==> Generator
+    Noise_Distribution --Noise Vector--> Generator
+    Training_Data --Real Sample--> Discriminator
+    Ground_Truth_Labels --Ground Truth Label--> Discriminator
