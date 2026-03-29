@@ -4,15 +4,42 @@
 
 ---
 
+## The Antagonism Precondition
+
+Before the three-axis taxonomy applies, a system must satisfy the **antagonism precondition** — the formal criterion that distinguishes structured antagonism from mere feedback.
+
+A system exhibits structured antagonism when:
+
+1. **Two or more agents with distinct objective functions.** The system contains identifiable agents that optimize different things. This rules out single-controller systems (thermostats, homeostasis) where one agent regulates a passive plant.
+
+2. **No Pareto-dominant joint strategy.** There is no point in the joint strategy space where all agents simultaneously achieve their optima. At least one dimension of one agent's objectives is structurally in tension with another's. This rules out mutualistic systems (mycorrhizal networks, symbiosis) where cooperative equilibria are Pareto-dominant — both agents can be at their optimum simultaneously.
+
+3. **The tension is mediated by the system's feedback topology.** The agents' outputs are coupled through the wiring such that one agent's optimization pressure constrains the other's strategy space. The opposition is structural, not incidental.
+
+Condition 2 is the key discriminant. It is the standard game-theoretic criterion for a non-trivially mixed game: the payoff matrix has no cell where all players are simultaneously maximized. Mixed-motivation systems (like the elenchus, where Socrates and Euthyphro share the truth-seeking objective but conflict on reputation/exposure) satisfy condition 2 because the tension on the conflicting dimension is sufficient — Pareto dominance requires *all* dimensions, and one dimension of conflict is enough to prevent it.
+
+**Boundary cases:**
+
+| System | Condition 1 | Condition 2 | Condition 3 | Antagonistic? |
+|--------|:---:|:---:|:---:|:---:|
+| GAN | Two agents | No Pareto point (fool vs detect) | Gradient feedback | Yes |
+| Elenchus | Two agents | No Pareto point (reputation conflict) | Commitment loop | Yes |
+| Thermostat | One agent (controller + passive plant) | N/A | N/A | **No** |
+| Homeostasis | One agent (hypothalamus + passive body) | N/A | N/A | **No** |
+| Mycorrhizal mutualism | Two agents | Pareto-dominant (both benefit) | Cooperative exchange | **No** |
+
+---
+
 ## The Test
 
-The taxonomy was developed from three systems: GANs, Socratic elenchus, and AI Co-Scientist. A real structural result should predict the class of systems from control theory, biology, law, security, and market design — domains where the adversarial feedback structure is well-characterized independently.
+The taxonomy was developed from three systems: GANs, Socratic elenchus, and AI Co-Scientist. A real structural result should predict the class of systems from domains where the adversarial feedback structure is well-characterized independently — and should also correctly *exclude* systems that have feedback topology but lack antagonism.
 
 For each candidate domain, we ask:
-1. What is the operator class? (`.feedback()` vs `.loop()` vs nested)
-2. Is observation symmetric or asymmetric?
-3. Is there commitment enforcement (monotonic state)?
-4. What is the known failure mode? Does the taxonomy predict it?
+1. Does it satisfy the antagonism precondition?
+2. What is the operator class? (`.feedback()` vs `.loop()` vs nested)
+3. Is observation symmetric or asymmetric?
+4. Is there commitment enforcement (monotonic state)?
+5. What is the known failure mode? Does the taxonomy predict it?
 
 ---
 
@@ -142,38 +169,101 @@ For each candidate domain, we ask:
 
 ---
 
-## Class 4? Open Questions
+## Correctly Excluded Systems
 
 ### Homeostasis / Thermoregulation
 
-**Domain:** Biology. The hypothalamus maintains body temperature via negative feedback — vasodilation, sweating, shivering.
+**Domain:** Biology. The hypothalamus maintains body temperature via negative feedback.
 
-**Mapping:** `.feedback()` — within-timestep error signal. But is this *antagonistic*? The setpoint and the disturbance (environment) are not adversaries in any strategic sense. There is no evaluator with a different objective. This is pure control, not structured antagonism.
+**Why excluded:** Fails condition 1 (one agent — the hypothalamus regulates a passive body). The disturbance (environment) is not an agent with an objective function. `.feedback()` topology without antagonism is pure control.
 
-**Taxonomy status:** `.feedback()` topology but **no antagonism** — the feedback is corrective, not adversarial. The taxonomy may need a precondition: the system must have agents with *different* objectives for the antagonism classification to apply. Pure negative feedback without opposed objectives is control, not antagonism.
+### Mutualistic Coevolution (Mycorrhizal Networks)
 
-### Hegelian Dialectic
+**Domain:** Ecology. Fungi and plant roots exchange nutrients — fungi provide phosphorus, plants provide carbon. Both benefit.
 
-**Domain:** Philosophy of history. Thesis → antithesis → synthesis, where the synthesis becomes the new thesis at a higher level.
+**Why excluded:** Fails condition 2 (Pareto-dominant joint strategy exists). Both organisms can be at their optimum simultaneously. The exchange is cooperative, not constraining — neither agent's optimization pressure degrades the other's position. `.loop()` topology (nutrient exchange accumulates across seasons) but no structural tension.
 
-**Mapping:** The state space *transforms* with each iteration — the synthesis is not just a new state in the same space but a new level of abstraction. This is not expressible as `.loop()` (which iterates within a fixed state space) or `.feedback()`.
-
-**Taxonomy status:** Potentially a **fourth operator class** — `.lift()` — where each iteration expands the state space. This remains an open question from the research journal (Entry 8).
+**Note:** This is the critical test case for condition 2. Mycorrhizal networks have information asymmetry (each party has private knowledge of its resource state), accumulating state, and `.loop()` topology. Without the Pareto dominance criterion, the taxonomy would incorrectly classify this as pursuit-evasion. Condition 2 is what prevents the taxonomy from being "any feedback system."
 
 ---
 
-## Summary Table
+## Enforcement Pathologies: Antigenic Original Sin
 
-| Domain | Operator | Observation | Enforcement | Predicted failure | Known failure | Match? |
-|--------|----------|-------------|-------------|-------------------|---------------|:---:|
-| H-infinity control | `.feedback()` | Symmetric | N/A | Mode collapse | Gain instability | Yes |
-| Adversarial training | `.feedback()` | Symmetric | N/A | Mode collapse | Catastrophic overfitting | Yes |
-| Adaptive immunity | `.loop()` | Asymmetric | Partial | Sophistry | Immune evasion | Yes |
-| Adversarial law | `.loop()` | Asymmetric | Strong | Sophistry | Obfuscation | Yes |
-| Red team / blue team | `.loop()` | Asymmetric | Partial | Sophistry | Security theater | Yes |
-| Peer review | `.loop().loop()` | Hierarchical | Partial | Sycophantic consensus | Paradigm lock-in | Yes |
-| Niche construction | `.loop().loop()` | Hierarchical | Partial | Sycophantic consensus | Ecological trap | Plausible |
-| Homeostasis | `.feedback()` | N/A | N/A | — | — | Not antagonistic |
-| Hegelian dialectic | ? | ? | ? | ? | ? | Needs new operator |
+The adaptive immunity mapping surfaced a failure mode — **antigenic original sin** — where the commitment store's monotonicity actively hurts. When a pathogen mutates sufficiently, the immune system's stored memory (old antibodies) is no longer relevant, but the store's monotonicity means old responses are preferentially recalled over new ones.
 
-Seven clear matches. One non-antagonistic system correctly excluded. One system (Hegelian dialectic) that may require extending the taxonomy. The taxonomy classifies known systems from control theory, immunology, law, security, evolutionary biology, and science with zero false predictions on the well-characterized cases.
+This is not a gap in the taxonomy. It is a pathology *within* the `.loop()` class's enforcement axis. The taxonomy predicts that `.loop()` systems are vulnerable to enforcement-related failures. Antigenic sin is a *specific* enforcement failure: the store is monotonic, but the evader has changed enough that old commitments are misleading.
+
+The analogue in the elenchus: Socrates invokes an early concession that Euthyphro made about a different definition, but the conceptual landscape has shifted enough that the old concession doesn't bind in the way Socrates assumes. This doesn't happen in the Euthyphro (the definitions are genuinely related — D5 reduces to D3 legitimately). But in a longer or less focused dialogue, it could.
+
+The analogue in adversarial law: a prosecution invokes a witness's early testimony that was accurate at the time but has been superseded by new evidence. The store's monotonicity (testimony cannot be un-given) creates a misleading record.
+
+These are all enforcement pathologies of the same structural type: **the store's monotonicity becomes counterproductive when the evader has changed faster than the store's relevance decays.** The taxonomy predicts the vulnerability class; the specific pathology depends on the domain.
+
+---
+
+## The `.lift()` Hypothesis
+
+### What `.lift()` would describe
+
+The current three-operator vocabulary (`.feedback()`, `.loop()`, nested `.loop()`) assumes a **fixed state space**. The commitment store grows but the space of possible propositions is fixed. GAN parameters update but the model architecture is fixed. The hypothesis population evolves but the evaluation criteria are fixed.
+
+A `.lift()` operator would describe systems where **the evaluation criteria themselves change as a result of the process** — where each iteration transforms the state space rather than iterating within it.
+
+### Candidate instances
+
+| Domain | Inner operation | Lift operation | What changes |
+|--------|---------------|---------------|-------------|
+| Scientific paradigm shifts | Normal science (`.loop()`) | Paradigm shift | What counts as a good theory |
+| Constitutional amendment | Ordinary legislation (`.loop()`) | Amendment | The rules for making rules |
+| Developmental biology | Gene expression (`.loop()`) | Cell differentiation | The regulatory state space |
+| Meta-learning (MAML) | Parameter update (`.loop()`) | Learning algorithm update | The optimization procedure itself |
+
+### Is `.lift()` encodable in GDS?
+
+The question is whether `.lift()` requires a genuinely new primitive or whether it is expressible as a composition of existing operators.
+
+**Argument for new primitive:** GDS `CorecursiveLoop` iterates within a fixed `Interface` — the forward_in and forward_out types are set at composition time. A true `.lift()` would require an operator where the output type of iteration N is *different from* the input type of iteration N+1. This is a type-level change, not a value-level change, and GDS's type system does not support it.
+
+**Argument for existing composition:** `.lift()` could be modeled as `.loop()` with a state variable whose *interpretation* changes across iterations, even if its type stays the same. A string-typed "current paradigm" variable can hold "Newtonian mechanics" at iteration N and "general relativity" at iteration N+1 without requiring a type change. The lift is in the semantics, not the syntax.
+
+**Assessment:** The second argument is formally correct but philosophically unsatisfying. The whole point of `.lift()` is that the rules change — and representing rule changes as value changes in a fixed-type variable hides the structural transformation in the data. This is analogous to encoding a programming language in a string field rather than defining its grammar — technically possible, but it loses the structure the formalism should capture.
+
+This remains an open question. If `.lift()` cannot be captured without a new GDS primitive, it is a limitation the research program has surfaced in the framework.
+
+---
+
+## Summary
+
+### What the taxonomy predicts correctly (7/7)
+
+| Domain | Operator | Predicted failure | Known failure | Match |
+|--------|----------|-------------------|---------------|:---:|
+| H-infinity control | `.feedback()` | Mode collapse | Gain instability | Yes |
+| Adversarial training | `.feedback()` | Mode collapse | Catastrophic overfitting | Yes |
+| Adaptive immunity | `.loop()` | Sophistry | Immune evasion | Yes |
+| Adversarial law | `.loop()` | Sophistry | Obfuscation | Yes |
+| Red team / blue team | `.loop()` | Sophistry | Security theater | Yes |
+| Peer review | `.loop().loop()` | Sycophantic consensus | Paradigm lock-in | Yes |
+| Niche construction | `.loop().loop()` | Sycophantic consensus | Ecological trap | Plausible |
+
+### What the taxonomy correctly excludes (2)
+
+| System | Topology | Why excluded |
+|--------|----------|-------------|
+| Homeostasis | `.feedback()` | Fails condition 1 (single agent) |
+| Mycorrhizal mutualism | `.loop()` | Fails condition 2 (Pareto-dominant) |
+
+### What the taxonomy cannot yet classify (1)
+
+| System | Issue | Status |
+|--------|-------|--------|
+| Hegelian dialectic | State space transforms per iteration | Needs `.lift()` operator — open question |
+
+### Falsifiability
+
+The taxonomy would be falsified by a system that:
+1. Satisfies the antagonism precondition
+2. Has a well-characterized failure mode
+3. Is classified by the three axes into a class whose predicted failure mode does not match the observed one
+
+No such system has been found. This is either because the taxonomy captures a genuine structural pattern, or because the three axes are loose enough that classification can be adjusted post-hoc. The test for the latter is to find a system where the axis assignment is unambiguous but the prediction fails. Candidate stress tests: adversarial debate protocols (where the failure mode may be neither mode collapse nor sophistry nor sycophancy), and competitive multi-agent reinforcement learning (where the failure mode may depend on training dynamics not captured by topology).
