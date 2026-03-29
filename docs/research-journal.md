@@ -844,6 +844,57 @@ SA and the Euthyphro are not just topologically equivalent — they are equivale
 
 ---
 
+## Entry 12: Observation Width — A Third Topological Dimension
+
+**Date:** 2026-03-29
+
+### The stress test
+
+The OEM (Entry 11), encoded as a GDS spec, was run through the antagonism classifier. Result: classified as `hierarchical_antagonism` with predicted failure `sycophantic_consensus`. But the OEM is a single-loop system, not hierarchical. The classifier fired its nested-loop heuristic because 2 temporal wirings target the same block (Evaluator receives Store State + Store History).
+
+This is not a classifier bug. It is a genuine theoretical gap.
+
+### What the gap reveals
+
+The taxonomy has been treating loop nesting depth as the primary structural variable. The OEM shows there is a second independent dimension: **observation width** — how many distinct temporal channels an agent has access to at a single node.
+
+These are independent:
+
+| | Low width | High width |
+|---|---|---|
+| **Low depth** | GAN (baseline) | OEM, Euthyphro |
+| **High depth** | ? | Co-Scientist |
+
+The classifier conflated dimension 3 (width) with dimension 1 (depth). Two temporal wirings to the same node looked like nesting when it was actually width.
+
+### Three dimensions, not one
+
+The taxonomy now has three topological dimensions (distinct from the three *axes* of operator/observation/enforcement):
+
+1. **Loop nesting depth** — how many levels of iteration. What the classifier currently measures.
+2. **Observation asymmetry** — does the evaluator see things the generator doesn't. What SA-OEM-001 measures. Binary: symmetric or asymmetric.
+3. **Observation width** — how many distinct temporal channels the evaluator accesses. The new dimension. A continuous variable: 1 channel (GAN), 2 channels (Euthyphro: current state + refutation), 3 channels (OEM: store state + history + ground truth).
+
+### The theoretical question
+
+**Which dimension drives productive antagonism more — nesting depth or observation width?**
+
+The elenchus is a strong hint. Socrates operates a single loop (low depth) but observes the full commitment store trajectory (high width). The elenchus produces genuine improvement despite being topologically simpler than the Co-Scientist. This suggests observation width may be more load-bearing for productive antagonism, with nesting depth mattering more for convergence speed and certification difficulty.
+
+If correct, the earlier claim — deeper nesting → richer fixed-point structure — needs a companion: **higher observation width → stronger productive antagonism guarantee** (given the orthogonality condition is met). And the synthesis gap sharpens: does depth or width dominate for genuine improvement?
+
+### Connection to the OEM parameters
+
+Observation width is the structural encoding of `|I|` inverted. High width means the evaluator has many independent channels — small `|I|`. Low width means the evaluator shares the generator's single channel — large `|I|`. The OEM's `ρ(E,T)` parameter is about whether those channels *contain truth*; observation width is about whether the evaluator *has access to independent channels at all*.
+
+Width is the structural precondition. `ρ(E,T)` is the semantic condition. Both are necessary for productive antagonism. The topology can verify width; it cannot verify `ρ(E,T)`.
+
+### Classifier status
+
+The classifier correctly classifies 4/5 models. The OEM misclassification is documented as a known limitation: the nested-loop heuristic conflates observation depth with nesting depth. Fix options (annotating wire semantics or adding width as a parameter) are deferred — the theoretical insight is more valuable than the code fix at this stage.
+
+---
+
 ## Known Limitations of the Formalism
 
 ### Terminal conditions are strings, not computable predicates (F-006)
