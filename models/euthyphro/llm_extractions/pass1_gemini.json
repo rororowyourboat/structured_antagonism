@@ -1,0 +1,473 @@
+[
+  {
+    "section_id": 1,
+    "key_exchanges": [
+      {
+        "speaker": "Euthyphro",
+        "turn_range": "1-3",
+        "act": "questioning",
+        "propositions_asserted": [
+          "Socrates has left the Lyceum",
+          "Socrates is at the Porch of the King Archon"
+        ],
+        "propositions_conceded": [],
+        "propositions_presupposed": [
+          "Socrates is not usually involved in legal suits"
+        ]
+      }
+    ]
+  },
+  {
+    "section_id": 2,
+    "key_exchanges": [
+      {
+        "speaker": "Socrates",
+        "turn_range": "2-12",
+        "act": "exposition",
+        "propositions_asserted": [
+          "Meletus is prosecuting Socrates for corrupting the youth",
+          "Meletus accuses Socrates of making new gods and denying old ones",
+          "Meletus is right to care for the virtue of the young first"
+        ],
+        "propositions_conceded": [],
+        "propositions_presupposed": [
+          "The state is the judge of political and moral conduct"
+        ]
+      },
+      {
+        "speaker": "Euthyphro",
+        "turn_range": "11-13",
+        "act": "agreeing / asserting",
+        "propositions_asserted": [
+          "Attacking Socrates is attacking the foundation of the state",
+          "Meletus is attacking Socrates because of his familiar sign",
+          "The public is jealous of those with divine knowledge"
+        ],
+        "propositions_conceded": [],
+        "propositions_presupposed": [
+          "Divine knowledge is a real and specialized field"
+        ]
+      }
+    ]
+  },
+  {
+    "section_id": 3,
+    "key_exchanges": [
+      {
+        "speaker": "Euthyphro",
+        "turn_range": "19-33",
+        "act": "exposition",
+        "propositions_asserted": [
+          "Euthyphro is prosecuting his father for murder",
+          "The victim was a dependant field-labourer who killed a servant",
+          "Pollution from murder is the same regardless of whether the victim is a relative or a stranger",
+          "His family is wrong to think a son should not prosecute a father"
+        ],
+        "propositions_conceded": [],
+        "propositions_presupposed": [
+          "Piety involves a specific set of rules that outweigh family loyalty"
+        ]
+      }
+    ]
+  },
+  {
+    "section_id": 4,
+    "key_exchanges": [
+      {
+        "speaker": "Euthyphro",
+        "turn_range": "35-37",
+        "act": "asserting",
+        "propositions_asserted": [
+          "Euthyphro has exact knowledge of all matters regarding piety and impiety",
+          "This exact knowledge is what distinguishes Euthyphro from other men"
+        ],
+        "propositions_conceded": [],
+        "propositions_presupposed": [
+          "Piety is a subject that can be known with exactness"
+        ]
+      }
+    ]
+  },
+  {
+    "section_id": 5,
+    "key_exchanges": [
+      {
+        "speaker": "Socrates",
+        "turn_range": "38",
+        "act": "questioning",
+        "propositions_asserted": [
+          "Piety is always the same in every action",
+          "Impiety has one notion which includes everything impious"
+        ],
+        "propositions_conceded": [],
+        "propositions_presupposed": [
+          "There is a unified essence to piety"
+        ]
+      },
+      {
+        "speaker": "Euthyphro",
+        "turn_range": "39",
+        "act": "agreeing",
+        "propositions_asserted": [],
+        "propositions_conceded": [
+          "Piety is consistent and has a single defining idea"
+        ],
+        "propositions_presupposed": []
+      }
+    ]
+  },
+  {
+    "section_id": 6,
+    "key_exchanges": [
+      {
+        "speaker": "Euthyphro",
+        "turn_range": "41",
+        "act": "proposing",
+        "propositions_asserted": [
+          "Piety is doing as I am doing: prosecuting the guilty",
+          "Not to prosecute the guilty is impiety",
+          "Zeus is the best and most righteous of the gods",
+          "Zeus bound his father Cronos for a crime"
+        ],
+        "propositions_conceded": [],
+        "propositions_presupposed": [
+          "The actions of the gods provide a moral precedent for humans"
+        ]
+      }
+    ]
+  },
+  {
+    "section_id": 7,
+    "key_exchanges": [
+      {
+        "speaker": "Socrates",
+        "turn_range": "50-52",
+        "act": "questioning",
+        "propositions_asserted": [
+          "There are many pious acts other than prosecuting a father",
+          "A definition should explain the general idea/standard of piety"
+        ],
+        "propositions_conceded": [],
+        "propositions_presupposed": [
+          "An example is not a definition"
+        ]
+      },
+      {
+        "speaker": "Euthyphro",
+        "turn_range": "51-53",
+        "act": "agreeing",
+        "propositions_asserted": [],
+        "propositions_conceded": [
+          "There is one idea that makes the pious pious",
+          "A general standard for measuring actions is required"
+        ],
+        "propositions_presupposed": []
+      }
+    ]
+  },
+  {
+    "section_id": 8,
+    "key_exchanges": [
+      {
+        "speaker": "Euthyphro",
+        "turn_range": "55",
+        "act": "proposing",
+        "propositions_asserted": [
+          "Piety is that which is dear to the gods",
+          "Impiety is that which is not dear to the gods"
+        ],
+        "propositions_conceded": [],
+        "propositions_presupposed": []
+      }
+    ]
+  },
+  {
+    "section_id": 9,
+    "key_exchanges": [
+      {
+        "speaker": "Socrates",
+        "turn_range": "62-82",
+        "act": "questioning",
+        "propositions_asserted": [
+          "The gods have enmities and differences",
+          "Enmity is caused by differences about the just, the good, and the honorable",
+          "The gods disagree about what is just and good",
+          "The same things are loved by some gods and hated by others"
+        ],
+        "propositions_conceded": [],
+        "propositions_presupposed": [
+          "The gods are subject to human-like disputes over values"
+        ]
+      },
+      {
+        "speaker": "Euthyphro",
+        "turn_range": "63-83",
+        "act": "agreeing",
+        "propositions_asserted": [],
+        "propositions_conceded": [
+          "The same things can be both pious and impious if gods disagree",
+          "The previous definition leads to a contradiction"
+        ],
+        "propositions_presupposed": []
+      }
+    ]
+  },
+  {
+    "section_id": 10,
+    "key_exchanges": [
+      {
+        "speaker": "Euthyphro",
+        "turn_range": "85",
+        "act": "objecting",
+        "propositions_asserted": [
+          "All gods agree that a murderer should be punished"
+        ],
+        "propositions_conceded": [],
+        "propositions_presupposed": [
+          "There are some universal moral agreements among gods"
+        ]
+      },
+      {
+        "speaker": "Socrates",
+        "turn_range": "86-98",
+        "act": "questioning",
+        "propositions_asserted": [
+          "People and gods do not argue about whether the guilty should be punished",
+          "People and gods argue about who is guilty in a specific case"
+        ],
+        "propositions_conceded": [],
+        "propositions_presupposed": []
+      }
+    ]
+  },
+  {
+    "section_id": 11,
+    "key_exchanges": [
+      {
+        "speaker": "Socrates",
+        "turn_range": "102-104",
+        "act": "amending",
+        "propositions_asserted": [
+          "What all the gods hate is impious",
+          "What all the gods love is pious"
+        ],
+        "propositions_conceded": [],
+        "propositions_presupposed": []
+      },
+      {
+        "speaker": "Euthyphro",
+        "turn_range": "105",
+        "act": "agreeing",
+        "propositions_asserted": [
+          "What all the gods love is pious and holy"
+        ],
+        "propositions_conceded": [
+          "The definition requires the unanimous love of the gods"
+        ],
+        "propositions_presupposed": []
+      }
+    ]
+  },
+  {
+    "section_id": 12,
+    "key_exchanges": [
+      {
+        "speaker": "Socrates",
+        "turn_range": "108-138",
+        "act": "questioning",
+        "propositions_asserted": [
+          "The pious is loved by the gods because it is pious",
+          "It is not pious because it is loved",
+          "The 'dear to the gods' is dear because it is loved by them",
+          "Piety and 'being loved by the gods' are distinct concepts"
+        ],
+        "propositions_conceded": [],
+        "propositions_presupposed": [
+          "An essential definition is different from an accidental attribute"
+        ]
+      },
+      {
+        "speaker": "Euthyphro",
+        "turn_range": "125-139",
+        "act": "conceding",
+        "propositions_asserted": [],
+        "propositions_conceded": [
+          "A thing is loved because it is holy",
+          "The attribute of being loved does not explain the nature of holiness",
+          "Arguments seem to move away and not stay fixed"
+        ],
+        "propositions_presupposed": []
+      }
+    ]
+  },
+  {
+    "section_id": 13,
+    "key_exchanges": [
+      {
+        "speaker": "Socrates",
+        "turn_range": "142-156",
+        "act": "questioning",
+        "propositions_asserted": [
+          "The pious is necessarily just",
+          "Not everything that is just is pious",
+          "Piety is a part of justice"
+        ],
+        "propositions_conceded": [],
+        "propositions_presupposed": []
+      },
+      {
+        "speaker": "Euthyphro",
+        "turn_range": "143-157",
+        "act": "agreeing",
+        "propositions_asserted": [],
+        "propositions_conceded": [
+          "Piety is a subset of justice"
+        ],
+        "propositions_presupposed": []
+      }
+    ]
+  },
+  {
+    "section_id": 14,
+    "key_exchanges": [
+      {
+        "speaker": "Euthyphro",
+        "turn_range": "159",
+        "act": "proposing",
+        "propositions_asserted": [
+          "Piety is the part of justice which attends to the gods",
+          "The other part of justice attends to men"
+        ],
+        "propositions_conceded": [],
+        "propositions_presupposed": []
+      }
+    ]
+  },
+  {
+    "section_id": 15,
+    "key_exchanges": [
+      {
+        "speaker": "Socrates",
+        "turn_range": "160-178",
+        "act": "questioning",
+        "propositions_asserted": [
+          "Attention usually aims at the good or benefit of the attended",
+          "Pious acts do not benefit or improve the gods"
+        ],
+        "propositions_conceded": [],
+        "propositions_presupposed": []
+      },
+      {
+        "speaker": "Euthyphro",
+        "turn_range": "179",
+        "act": "conceding / retracting",
+        "propositions_asserted": [],
+        "propositions_conceded": [
+          "Piety is not attention that improves the gods"
+        ],
+        "propositions_presupposed": [
+          "Gods are already perfect and cannot be improved"
+        ]
+      }
+    ]
+  },
+  {
+    "section_id": 16,
+    "key_exchanges": [
+      {
+        "speaker": "Euthyphro",
+        "turn_range": "183-201",
+        "act": "proposing",
+        "propositions_asserted": [
+          "Piety is a kind of ministration or service to the gods",
+          "Piety is learning how to please the gods in word and deed",
+          "Prayer and sacrifice are the means of this pleasing",
+          "Such piety is the salvation of families and states"
+        ],
+        "propositions_conceded": [],
+        "propositions_presupposed": []
+      }
+    ]
+  },
+  {
+    "section_id": 17,
+    "key_exchanges": [
+      {
+        "speaker": "Socrates",
+        "turn_range": "202-214",
+        "act": "questioning",
+        "propositions_asserted": [
+          "Piety is a science of asking and giving",
+          "Sacrificing is giving to the gods; prayer is asking of them",
+          "Piety is a sort of business between gods and men"
+        ],
+        "propositions_conceded": [],
+        "propositions_presupposed": []
+      },
+      {
+        "speaker": "Euthyphro",
+        "turn_range": "203-221",
+        "act": "agreeing",
+        "propositions_asserted": [
+          "Gifts to gods are tributes of honor and things that please them"
+        ],
+        "propositions_conceded": [
+          "Piety is what is pleasing or dear to the gods"
+        ],
+        "propositions_presupposed": []
+      }
+    ]
+  },
+  {
+    "section_id": 18,
+    "key_exchanges": [
+      {
+        "speaker": "Socrates",
+        "turn_range": "224-228",
+        "act": "challenging",
+        "propositions_asserted": [
+          "The argument has come round in a circle",
+          "The current position (piety = dear to gods) contradicts the earlier conclusion"
+        ],
+        "propositions_conceded": [],
+        "propositions_presupposed": []
+      },
+      {
+        "speaker": "Euthyphro",
+        "turn_range": "229",
+        "act": "conceding",
+        "propositions_asserted": [],
+        "propositions_conceded": [
+          "One of the two contradictory positions must be true"
+        ],
+        "propositions_presupposed": []
+      }
+    ]
+  },
+  {
+    "section_id": 19,
+    "key_exchanges": [
+      {
+        "speaker": "Socrates",
+        "turn_range": "230-232",
+        "act": "termination / urging",
+        "propositions_asserted": [
+          "We must begin again to ask what piety is",
+          "Euthyphro must know the nature of piety to have risked prosecuting his father"
+        ],
+        "propositions_conceded": [],
+        "propositions_presupposed": []
+      },
+      {
+        "speaker": "Euthyphro",
+        "turn_range": "231",
+        "act": "evading",
+        "propositions_asserted": [
+          "He is in a hurry and must go"
+        ],
+        "propositions_conceded": [],
+        "propositions_presupposed": []
+      }
+    ]
+  }
+]

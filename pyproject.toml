@@ -11,6 +11,7 @@ dependencies = [
     "gds-games>=0.2.0",
     "gds-viz>=0.1.2",
     "gds-owl>=0.1.0",
+    "google-genai>=1.0.0",
 ]
 
 [project.optional-dependencies]

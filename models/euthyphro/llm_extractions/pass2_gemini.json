@@ -1,0 +1,863 @@
+[
+  {
+    "section_id": 1,
+    "title": "Introduction and Setting",
+    "turn_range": "T1-T9",
+    "stephanus": "2a-3b",
+    "substantive_turns": [
+      {
+        "turn_id": "T8",
+        "speaker": "Socrates",
+        "stephanus": "2b-3a",
+        "speech_act": {
+          "primary": "assertion",
+          "secondary": "clarify",
+          "note": "Socrates describes the specific charge brought by Meletus."
+        },
+        "commitment_delta": {
+          "added": [
+            {
+              "holder": "Socrates",
+              "proposition": "Socrates is charged with corrupting the youth by inventing new gods and denying old ones.",
+              "type": "assertion",
+              "source": "explicit",
+              "available_to": "both",
+              "confidence": "high"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "section_id": 2,
+    "title": "Divine Knowledge Claim",
+    "turn_range": "T10-T17",
+    "stephanus": "3b-3e",
+    "substantive_turns": [
+      {
+        "turn_id": "T13",
+        "speaker": "Euthyphro",
+        "stephanus": "3b-c",
+        "speech_act": {
+          "primary": "assertion",
+          "secondary": "clarify",
+          "note": "Euthyphro aligns his own situation with Socrates' regarding divine knowledge."
+        },
+        "commitment_delta": {
+          "added": [
+            {
+              "holder": "Euthyphro",
+              "proposition": "Euthyphro possesses specialized knowledge regarding divine things and the future.",
+              "type": "commitment",
+              "source": "explicit",
+              "available_to": "both",
+              "confidence": "high"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "section_id": 3,
+    "title": "The Prosecution of the Father",
+    "turn_range": "T18-T33",
+    "stephanus": "3e-4e",
+    "substantive_turns": [
+      {
+        "turn_id": "T33",
+        "speaker": "Euthyphro",
+        "stephanus": "4b-e",
+        "speech_act": {
+          "primary": "assertion",
+          "secondary": "propose",
+          "note": "Detailed justification for prosecuting his father based on a theory of pollution."
+        },
+        "commitment_delta": {
+          "added": [
+            {
+              "holder": "Euthyphro",
+              "proposition": "The pollution from murder is the same regardless of the relationship between the victim and the killer.",
+              "type": "commitment",
+              "source": "explicit",
+              "available_to": "both",
+              "confidence": "high"
+            },
+            {
+              "holder": "Euthyphro",
+              "proposition": "One must proceed against a murderer even if they are a close relative to avoid shared pollution.",
+              "type": "commitment",
+              "source": "explicit",
+              "available_to": "both",
+              "confidence": "high"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "section_id": 4,
+    "title": "The Claim of Exact Knowledge",
+    "turn_range": "T34-T37",
+    "stephanus": "4e-5a",
+    "substantive_turns": [
+      {
+        "turn_id": "T35",
+        "speaker": "Euthyphro",
+        "stephanus": "4e-5a",
+        "speech_act": {
+          "primary": "assertion",
+          "secondary": "concede",
+          "note": "Euthyphro explicitly claims superior knowledge of piety over ordinary men."
+        },
+        "commitment_delta": {
+          "added": [
+            {
+              "holder": "Euthyphro",
+              "proposition": "Euthyphro has exact knowledge of piety and impiety.",
+              "type": "commitment",
+              "source": "explicit",
+              "available_to": "both",
+              "confidence": "high"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "section_id": 5,
+    "title": "The Search for the Eidos",
+    "turn_range": "T38-T40",
+    "stephanus": "5a-5d",
+    "substantive_turns": [
+      {
+        "turn_id": "T38",
+        "speaker": "Socrates",
+        "stephanus": "5c-d",
+        "speech_act": {
+          "primary": "question",
+          "secondary": "propose",
+          "note": "Socrates sets the methodological requirement for a definition (eidos)."
+        },
+        "commitment_delta": {
+          "added": [
+            {
+              "holder": "Dialogue",
+              "proposition": "Piety is always the same in every action and possesses a single idea/form (eidos).",
+              "type": "presupposition",
+              "source": "extracted",
+              "available_to": "both",
+              "confidence": "high"
+            }
+          ]
+        }
+      },
+      {
+        "turn_id": "T39",
+        "speaker": "Euthyphro",
+        "stephanus": "5d",
+        "speech_act": {
+          "primary": "concede",
+          "note": "Euthyphro ratifies the methodological constraint of a single eidos."
+        },
+        "commitment_delta": {
+          "added": [
+            {
+              "holder": "Euthyphro",
+              "proposition": "Piety is always the same in every action and possesses a single idea/form (eidos).",
+              "type": "commitment",
+              "source": "extracted",
+              "available_to": "both",
+              "confidence": "high"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "section_id": 6,
+    "title": "Definition 1: Prosecuting the Wrongdoer",
+    "turn_range": "T41",
+    "stephanus": "5d-6e",
+    "substantive_turns": [
+      {
+        "turn_id": "T41",
+        "speaker": "Euthyphro",
+        "stephanus": "5d-e",
+        "speech_act": {
+          "primary": "propose",
+          "note": "First attempt at definition, using himself as the model."
+        },
+        "commitment_delta": {
+          "added": [
+            {
+              "holder": "Euthyphro",
+              "proposition": "Piety is prosecuting anyone guilty of murder, sacrilege, or similar crimes regardless of relation.",
+              "type": "commitment",
+              "source": "explicit",
+              "available_to": "both",
+              "confidence": "high",
+              "note": "Definition D1."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "section_id": 7,
+    "title": "Refutation of D1: Example vs. Eidos",
+    "turn_range": "T42-T54",
+    "stephanus": "6a-6e",
+    "substantive_turns": [
+      {
+        "turn_id": "T50",
+        "speaker": "Socrates",
+        "stephanus": "6d-e",
+        "speech_act": {
+          "primary": "challenge",
+          "secondary": "clarify",
+          "note": "Socrates rejects the example as the definition."
+        },
+        "commitment_delta": {
+          "added": [
+            {
+              "holder": "Dialogue",
+              "proposition": "An example of a pious act is not the general idea (eidos) of piety.",
+              "type": "commitment",
+              "source": "extracted",
+              "available_to": "both",
+              "confidence": "high"
+            }
+          ]
+        }
+      },
+      {
+        "turn_id": "T51",
+        "speaker": "Euthyphro",
+        "stephanus": "6e",
+        "speech_act": {
+          "primary": "concede",
+          "note": "Euthyphro acknowledges the distinction."
+        },
+        "commitment_delta": {
+          "removed": [
+            {
+              "holder": "Euthyphro",
+              "proposition": "Piety is prosecuting anyone guilty of murder, sacrilege, or similar crimes regardless of relation.",
+              "removal_type": "refuted",
+              "note": "Recognized as only an example (methodological refutation)."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "section_id": 8,
+    "title": "Definition 2: Dear to the Gods",
+    "turn_range": "T55-T57",
+    "stephanus": "6e-7a",
+    "substantive_turns": [
+      {
+        "turn_id": "T55",
+        "speaker": "Euthyphro",
+        "stephanus": "6e-7a",
+        "speech_act": {
+          "primary": "propose",
+          "note": "The first formal definition of the essence."
+        },
+        "commitment_delta": {
+          "added": [
+            {
+              "holder": "Euthyphro",
+              "proposition": "Piety is what is dear to the gods.",
+              "type": "commitment",
+              "source": "explicit",
+              "available_to": "both",
+              "confidence": "high",
+              "note": "Definition D2."
+            },
+            {
+              "holder": "Euthyphro",
+              "proposition": "Impiety is what is not dear to the gods.",
+              "type": "commitment",
+              "source": "explicit",
+              "available_to": "both",
+              "confidence": "high"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "section_id": 9,
+    "title": "Refutation of D2: The Quarrels of the Gods",
+    "turn_range": "T58-T83",
+    "stephanus": "7a-8a",
+    "substantive_turns": [
+      {
+        "turn_id": "T82",
+        "speaker": "Socrates",
+        "stephanus": "8a",
+        "speech_act": {
+          "primary": "challenge",
+          "secondary": "concede",
+          "note": "Socrates demonstrates internal contradiction in D2."
+        },
+        "commitment_delta": {
+          "added": [
+            {
+              "holder": "Dialogue",
+              "proposition": "If the gods disagree about justice, the same act is both dear to some gods and hateful to others.",
+              "type": "conditional_commitment",
+              "antecedent": "The gods have enmities and disagree about justice.",
+              "consequent": "The same act is both pious and impious under D2.",
+              "antecedent_status": "conceded at T63",
+              "discharged": true,
+              "source": "extracted",
+              "available_to": "both",
+              "confidence": "high"
+            }
+          ]
+        }
+      },
+      {
+        "turn_id": "T83",
+        "speaker": "Euthyphro",
+        "stephanus": "8a",
+        "speech_act": {
+          "primary": "concede",
+          "note": "Euthyphro admits the consequence that an act can be both pious and impious."
+        },
+        "commitment_delta": {
+          "added": [
+            {
+              "holder": "Euthyphro",
+              "proposition": "The same thing can be both pious and impious.",
+              "type": "commitment",
+              "source": "extracted",
+              "available_to": "both",
+              "confidence": "medium"
+            }
+          ],
+          "removed": [
+            {
+              "holder": "Euthyphro",
+              "proposition": "Piety is what is dear to the gods.",
+              "removal_type": "refuted",
+              "note": "Refuted via internal contradiction."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "section_id": 10,
+    "title": "Amendment to Definition 3",
+    "turn_range": "T84-T104",
+    "stephanus": "8a-9d",
+    "substantive_turns": [
+      {
+        "turn_id": "T85",
+        "speaker": "Euthyphro",
+        "stephanus": "8b",
+        "speech_act": {
+          "primary": "evade",
+          "secondary": "propose",
+          "note": "Euthyphro argues for divine consensus on specific crimes (murder)."
+        },
+        "commitment_delta": {
+          "added": [
+            {
+              "holder": "Euthyphro",
+              "proposition": "All gods agree that a murderer who kills unjustly should be punished.",
+              "type": "commitment",
+              "source": "explicit",
+              "available_to": "both",
+              "confidence": "high"
+            }
+          ]
+        }
+      },
+      {
+        "turn_id": "T102",
+        "speaker": "Socrates",
+        "stephanus": "9c-d",
+        "speech_act": {
+          "primary": "propose",
+          "secondary": "clarify",
+          "note": "Socrates proposes the amendment to 'all' the gods to save the logic."
+        },
+        "commitment_delta": {
+          "added": [
+            {
+              "holder": "Dialogue",
+              "proposition": "Piety is what all the gods love, and impiety is what all the gods hate.",
+              "type": "assertion",
+              "source": "explicit",
+              "available_to": "both",
+              "confidence": "high"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "section_id": 11,
+    "title": "Definition 3: All the Gods Love",
+    "turn_range": "T105",
+    "stephanus": "9e",
+    "substantive_turns": [
+      {
+        "turn_id": "T105",
+        "speaker": "Euthyphro",
+        "stephanus": "9e",
+        "speech_act": {
+          "primary": "concede",
+          "secondary": "propose",
+          "note": "Euthyphro adopts the universal consensus version."
+        },
+        "commitment_delta": {
+          "added": [
+            {
+              "holder": "Euthyphro",
+              "proposition": "Piety is what all the gods love.",
+              "type": "commitment",
+              "source": "explicit",
+              "available_to": "both",
+              "confidence": "high",
+              "note": "Definition D3."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "section_id": 12,
+    "title": "The Euthyphro Dilemma",
+    "turn_range": "T106-T138",
+    "stephanus": "10a-11b",
+    "substantive_turns": [
+      {
+        "turn_id": "T108",
+        "speaker": "Socrates",
+        "stephanus": "10a",
+        "speech_act": {
+          "primary": "question",
+          "note": "The core dilemma: loved because it is holy, or holy because it is loved?"
+        },
+        "commitment_delta": {
+          "added": [
+            {
+              "holder": "Dialogue",
+              "proposition": "There is a causal/logical priority between the nature of piety and the gods' love of it.",
+              "type": "presupposition",
+              "source": "implicit",
+              "available_to": "socrates_only",
+              "confidence": "high"
+            }
+          ]
+        }
+      },
+      {
+        "turn_id": "T127",
+        "speaker": "Euthyphro",
+        "stephanus": "10d",
+        "speech_act": {
+          "primary": "concede",
+          "note": "Euthyphro picks the 'objectivist' horn of the dilemma."
+        },
+        "commitment_delta": {
+          "added": [
+            {
+              "holder": "Euthyphro",
+              "proposition": "Piety is loved by the gods because it is pious.",
+              "type": "commitment",
+              "source": "explicit",
+              "available_to": "both",
+              "confidence": "high"
+            },
+            {
+              "holder": "Euthyphro",
+              "proposition": "Piety is not pious because it is loved by the gods.",
+              "type": "commitment",
+              "source": "extracted",
+              "available_to": "both",
+              "confidence": "high"
+            }
+          ]
+        }
+      },
+      {
+        "turn_id": "T138",
+        "speaker": "Socrates",
+        "stephanus": "10e-11b",
+        "speech_act": {
+          "primary": "challenge",
+          "note": "Socrates demonstrates that 'god-loved' (pathos) cannot be the essence (ousia)."
+        },
+        "commitment_delta": {
+          "added": [
+            {
+              "holder": "Dialogue",
+              "proposition": "The attribute of being loved is distinct from the essence of holiness.",
+              "type": "commitment",
+              "source": "extracted",
+              "available_to": "both",
+              "confidence": "high"
+            }
+          ],
+          "removed": [
+            {
+              "holder": "Euthyphro",
+              "proposition": "Piety is what all the gods love.",
+              "removal_type": "refuted",
+              "note": "D3 is refuted as an attribute/pathos, not an essence/ousia."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "section_id": 13,
+    "title": "Piety as a Part of Justice",
+    "turn_range": "T139-T155",
+    "stephanus": "11b-12d",
+    "substantive_turns": [
+      {
+        "turn_id": "T155",
+        "speaker": "Euthyphro",
+        "stephanus": "12d",
+        "speech_act": {
+          "primary": "concede",
+          "note": "Euthyphro accepts the genus/species relationship between justice and piety."
+        },
+        "commitment_delta": {
+          "added": [
+            {
+              "holder": "Euthyphro",
+              "proposition": "Piety is a part of justice.",
+              "type": "commitment",
+              "source": "extracted",
+              "available_to": "both",
+              "confidence": "high"
+            },
+            {
+              "holder": "Euthyphro",
+              "proposition": "All piety is just, but not all justice is pious.",
+              "type": "commitment",
+              "source": "extracted",
+              "available_to": "both",
+              "confidence": "high"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "section_id": 14,
+    "title": "Definition 4: Care of the Gods",
+    "turn_range": "T156-T159",
+    "stephanus": "12d-12e",
+    "substantive_turns": [
+      {
+        "turn_id": "T159",
+        "speaker": "Euthyphro",
+        "stephanus": "12e",
+        "speech_act": {
+          "primary": "propose",
+          "note": "Euthyphro specifies the part of justice that constitutes piety."
+        },
+        "commitment_delta": {
+          "added": [
+            {
+              "holder": "Euthyphro",
+              "proposition": "Piety is that part of justice concerned with the care (therapeia) of the gods.",
+              "type": "commitment",
+              "source": "explicit",
+              "available_to": "both",
+              "confidence": "high",
+              "note": "Definition D4."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "section_id": 15,
+    "title": "Refutation of D4: The Meaning of Care",
+    "turn_range": "T160-T181",
+    "stephanus": "13a-13d",
+    "substantive_turns": [
+      {
+        "turn_id": "T172",
+        "speaker": "Socrates",
+        "stephanus": "13b-c",
+        "speech_act": {
+          "primary": "question",
+          "secondary": "propose",
+          "note": "Socrates establishes that care normally benefits/improves the object."
+        },
+        "commitment_delta": {
+          "added": [
+            {
+              "holder": "Dialogue",
+              "proposition": "Care (therapeia) of an object is intended for the benefit and improvement of that object.",
+              "type": "commitment",
+              "source": "extracted",
+              "available_to": "both",
+              "confidence": "high"
+            }
+          ]
+        }
+      },
+      {
+        "turn_id": "T179",
+        "speaker": "Euthyphro",
+        "stephanus": "13c",
+        "speech_act": {
+          "primary": "concede",
+          "secondary": "retract",
+          "note": "Euthyphro admits humans cannot improve the gods."
+        },
+        "commitment_delta": {
+          "added": [
+            {
+              "holder": "Euthyphro",
+              "proposition": "Pious acts do not make the gods better.",
+              "type": "commitment",
+              "source": "explicit",
+              "available_to": "both",
+              "confidence": "high"
+            }
+          ],
+          "removed": [
+            {
+              "holder": "Euthyphro",
+              "proposition": "Piety is that part of justice concerned with the care (therapeia) of the gods.",
+              "removal_type": "refuted",
+              "note": "Refuted because therapeia implies improvement of the gods (definitional collapse)."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "section_id": 16,
+    "title": "Definition 5: Service and Sacrifice",
+    "turn_range": "T182-T201",
+    "stephanus": "13d-14b",
+    "substantive_turns": [
+      {
+        "turn_id": "T183",
+        "speaker": "Euthyphro",
+        "stephanus": "13d",
+        "speech_act": {
+          "primary": "propose",
+          "note": "Euthyphro shifts to 'service' (hyperetike)."
+        },
+        "commitment_delta": {
+          "added": [
+            {
+              "holder": "Euthyphro",
+              "proposition": "Piety is a kind of service (hyperetike) to the gods.",
+              "type": "commitment",
+              "source": "explicit",
+              "available_to": "both",
+              "confidence": "high"
+            }
+          ]
+        }
+      },
+      {
+        "turn_id": "T201",
+        "speaker": "Euthyphro",
+        "stephanus": "14b",
+        "speech_act": {
+          "primary": "propose",
+          "note": "Refined D5 as a science of prayer and sacrifice."
+        },
+        "commitment_delta": {
+          "added": [
+            {
+              "holder": "Euthyphro",
+              "proposition": "Piety is learning how to please the gods in word and deed, by prayers and sacrifices.",
+              "type": "commitment",
+              "source": "explicit",
+              "available_to": "both",
+              "confidence": "high",
+              "note": "Definition D5."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "section_id": 17,
+    "title": "Reduction of D5 to D3",
+    "turn_range": "T202-T223",
+    "stephanus": "14c-15b",
+    "substantive_turns": [
+      {
+        "turn_id": "T206",
+        "speaker": "Socrates",
+        "stephanus": "14d",
+        "speech_act": {
+          "primary": "question",
+          "note": "Socrates decomposes D5 into 'asking' and 'giving'."
+        },
+        "commitment_delta": {
+          "added": [
+            {
+              "holder": "Euthyphro",
+              "proposition": "Piety is a science of asking and giving.",
+              "type": "commitment",
+              "source": "extracted",
+              "available_to": "both",
+              "confidence": "high"
+            }
+          ]
+        }
+      },
+      {
+        "turn_id": "T219",
+        "speaker": "Euthyphro",
+        "stephanus": "15a",
+        "speech_act": {
+          "primary": "assertion",
+          "note": "Euthyphro defines the 'gift' to the gods as honor and what pleases them."
+        },
+        "commitment_delta": {
+          "added": [
+            {
+              "holder": "Euthyphro",
+              "proposition": "Our gifts to the gods are tributes of honor and what pleases them.",
+              "type": "commitment",
+              "source": "explicit",
+              "available_to": "both",
+              "confidence": "high"
+            }
+          ]
+        }
+      },
+      {
+        "turn_id": "T221",
+        "speaker": "Euthyphro",
+        "stephanus": "15b",
+        "speech_act": {
+          "primary": "concede",
+          "note": "Euthyphro admits the core of D5 is 'what is dear' to the gods."
+        },
+        "commitment_delta": {
+          "added": [
+            {
+              "holder": "Euthyphro",
+              "proposition": "Piety is what is dear to the gods.",
+              "type": "commitment",
+              "source": "extracted",
+              "available_to": "both",
+              "confidence": "high"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "section_id": 18,
+    "title": "Circular Appeal and Terminal Signal",
+    "turn_range": "T224-T229",
+    "stephanus": "15b-15c",
+    "substantive_turns": [
+      {
+        "turn_id": "T224",
+        "speaker": "Socrates",
+        "stephanus": "15b",
+        "speech_act": {
+          "primary": "challenge",
+          "note": "Socrates explicitly identifies the cycle."
+        },
+        "commitment_delta": {
+          "added": [
+            {
+              "holder": "Dialogue",
+              "proposition": "The current definition (D5) is equivalent to the prior definition (D3/D2).",
+              "type": "commitment",
+              "source": "extracted",
+              "available_to": "both",
+              "confidence": "high"
+            }
+          ]
+        },
+        "cycle_signal": {
+          "flagged": true,
+          "current_definition": "D5",
+          "maps_to": "D3",
+          "via": "Piety -> Science of Giving/Asking -> Giving what pleases -> What is Loved/Dear -> D3",
+          "discharged_conditional": "The refutation at T138 (loved != essence) remains in the store, making D5 refuted by the same logic."
+        }
+      },
+      {
+        "turn_id": "T227",
+        "speaker": "Euthyphro",
+        "stephanus": "15c",
+        "speech_act": {
+          "primary": "concede",
+          "note": "Euthyphro admits the identity between 'loved by the gods' and 'pious' in his current thought."
+        },
+        "commitment_delta": {
+          "added": [
+            {
+              "holder": "Euthyphro",
+              "proposition": "What is loved of the gods is holy.",
+              "type": "commitment",
+              "source": "explicit",
+              "available_to": "both",
+              "confidence": "high"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "section_id": 19,
+    "title": "Aporia and Termination",
+    "turn_range": "T230-T232",
+    "stephanus": "15c-16a",
+    "substantive_turns": [
+      {
+        "turn_id": "T231",
+        "speaker": "Euthyphro",
+        "stephanus": "15e",
+        "speech_act": {
+          "primary": "evade",
+          "note": "Euthyphro terminates the game by leaving."
+        },
+        "commitment_delta": {
+          "suspended": [
+            {
+              "holder": "Euthyphro",
+              "proposition": "All previous definitions of piety.",
+              "reason": "Interlocutor departs before consistent resolution or new eidos can be proposed."
+            }
+          ]
+        }
+      }
+    ]
+  }
+]
