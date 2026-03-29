@@ -744,6 +744,106 @@ This project occupies the gap: a topology-level classification rather than a sol
 
 ---
 
+## Entry 11: The Orthogonal Evaluator Model — When Does Antagonism Produce Genuine Improvement?
+
+**Date:** 2026-03-29
+
+### The problem
+
+The taxonomy classifies antagonistic systems by composition topology and predicts failure modes. But it does not answer the harder question: **when does adversarial process converge to genuine quality versus confident consensus around the wrong answer?**
+
+This is the synthesis gap named in Entry 2. The taxonomy tells you *what kind* of system you have. It does not tell you whether that system will produce a good result.
+
+### Three non-equivalent definitions of "genuine improvement"
+
+1. **Convergence to a fixed point** — the system reaches a stable state (Nash equilibrium, stable extension, aporia). Measurable, but does not distinguish genuine improvement from cycling around a wrong answer. Fan/Toni (2016) proved this for ABA dialogues.
+
+2. **Reduction of exploitable inconsistency** — the commitment store shrinks toward coherence, or the hypothesis space narrows toward consistency. This is what the elenchus measures: the trajectory moves toward a state where no consistent definition survives. Quality is measured by whether the inconsistencies surfaced are genuine (productive) or manufactured (sophistic).
+
+3. **Approach to ground truth** — the output gets closer to something independently verifiable. This is what GAN training claims when it converges (`p_g → p_data`), but it requires an external reference that most real multi-agent systems do not have.
+
+**Definition 2 is the one the project's formal apparatus can operationalize.** Definition 1 is already proved by Fan/Toni. Definition 3 requires external ground truth not available in most domains. Definition 2 — reduction of exploitable inconsistency — is what the commitment store annotation tracks and what the topology predicts.
+
+### The Orthogonal Evaluator Model (OEM)
+
+The key structural insight from the existing work: genuine improvement requires the evaluator to have access to signals orthogonal to the generator's information channel. When that condition fails, you get mode collapse or sycophancy. When it holds, you get productive antagonism.
+
+This suggests a model where the orthogonality condition is the central variable — not a background assumption but a tuneable parameter.
+
+**Three components:**
+
+1. **Generator G** — proposes hypotheses, definitions, solutions. In the elenchus: Euthyphro. In GANs: the generator network. In peer review: the submitting author.
+
+2. **Evaluator E** — assesses proposals against a scoring function. The critical variable is `ρ(E, T)` — the correlation between E's scoring function and ground truth T. When `ρ = 1`, E perfectly tracks truth. When `ρ = 0`, E's signal is orthogonal noise. When `ρ = -1`, E is adversarial with no truth-tracking.
+
+3. **Shared information channel I** — the overlap between G's hypothesis space and E's evaluation criteria. When `|I|` is large (they share the same model of the world), E mirrors G and you get sycophancy. When `|I|` is small (E has genuinely independent signal), you get productive tension.
+
+**The convergence condition:**
+
+Genuine improvement (definition 2: reduction of exploitable inconsistency) occurs when:
+
+- `ρ(E, T) > ρ(G, T)` — the evaluator has better access to truth than the generator
+- `|I|` is bounded below a threshold — the shared channel is not so large that E collapses into G's distribution
+
+**Failure mode mapping:**
+
+| Condition | Result |
+|-----------|--------|
+| `ρ(E,T)` high, `|I|` small | Productive antagonism — evaluator has independent leverage |
+| `|I|` → max | Sycophancy / mode collapse — evaluator mirrors generator |
+| `ρ(E,T)` low, `ρ(G,E)` high | Sophistry — generator tracks evaluator instead of truth |
+| `ρ(E,T) ≈ ρ(G,T)`, both low | Cycling — neither has truth access, no convergence |
+
+### Mapping to existing models
+
+| System | `ρ(E,T)` | `|I|` | Prediction | Observed |
+|--------|----------|-------|------------|----------|
+| Euthyphro (productive) | High — logical consistency is truth-tracking | Small — Socrates has trajectory, Euthyphro doesn't | Productive | Aporia (genuine) |
+| GAN (productive) | High — discriminator has real data | Small — discriminator sees real samples, generator sees noise | Productive | Nash equilibrium |
+| GAN (mode collapse) | Degrades over training | Grows — generator learns discriminator's distribution | Sycophancy | Mode collapse |
+| Sophist vs Socrates | Low — sophist tracks questioner, not truth | Large — sophist reads evaluator | Sophistry | Unbounded growth |
+| Peer review (productive) | Medium — reviewer has domain expertise | Small — reviewer has different perspective from author | Productive | Published, improved |
+| Peer review (paradigm lock-in) | Degrades — reviewers share paradigm | Large — all reviewers trained on same literature | Sycophantic consensus | Paradigm lock-in |
+
+### How this resolves the "hard problem"
+
+The information asymmetry condition — identified in Entry 7 as "the hard problem that topology cannot capture" — is now parameterized:
+
+- **`|I|`** is the structural component. It is partially capturable in GDS topology: if the evaluator's `x` channel observes ports not present in the generator's `x` channel (as detected by our SPARQL observation asymmetry query), that is evidence of small `|I|`. The asymmetric projection blocks in the Euthyphro and SA loop models encode this structurally.
+
+- **`ρ(E,T)`** is the semantic component. It cannot be captured by topology alone — it depends on whether the evaluator's signal is actually truth-tracking, which is a content question. This is the genuinely irreducible limitation: topology tells you the structure permits productive antagonism, but not whether the evaluator is actually competent.
+
+The synthesis gap is now formally statable: **what is the minimum `ρ(E,T)` required for productive antagonism, and how does it depend on `|I|`?** This is analogous to PAC-learning's sample complexity question: how much signal does the evaluator need to drive genuine improvement? The answer likely depends on the complexity of the generator's hypothesis space — a richer generator requires a more truth-tracking evaluator.
+
+### GDS encoding path
+
+`ρ(E,T)` and `|I|` can be encoded as `ParameterDef` entries on the `GDSSpec`, annotating the wiring between evaluator and generator. The productive antagonism condition becomes a custom verification check:
+
+```python
+@gds_check(check_id="SA-OEM-001", severity="warning")
+def check_orthogonal_evaluator(system: SystemIR) -> list[Finding]:
+    """Productive antagonism requires evaluator's observation ports
+    to include tokens not present in generator's observation ports."""
+    # Extract forward_in tokens for decision-type blocks
+    # Check that evaluator's tokens are a strict superset
+    # If symmetric: warn "sycophancy risk — shared information channel"
+    ...
+```
+
+This would run on any GDS model and flag systems where the evaluator and generator share the same observation channels — a structural precondition for sycophancy.
+
+### The fourth model confirms the theory
+
+The SA Design-Audit-Synthesize loop, classified as `pursuit_evasion` alongside the Euthyphro, has:
+- `ρ(E,T)` high — the Auditor checks structural properties (gaps, contradictions) that are independently verifiable
+- `|I|` small — the Auditor observes 4 channels (Spec History + Current Spec State + Prior Findings + Revised Spec) while the Designer observes 2 (Current Spec State + Audit Findings)
+- Prediction: productive antagonism
+- Observed: the methodology works when applied correctly; fails (sophistry) when audit is shallow (`ρ(E,T)` drops) or halt gates are overridden (`|I|` grows because auditor defers to designer)
+
+SA and the Euthyphro are not just topologically equivalent — they are equivalent on the OEM parameters too. The methodology was designed, unknowingly, to maximize `ρ(E,T)` (independent structural review) and minimize `|I|` (role separation between designer and auditor). The ten principles are engineering choices that tune the OEM parameters toward productive antagonism.
+
+---
+
 ## Known Limitations of the Formalism
 
 ### Terminal conditions are strings, not computable predicates (F-006)
