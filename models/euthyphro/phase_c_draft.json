@@ -1,7 +1,6 @@
 {
-  "_meta": "Phase C draft — human commitment judgments. Covers Sections 6-18 (D1 through aporia). Preamble sections (1-5) contain no definitional commitments. Schema v3.0, five-type taxonomy.",
+  "_meta": "Phase C draft \u2014 human commitment judgments. Covers Sections 6-18 (D1 through aporia). Preamble sections (1-5) contain no definitional commitments. Schema v3.0, five-type taxonomy.",
   "_finding": "conditional_commitment has zero instances in the Euthyphro. Every apparent conditional is actually a derivation from independently conceded premises. Type retained in schema for other dialogues.",
-
   "sections": [
     {
       "section": 6,
@@ -18,7 +17,7 @@
           "source": "explicit",
           "available_to": "both",
           "confidence": "high",
-          "note": "Euthyphro volunteers this as D1. It is an assertion, not a commitment, because Socrates has not yet bound him to it under questioning — he offered it freely."
+          "note": "Euthyphro volunteers this as D1. It is an assertion, not a commitment, because Socrates has not yet bound him to it under questioning \u2014 he offered it freely."
         },
         {
           "id": "C-6.2",
@@ -44,12 +43,15 @@
         }
       ],
       "store_after": {
-        "euthyphro": ["C-6.1", "C-6.2"],
+        "euthyphro": [
+          "C-6.1",
+          "C-6.2",
+          "P-6.1"
+        ],
         "socrates": [],
-        "dialogue": ["P-6.1"]
+        "dialogue": []
       }
     },
-
     {
       "section": 7,
       "title": "Refutation of D1: example is not definition",
@@ -85,7 +87,10 @@
           "proposition": "D1 fails: an example of a pious act is not the general idea (eidos) of piety",
           "type": "derivation",
           "_if_derivation": {
-            "premises": ["C-7.1", "C-7.2"],
+            "premises": [
+              "C-7.1",
+              "C-7.2"
+            ],
             "conclusion": "D1 (piety = prosecuting wrongdoers) gives an example, not a definition. The eidos requirement is unmet.",
             "derived_by": "Socrates",
             "presented_at": "6d-6e",
@@ -112,12 +117,17 @@
         }
       ],
       "store_after": {
-        "euthyphro": ["C-7.1", "C-7.2"],
+        "euthyphro": [
+          "C-7.1",
+          "C-7.2",
+          "P-6.1"
+        ],
         "socrates": [],
-        "dialogue": ["P-6.1", "D-7.1"]
+        "dialogue": [
+          "D-7.1"
+        ]
       }
     },
-
     {
       "section": 8,
       "title": "Definition 2: what is dear to the gods",
@@ -133,7 +143,7 @@
           "source": "explicit",
           "available_to": "both",
           "confidence": "high",
-          "note": "Euthyphro: 'Piety, then, is that which is dear to the gods.' This is D2. Volunteered but in response to Socratic demand for a definition, so it functions as a commitment — Socrates treats it as binding."
+          "note": "Euthyphro: 'Piety, then, is that which is dear to the gods.' This is D2. Volunteered but in response to Socratic demand for a definition, so it functions as a commitment \u2014 Socrates treats it as binding."
         },
         {
           "id": "C-8.2",
@@ -148,12 +158,19 @@
         }
       ],
       "store_after": {
-        "euthyphro": ["C-7.1", "C-7.2", "C-8.1", "C-8.2"],
+        "euthyphro": [
+          "C-7.1",
+          "C-7.2",
+          "C-8.1",
+          "C-8.2",
+          "P-6.1"
+        ],
         "socrates": [],
-        "dialogue": ["P-6.1", "D-7.1"]
+        "dialogue": [
+          "D-7.1"
+        ]
       }
     },
-
     {
       "section": 9,
       "title": "Refutation of D2: gods disagree",
@@ -222,18 +239,25 @@
           "proposition": "The same things are both hated and loved by the gods",
           "type": "derivation",
           "_if_derivation": {
-            "premises": ["C-9.1", "C-9.3", "C-9.4", "C-9.5"],
+            "premises": [
+              "C-9.1",
+              "C-9.3",
+              "C-9.4",
+              "C-9.5"
+            ],
             "conclusion": "The same things are hated by the gods and loved by the gods, and are both hateful and dear to them.",
             "derived_by": "Socrates",
             "presented_at": "7e-8a",
             "objected_to": false,
             "ratified_by": "Euthyphro",
-            "invocable_at": ["8a"]
+            "invocable_at": [
+              "8a"
+            ]
           },
           "source": "derived",
           "available_to": "both",
           "confidence": "high",
-          "note": "Socrates: 'Then the same things are hated by the gods and loved by the gods?' Euthyphro: 'True.' Derivation ratified — available to both."
+          "note": "Socrates: 'Then the same things are hated by the gods and loved by the gods?' Euthyphro: 'True.' Derivation ratified \u2014 available to both."
         },
         {
           "id": "D-9.2",
@@ -242,25 +266,31 @@
           "proposition": "Under D2, the same things are both pious and impious",
           "type": "derivation",
           "_if_derivation": {
-            "premises": ["C-8.1", "C-8.2", "D-9.1"],
+            "premises": [
+              "C-8.1",
+              "C-8.2",
+              "D-9.1"
+            ],
             "conclusion": "Under D2 (piety = dear to gods, impiety = not dear to gods), the same things will be both pious and impious.",
             "derived_by": "Socrates",
             "presented_at": "8a",
             "objected_to": false,
             "ratified_by": "Euthyphro",
-            "invocable_at": ["8a"]
+            "invocable_at": [
+              "8a"
+            ]
           },
           "source": "derived",
           "available_to": "both",
           "confidence": "medium",
-          "note": "Euthyphro: 'So I should suppose.' The hedge ('I should suppose') is weaker than his usual 'True' or 'Certainly' — he is beginning to see the problem but has not fully conceded. Marked medium confidence."
+          "note": "Euthyphro: 'So I should suppose.' The hedge ('I should suppose') is weaker than his usual 'True' or 'Certainly' \u2014 he is beginning to see the problem but has not fully conceded. Marked medium confidence."
         }
       ],
       "removed": [
         {
           "id": "C-8.1",
           "removal_type": "refuted",
-          "note": "D2 produces contradiction via D-9.2. Not formally retracted by Euthyphro — he moves to D3 (the 'all gods' amendment)."
+          "note": "D2 produces contradiction via D-9.2. Not formally retracted by Euthyphro \u2014 he moves to D3 (the 'all gods' amendment)."
         },
         {
           "id": "C-8.2",
@@ -269,12 +299,24 @@
         }
       ],
       "store_after": {
-        "euthyphro": ["C-7.1", "C-7.2", "C-9.1", "C-9.2", "C-9.3", "C-9.4", "C-9.5"],
+        "euthyphro": [
+          "C-7.1",
+          "C-7.2",
+          "C-9.1",
+          "C-9.2",
+          "C-9.3",
+          "C-9.4",
+          "C-9.5",
+          "P-6.1"
+        ],
         "socrates": [],
-        "dialogue": ["P-6.1", "D-7.1", "D-9.1", "D-9.2"]
+        "dialogue": [
+          "D-7.1",
+          "D-9.1",
+          "D-9.2"
+        ]
       }
     },
-
     {
       "section": 10,
       "title": "Amendment: what ALL the gods love",
@@ -290,7 +332,7 @@
           "source": "explicit",
           "available_to": "both",
           "confidence": "medium",
-          "note": "Euthyphro objects to D2's refutation by asserting divine unanimity on murder. This is an assertion (volunteered as a defense), not a commitment (not extracted). Socrates does not accept it — he presses on the particular case. Confidence medium because the assertion is strategic, not philosophical."
+          "note": "Euthyphro objects to D2's refutation by asserting divine unanimity on murder. This is an assertion (volunteered as a defense), not a commitment (not extracted). Socrates does not accept it \u2014 he presses on the particular case. Confidence medium because the assertion is strategic, not philosophical."
         },
         {
           "id": "C-10.2",
@@ -305,12 +347,26 @@
         }
       ],
       "store_after": {
-        "euthyphro": ["C-7.1", "C-7.2", "C-9.1", "C-9.2", "C-9.3", "C-9.4", "C-9.5", "C-10.1", "C-10.2"],
+        "euthyphro": [
+          "C-7.1",
+          "C-7.2",
+          "C-9.1",
+          "C-9.2",
+          "C-9.3",
+          "C-9.4",
+          "C-9.5",
+          "C-10.1",
+          "C-10.2",
+          "P-6.1"
+        ],
         "socrates": [],
-        "dialogue": ["P-6.1", "D-7.1", "D-9.1", "D-9.2"]
+        "dialogue": [
+          "D-7.1",
+          "D-9.1",
+          "D-9.2"
+        ]
       }
     },
-
     {
       "section": 11,
       "title": "Definition 3: what all the gods love",
@@ -326,7 +382,7 @@
           "source": "explicit",
           "available_to": "both",
           "confidence": "high",
-          "note": "D3. Euthyphro: 'Yes, I should say that what all the gods love is pious and holy.' Adopts Socrates' amendment (T102). Note: this is DIFFERENT from C-8.1 ('dear to the gods' vs 'all the gods love') — semantic distinction preserved per normalization rule 4."
+          "note": "D3. Euthyphro: 'Yes, I should say that what all the gods love is pious and holy.' Adopts Socrates' amendment (T102). Note: this is DIFFERENT from C-8.1 ('dear to the gods' vs 'all the gods love') \u2014 semantic distinction preserved per normalization rule 4."
         },
         {
           "id": "C-11.2",
@@ -352,12 +408,29 @@
         }
       ],
       "store_after": {
-        "euthyphro": ["C-7.1", "C-7.2", "C-9.1", "C-9.2", "C-9.3", "C-9.4", "C-9.5", "C-10.1", "C-10.2", "C-11.1", "C-11.2", "C-11.3"],
+        "euthyphro": [
+          "C-7.1",
+          "C-7.2",
+          "C-9.1",
+          "C-9.2",
+          "C-9.3",
+          "C-9.4",
+          "C-9.5",
+          "C-10.1",
+          "C-10.2",
+          "C-11.1",
+          "C-11.2",
+          "C-11.3",
+          "P-6.1"
+        ],
         "socrates": [],
-        "dialogue": ["P-6.1", "D-7.1", "D-9.1", "D-9.2"]
+        "dialogue": [
+          "D-7.1",
+          "D-9.1",
+          "D-9.2"
+        ]
       }
     },
-
     {
       "section": 12,
       "title": "Refutation of D3: the Euthyphro dilemma",
@@ -404,25 +477,32 @@
           "proposition": "Piety and god-lovedness have different causal structures; D3 gives an attribute (being loved), not the essence of piety",
           "type": "derivation",
           "_if_derivation": {
-            "premises": ["C-12.1", "C-12.2", "C-12.3", "C-11.1"],
-            "conclusion": "Pious = loved because it is pious (nature → love). Dear-to-gods = dear because loved (love → state). These have opposite causal directions, so they are not the same thing. D3 ('piety = what all the gods love') gives the attribute of being loved, not the essence that causes it.",
+            "premises": [
+              "C-12.1",
+              "C-12.2",
+              "C-12.3",
+              "C-11.1"
+            ],
+            "conclusion": "Pious = loved because it is pious (nature \u2192 love). Dear-to-gods = dear because loved (love \u2192 state). These have opposite causal directions, so they are not the same thing. D3 ('piety = what all the gods love') gives the attribute of being loved, not the essence that causes it.",
             "derived_by": "Socrates",
             "presented_at": "10d-11b",
             "objected_to": false,
             "ratified_by": null,
-            "invocable_at": ["15b-c"]
+            "invocable_at": [
+              "15b-c"
+            ]
           },
           "source": "derived",
           "available_to": "socrates_only",
           "confidence": "high",
-          "note": "Socrates performs the derivation in monologue (T132-T138). Euthyphro does not ratify — he responds 'I really do not know, Socrates, how to express what I mean' (T139). The derivation is unopposed but not explicitly accepted. This is the key asymmetry: Socrates knows the derivation is in the store; Euthyphro may not have tracked the logical structure."
+          "note": "Socrates performs the derivation in monologue (T132-T138). Euthyphro does not ratify \u2014 he responds 'I really do not know, Socrates, how to express what I mean' (T139). The derivation is unopposed but not explicitly accepted. This is the key asymmetry: Socrates knows the derivation is in the store; Euthyphro may not have tracked the logical structure."
         }
       ],
       "removed": [
         {
           "id": "C-11.1",
           "removal_type": "refuted",
-          "note": "D3 is refuted by D-12.1 (gives attribute not essence). Euthyphro does not formally retract — he says arguments 'walk away' (T139)."
+          "note": "D3 is refuted by D-12.1 (gives attribute not essence). Euthyphro does not formally retract \u2014 he says arguments 'walk away' (T139)."
         },
         {
           "id": "C-11.2",
@@ -436,12 +516,30 @@
         }
       ],
       "store_after": {
-        "euthyphro": ["C-7.1", "C-7.2", "C-9.1", "C-9.2", "C-9.3", "C-9.4", "C-9.5", "C-10.1", "C-10.2", "C-12.1", "C-12.2", "C-12.3"],
+        "euthyphro": [
+          "C-7.1",
+          "C-7.2",
+          "C-9.1",
+          "C-9.2",
+          "C-9.3",
+          "C-9.4",
+          "C-9.5",
+          "C-10.1",
+          "C-10.2",
+          "C-12.1",
+          "C-12.2",
+          "C-12.3",
+          "P-6.1"
+        ],
         "socrates": [],
-        "dialogue": ["P-6.1", "D-7.1", "D-9.1", "D-9.2", "D-12.1"]
+        "dialogue": [
+          "D-7.1",
+          "D-9.1",
+          "D-9.2",
+          "D-12.1"
+        ]
       }
     },
-
     {
       "section": "13-14",
       "title": "Definition 4: piety as part of justice / care of gods",
@@ -483,12 +581,33 @@
         }
       ],
       "store_after": {
-        "euthyphro": ["C-7.1", "C-7.2", "C-9.1", "C-9.2", "C-9.3", "C-9.4", "C-9.5", "C-10.1", "C-10.2", "C-12.1", "C-12.2", "C-12.3", "C-14.1", "C-14.2", "C-14.3"],
+        "euthyphro": [
+          "C-7.1",
+          "C-7.2",
+          "C-9.1",
+          "C-9.2",
+          "C-9.3",
+          "C-9.4",
+          "C-9.5",
+          "C-10.1",
+          "C-10.2",
+          "C-12.1",
+          "C-12.2",
+          "C-12.3",
+          "C-14.1",
+          "C-14.2",
+          "C-14.3",
+          "P-6.1"
+        ],
         "socrates": [],
-        "dialogue": ["P-6.1", "D-7.1", "D-9.1", "D-9.2", "D-12.1"]
+        "dialogue": [
+          "D-7.1",
+          "D-9.1",
+          "D-9.2",
+          "D-12.1"
+        ]
       }
     },
-
     {
       "section": 15,
       "title": "Refutation of D4: care cannot improve the gods",
@@ -524,7 +643,11 @@
           "proposition": "D4's 'care of the gods' cannot mean what care normally means, since care improves its object and the gods cannot be improved",
           "type": "derivation",
           "_if_derivation": {
-            "premises": ["C-14.3", "C-15.1", "C-15.2"],
+            "premises": [
+              "C-14.3",
+              "C-15.1",
+              "C-15.2"
+            ],
             "conclusion": "D4 uses 'care' (therapeia) but care improves its object; the gods cannot be improved; therefore 'care' is inapplicable in its normal sense.",
             "derived_by": "Socrates",
             "presented_at": "13b-c",
@@ -535,7 +658,7 @@
           "source": "derived",
           "available_to": "both",
           "confidence": "high",
-          "note": "Euthyphro ratifies by saying 'that was certainly not what I meant' — acknowledging the refutation. Available to both because Euthyphro understands the point."
+          "note": "Euthyphro ratifies by saying 'that was certainly not what I meant' \u2014 acknowledging the refutation. Available to both because Euthyphro understands the point."
         },
         {
           "id": "P-15.1",
@@ -557,12 +680,36 @@
         }
       ],
       "store_after": {
-        "euthyphro": ["C-7.1", "C-7.2", "C-9.1", "C-9.2", "C-9.3", "C-9.4", "C-9.5", "C-10.1", "C-10.2", "C-12.1", "C-12.2", "C-12.3", "C-14.1", "C-14.2", "C-15.1", "C-15.2"],
+        "euthyphro": [
+          "C-7.1",
+          "C-7.2",
+          "C-9.1",
+          "C-9.2",
+          "C-9.3",
+          "C-9.4",
+          "C-9.5",
+          "C-10.1",
+          "C-10.2",
+          "C-12.1",
+          "C-12.2",
+          "C-12.3",
+          "C-14.1",
+          "C-14.2",
+          "C-15.1",
+          "C-15.2",
+          "P-6.1",
+          "P-15.1"
+        ],
         "socrates": [],
-        "dialogue": ["P-6.1", "D-7.1", "D-9.1", "D-9.2", "D-12.1", "D-15.1", "P-15.1"]
+        "dialogue": [
+          "D-7.1",
+          "D-9.1",
+          "D-9.2",
+          "D-12.1",
+          "D-15.1"
+        ]
       }
     },
-
     {
       "section": "16-17",
       "title": "Definition 5 + reduction to D3",
@@ -578,7 +725,7 @@
           "source": "explicit",
           "available_to": "both",
           "confidence": "medium",
-          "note": "Euthyphro shifts from 'care' to 'service' after D4's refutation. This is a repair attempt, not deeply committed — he is trying alternatives."
+          "note": "Euthyphro shifts from 'care' to 'service' after D4's refutation. This is a repair attempt, not deeply committed \u2014 he is trying alternatives."
         },
         {
           "id": "C-16.2",
@@ -589,7 +736,7 @@
           "source": "explicit",
           "available_to": "both",
           "confidence": "high",
-          "note": "D5. Euthyphro: 'Let me simply say that piety or holiness is learning how to please the gods in word and deed, by prayers and sacrifices.' (T201) This is an evasion — he refuses to answer what work the gods accomplish — but it is an explicit commitment to a definition."
+          "note": "D5. Euthyphro: 'Let me simply say that piety or holiness is learning how to please the gods in word and deed, by prayers and sacrifices.' (T201) This is an evasion \u2014 he refuses to answer what work the gods accomplish \u2014 but it is an explicit commitment to a definition."
         },
         {
           "id": "C-16.3",
@@ -631,13 +778,19 @@
           "proposition": "D5 reduces to 'piety is what is dear to the gods', which is D3/D2",
           "type": "derivation",
           "_if_derivation": {
-            "premises": ["C-16.3", "C-16.4", "C-16.5"],
-            "conclusion": "D5 (science of asking and giving) → giving what pleases the gods → what is dear to the gods → D3 (what all the gods love) / D2 (what is dear to the gods). The chain of reductions returns to a prior definition.",
+            "premises": [
+              "C-16.3",
+              "C-16.4",
+              "C-16.5"
+            ],
+            "conclusion": "D5 (science of asking and giving) \u2192 giving what pleases the gods \u2192 what is dear to the gods \u2192 D3 (what all the gods love) / D2 (what is dear to the gods). The chain of reductions returns to a prior definition.",
             "derived_by": "Socrates",
             "presented_at": "15a-b",
             "objected_to": false,
             "ratified_by": "Euthyphro",
-            "invocable_at": ["15b-c"]
+            "invocable_at": [
+              "15b-c"
+            ]
           },
           "source": "derived",
           "available_to": "both",
@@ -645,17 +798,52 @@
           "note": "Socrates: 'Then once more the assertion is repeated that piety is dear to the gods?' Euthyphro: 'Certainly.' (T222-T223) Euthyphro ratifies without recognizing the circularity."
         }
       ],
-      "removed": [],
+      "removed": [
+        {
+          "id": "C-16.1",
+          "removal_type": "superseded",
+          "note": "C-16.1 (service/hyperetike) is a repair attempt that Euthyphro abandons when Socrates presses on what work the gods accomplish. Superseded by C-16.2 (prayers and sacrifices) \u2014 Euthyphro shifts from the abstract 'service' to the concrete 'sacrifice and prayer' when he cannot specify the telos of service."
+        }
+      ],
       "store_after": {
-        "euthyphro": ["C-7.1", "C-7.2", "C-9.1", "C-9.2", "C-9.3", "C-9.4", "C-9.5", "C-10.1", "C-10.2", "C-12.1", "C-12.2", "C-12.3", "C-14.1", "C-14.2", "C-15.1", "C-15.2", "C-16.2", "C-16.3", "C-16.4", "C-16.5"],
+        "euthyphro": [
+          "C-7.1",
+          "C-7.2",
+          "C-9.1",
+          "C-9.2",
+          "C-9.3",
+          "C-9.4",
+          "C-9.5",
+          "C-10.1",
+          "C-10.2",
+          "C-12.1",
+          "C-12.2",
+          "C-12.3",
+          "C-14.1",
+          "C-14.2",
+          "C-15.1",
+          "C-15.2",
+          "C-16.2",
+          "C-16.3",
+          "C-16.4",
+          "C-16.5",
+          "P-6.1",
+          "P-15.1"
+        ],
         "socrates": [],
-        "dialogue": ["P-6.1", "D-7.1", "D-9.1", "D-9.2", "D-12.1", "D-15.1", "P-15.1", "D-16.1"]
+        "dialogue": [
+          "D-7.1",
+          "D-9.1",
+          "D-9.2",
+          "D-12.1",
+          "D-15.1",
+          "D-16.1"
+        ]
       }
     },
-
     {
       "section": 18,
-      "title": "Circularity demonstrated — aporia",
+      "title": "Circularity demonstrated \u2014 aporia",
       "stephanus": "15b-16a",
       "turn_range": "T224-T232",
       "entries": [
@@ -668,7 +856,7 @@
           "source": "extracted",
           "available_to": "both",
           "confidence": "high",
-          "note": "Socrates: 'Were we not saying that the holy or pious was not the same with that which is loved of the gods? Have you forgotten?' Euthyphro: 'I quite remember.' (T224-T225) Re-affirming D-12.1."
+          "note": "Socrates: 'Were we not saying that the holy or pious was not the same with that which is loved of the gods? Have you forgotten?' Euthyphro: 'I quite remember.' (T224-T225) Re-affirming D-12.1. IMPORTANT: This turn closes the information asymmetry. D-12.1 was available_to: socrates_only from T138 through T224. At T225, Euthyphro explicitly remembers the result, so D-12.1 transitions to available_to: both. The asymmetry held for the entirety of Sections 13-17 (D4 and D5), during which Euthyphro proposed two new definitions without recognizing that the D-12.1 derivation would eventually close the cycle."
         },
         {
           "id": "C-18.2",
@@ -679,7 +867,7 @@
           "source": "extracted",
           "available_to": "both",
           "confidence": "high",
-          "note": "Socrates: 'And are you not saying that what is loved of the gods is holy?' Euthyphro: 'True.' (T226-T227)"
+          "note": "Socrates: 'And are you not saying that what is loved of the gods is holy; and is not this the same as what is dear to them\u2014do you see?' Euthyphro: 'True.' (T226-T227). IMPORTANT: This turn does double duty. Socrates explicitly equates 'loved of the gods' with 'dear to them', collapsing the D2/D3 semantic distinction that normalization rule 4 preserves. This bridging is what allows C-16.5 ('dear to the gods') to reach D3 ('what all the gods love') in the cycle chain. Without this explicit equation at T226, the cycle would not close \u2014 the two propositions are different under the normalization rules."
         },
         {
           "id": "C-18.3",
@@ -697,14 +885,90 @@
         "flagged": true,
         "current_definition": "D5",
         "maps_to": "D3",
-        "via": "D5 (science of asking/giving) → giving what pleases the gods (C-16.4) → what is dear to the gods (C-16.5) → D3 (what all the gods love). D3 was refuted by D-12.1 (gives attribute not essence).",
-        "closing_derivation": "D-12.1"
+        "via": "D5 (science of asking/giving) \u2192 giving what pleases the gods (C-16.4) \u2192 what is dear to the gods (C-16.5) \u2192 Socrates equates 'dear to gods' with 'loved of gods' at T226 (C-18.2 note) \u2192 D3 (what all the gods love). D3 was refuted by D-12.1 (gives attribute not essence).",
+        "closing_derivation": "D-12.1",
+        "bridging_step": "T226: Socrates explicitly equates 'loved of the gods' with 'dear to them', collapsing the D2/D3 distinction. Without this bridging, C-16.5 and D3 are different propositions under normalization rule 4."
       },
       "store_after": {
-        "euthyphro": ["C-7.1", "C-7.2", "C-9.1", "C-9.2", "C-9.3", "C-9.4", "C-9.5", "C-10.1", "C-10.2", "C-12.1", "C-12.2", "C-12.3", "C-14.1", "C-14.2", "C-15.1", "C-15.2", "C-16.2", "C-16.3", "C-16.4", "C-16.5", "C-18.1", "C-18.2", "C-18.3"],
+        "euthyphro": [
+          "C-7.1",
+          "C-7.2",
+          "C-9.1",
+          "C-9.2",
+          "C-9.3",
+          "C-9.4",
+          "C-9.5",
+          "C-10.1",
+          "C-10.2",
+          "C-12.1",
+          "C-12.2",
+          "C-12.3",
+          "C-14.1",
+          "C-14.2",
+          "C-15.1",
+          "C-15.2",
+          "C-16.2",
+          "C-16.3",
+          "C-16.4",
+          "C-16.5",
+          "C-18.1",
+          "C-18.2",
+          "C-18.3",
+          "P-6.1",
+          "P-15.1"
+        ],
         "socrates": [],
-        "dialogue": ["P-6.1", "D-7.1", "D-9.1", "D-9.2", "D-12.1", "D-15.1", "P-15.1", "D-16.1"]
+        "dialogue": [
+          "D-7.1",
+          "D-9.1",
+          "D-9.2",
+          "D-12.1",
+          "D-15.1",
+          "D-16.1"
+        ]
       }
     }
-  ]
+  ],
+  "definition_map": {
+    "D1": {
+      "text": "Piety is prosecuting anyone guilty of wrongdoing",
+      "stephanus": "5d-6a",
+      "introduced": "C-6.1",
+      "refutation_id": "D-7.1",
+      "refutation_type": "example_not_essence",
+      "reduces_to": null
+    },
+    "D2": {
+      "text": "Piety is what is dear to the gods",
+      "stephanus": "6e",
+      "introduced": "C-8.1",
+      "refutation_id": "D-9.2",
+      "refutation_type": "contradicts_prior_commitment",
+      "reduces_to": null
+    },
+    "D3": {
+      "text": "Piety is what all the gods love",
+      "stephanus": "9e",
+      "introduced": "C-11.1",
+      "refutation_id": "D-12.1",
+      "refutation_type": "attribute_not_essence",
+      "reduces_to": null
+    },
+    "D4": {
+      "text": "Piety is that part of justice which attends to the gods",
+      "stephanus": "12d-13a",
+      "introduced": "C-14.3",
+      "refutation_id": "D-15.1",
+      "refutation_type": "inapplicable_predicate",
+      "reduces_to": null
+    },
+    "D5": {
+      "text": "Piety is learning how to please the gods in word and deed",
+      "stephanus": "13d-15b",
+      "introduced": "C-16.2",
+      "refutation_id": "D-16.1",
+      "refutation_type": "reduces_to_refuted",
+      "reduces_to": "D3"
+    }
+  }
 }
