@@ -706,3 +706,71 @@ The GDS SystemIR uses `is_temporal` for corecursive wirings. The OGS IR uses `is
 ### S-005 false positive for environment-sourced utility (F-001/F-002)
 
 OGS check S-005 requires every `DecisionGame` to have an incoming contravariant flow from another game. In the GAN topology, the Discriminator's utility signal (Ground Truth Label) comes from the external environment (training data), not from another player. S-005 produces a warning (not an error) for this topology. The signal is provided via `PatternInput`, which S-005 does not inspect. This is documented in `models/gan/artifacts/verification.txt`.
+
+---
+
+## Entry 9: Leibo, Social Generalization, and Commitment Store Ownership
+
+**Date:** 2026-03-29
+
+### Source
+
+Leibo's work on evaluating multi-agent AI systems (Melting Pot, Concordia) and the distinction between Small Worlds (enumerated states, Nash equilibrium) and Large Worlds (unknown unknowns, evolutionary dynamics).
+
+### What this changes
+
+**1. The elenchus is mixed-motivation, not zero-sum.**
+
+The taxonomy of strategic situations distinguishes pure conflict, pure common interest, and mixed motivation. The Socratic elenchus is mixed-motivation: Euthyphro wants to appear knowledgeable *and* find the truth; Socrates wants to expose inconsistency *and* find the truth. They share one objective and conflict on another. This means an evasion by Euthyphro is not a competitive move in a zero-sum sense — it is a mixed-motivation agent prioritizing one objective (reputation) over another (inquiry). The annotation schema should encode this as `game_type: "mixed_motivation"` with explicit objective decomposition per player.
+
+**2. Observation asymmetry is social generalization.**
+
+Leibo's key metric — generalization to strangers — maps onto the Socratic asymmetry. Socrates is a domain-general evaluator: his elenctic method works on any interlocutor, any topic. He extracts commitments from whoever is in front of him using a substrate-independent strategy. Euthyphro is hyper-specialized: his responses are contingent on his specific beliefs about piety. In multi-agent evaluation terms, Socrates generalizes; Euthyphro overfits to his own training distribution.
+
+**3. Sophistry is formally analogous to "Graduate Student Gradient Descent."**
+
+The failure mode where researchers repeatedly adjust a model based on test results, destroying generalization validity. Sophistry is structurally identical: the respondent adjusts their definition based on each refutation, producing a trajectory that tracks the critic's objections rather than converging on the nature of the thing. Both are **overfitting to the evaluator** — and both are detectable as trajectories where the store grows without convergence (in ML terms: training loss decreases but test loss does not).
+
+**4. Commitment store ownership: world-state, not character-state.**
+
+The Concordia architecture uses a Game Master (GM) / Player split: the GM owns world-state and resolves consequences of actions; players own character-state (beliefs, goals, memories). Applied to the elenchus:
+
+- **Euthyphro** (character-state): beliefs about piety, goal to appear knowledgeable, current definition
+- **Socrates** (character-state): elenctic strategy, question selection, goal to expose inconsistency
+- **Dialogue Logic** (world-state): commitment store, refutation history, consistency status
+
+The commitment store is *world-state*. Neither Socrates nor Euthyphro owns it. Socrates acts as a *partial GM* by invoking the store ("Were we not saying that...?"), but he doesn't own it any more than a player who remembers the board state owns the board. The annotator — who reconstructs the store from the text — is functioning as the post-hoc GM.
+
+In GDS terms, this means three entities:
+
+```python
+euthyphro_state = entity("Euthyphro",
+    beliefs=state_var(BeliefSet),
+    current_definition=state_var(Definition))
+socrates_state = entity("Socrates",
+    strategy=state_var(Strategy),
+    question_target=state_var(CommitmentRef))
+dialogue_state = entity("Dialogue",
+    commitment_store=state_var(CommitmentStore),
+    refutation_history=state_var(RefutationHistory),
+    consistency_status=state_var(ConsistencyStatus))
+```
+
+The `Commitment Update` mechanism in the current model is already structurally this — it's a `CovariantFunction` with no agency, updating world-state based on both players' outputs. But it should be made explicit that this is world-state owned by the dialogue logic.
+
+### LLM bias mitigation for annotation extraction
+
+When using an LLM for Phase B (structural extraction), the LLM has read the Euthyphro, read the secondary literature, and has implicit views about the commitment stores. This is a detectable bias, not an uncontrolled one.
+
+**Protocol: dual-pass with divergence detection.**
+
+1. **Context-minimal pass:** Give the LLM only the raw Jowett text. No schema, no mention of commitment stores or GDS. Ask: "Segment this dialogue into turns. For each turn, identify the speaker, classify the speech act, and list what the speaker asserts or concedes." This produces a naive extraction.
+
+2. **Schema-informed pass:** Give the LLM the full annotation schema and the raw text. Ask it to populate the schema, flagging `confidence: low` wherever uncertain.
+
+3. **Divergence detection:** Diff the two passes. Divergences indicate one of:
+   - The LLM's training data is supplying a scholarly interpretation the text doesn't support (contamination)
+   - The schema is forcing a distinction the naive reading doesn't surface (schema doing useful work)
+   - The text is genuinely ambiguous (flag for manual review)
+
+This treats the LLM's prior knowledge as detectable bias. Convergence between passes increases confidence. Divergence is the signal for human judgment.

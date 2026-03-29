@@ -33,11 +33,23 @@ Sophistry (the failure mode) is specifically unbounded growth without cycle — 
 ```json
 {
   "dialogue": "Euthyphro",
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "translation_base": "Jowett (Gutenberg #1642)",
   "translation_secondary": "Grube/Cooper (Hackett)",
   "normalization_rules": "see section below",
   "terminal_condition": "commitment store trajectory enters a cycle",
+  "game_type": "mixed_motivation",
+  "objectives": {
+    "euthyphro": ["appear knowledgeable", "find the truth about piety"],
+    "socrates": ["expose inconsistency in definitions", "find the truth about piety"]
+  },
+  "state_ownership": {
+    "character_state": {
+      "euthyphro": "beliefs, current definition, goal prioritization",
+      "socrates": "strategy, question target, elenctic method"
+    },
+    "world_state": "commitment store, refutation history, consistency status — owned by dialogue logic, not by either player"
+  },
   "turns": [
     {
       "turn_id": "integer, 1-indexed",
